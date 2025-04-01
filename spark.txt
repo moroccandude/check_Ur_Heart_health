@@ -1,0 +1,1 @@
+inferSchema=automatically detects the schema 
