@@ -1,1 +1,1 @@
-inferSchema=automatically detects the schema 
+inferSchema=automatically detects the schema test

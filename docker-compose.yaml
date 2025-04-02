@@ -11,7 +11,7 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
-    user: "${AIRFLOW_UID:-50000}:0"    
+    # user: "${AIRFLOW_UID:-50000}:0"    
     environment:
       - AIRFLOW__CORE__EXECUTOR=CeleryExecutor
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
@@ -236,7 +236,6 @@ services:
     ports:
       - "9870:9870"
       - "9000:9000"
-    user: usmail  
     hostname: namenode_hadoop
     volumes:
       - ./hadoop/namenode:/hadoop/dfs/name
@@ -251,7 +250,6 @@ services:
       - CLUSTER_NAME=hadoop
     depends_on:
       - namenode_hadoop  
-    user: usmail
     hostname: datanode_hadoop  
     volumes:
       - ./hadoop/datanode:/hadoop/dfs/name

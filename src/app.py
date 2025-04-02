@@ -6,18 +6,6 @@ import logging
 import time
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s -', datefmt='%d-%b-%y %H:%M:%S',filemode='w',filename='./logs/log.log')
 
-# df1=pd.read_csv("/home/usmail/Desktop/health_care/heart_disease/heart_disease/data/coronary artery disease.csv")
-# df2=pd.read_csv("/home/usmail/Desktop/health_care/heart_disease/heart_disease/data/heart_statlog_cleveland_hungary_final.csv")
-# df3=pd.read_csv("/home/usmail/Desktop/health_care/heart_disease/heart_disease/data/heart_failure_clinical_records_dataset.csv")
-# # df=df1.join(df1,on=["age","sex"])
-# df1_df2 = pd.merge(df1, df2, on='age', how='inner')  # You can use 'outer', 'left', or 'right' depending on your need
-
-# # Now merge the result with df3
-# df_final = pd.merge(df1_df2, df3, on='age', how='inner')  # Again, use the join type you prefer
-
-# # Check the merged data
-# print(df_final.columns)
-# # print(f"df1 :{df1.columns} |\n \n  df2 : {df2.columns} | \n \n  df3 : {df3.columns}")
 
 def inital_spark()->SparkSession:
     """ This function is used to create a spark session """

@@ -1,4 +1,0 @@
-18-Mar-25 21:39:12 - Creating spark session -
-18-Mar-25 21:39:14 - Ingesting data from /home/usmail/Desktop/health_care/heart_disease/heart_disease/data/ to hdfs -
-18-Mar-25 21:39:25 - Data ingested successfully -
-18-Mar-25 21:39:25 - Reading csv file from /home/usmail/Desktop/health_care/heart_disease/heart_disease/data/coronary artery disease.csv -

@@ -10,8 +10,10 @@ RUN apt-get update && apt-get install -y \
     git \
     && apt-get clean
 
-# Add your user with matching UID/GID
-RUN useradd  -m airflow
+# # Add your user with matching UID/GID
+# RUN groupadd -g 0 airflow && \
+#     useradd -u 1000 -m -g airflow airflow
+
 USER airflow
 # Create required directories
 RUN mkdir -p /opt/airflow/dags /opt/airflow/plugins /opt/airflow/logs /opt/airflow/data \
@@ -21,9 +23,4 @@ RUN mkdir -p /opt/airflow/dags /opt/airflow/plugins /opt/airflow/logs /opt/airfl
 COPY requirements.txt /requirements.txt
 RUN pip install --no-cache-dir -r /requirements.txt
 
-# Switch to the airflow user for running the services
-# Note: Using airflow user instead of custom user is recommended
-# USER airflow
 
-# The db init and user creation will be handled by the airflow-init service
-# in your docker-compose file, not here
