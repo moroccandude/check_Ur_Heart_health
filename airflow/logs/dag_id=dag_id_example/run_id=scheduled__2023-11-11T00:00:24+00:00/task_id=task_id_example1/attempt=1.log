@@ -1,0 +1,28 @@
+[2025-04-03T21:29:31.232+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_id_example.task_id_example1 scheduled__2023-11-11T00:00:24+00:00 [queued]>
+[2025-04-03T21:29:31.253+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_id_example.task_id_example1 scheduled__2023-11-11T00:00:24+00:00 [queued]>
+[2025-04-03T21:29:31.254+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2025-04-03T21:29:31.295+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): task_id_example1> on 2023-11-11 00:00:24+00:00
+[2025-04-03T21:29:31.309+0000] {standard_task_runner.py:57} INFO - Started process 1911 to run task
+[2025-04-03T21:29:31.314+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dag_id_example', 'task_id_example1', 'scheduled__2023-11-11T00:00:24+00:00', '--job-id', '1693', '--raw', '--subdir', 'DAGS_FOLDER/example_Dag.py', '--cfg-path', '/tmp/tmp7dkvcr47']
+[2025-04-03T21:29:31.315+0000] {standard_task_runner.py:85} INFO - Job 1693: Subtask task_id_example1
+[2025-04-03T21:29:31.407+0000] {task_command.py:415} INFO - Running <TaskInstance: dag_id_example.task_id_example1 scheduled__2023-11-11T00:00:24+00:00 [running]> on host cd2ae026cf73
+[2025-04-03T21:29:31.562+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_id_example' AIRFLOW_CTX_TASK_ID='task_id_example1' AIRFLOW_CTX_EXECUTION_DATE='2023-11-11T00:00:24+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-11T00:00:24+00:00'
+[2025-04-03T21:29:31.564+0000] {logging_mixin.py:151} INFO - Task 1
+[2025-04-03T21:29:31.564+0000] {python.py:194} INFO - Done. Returned value was: Task 1 completed
+[2025-04-03T21:29:31.623+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=dag_id_example, task_id=task_id_example1, execution_date=20231111T000024, start_date=20250403T212931, end_date=20250403T212931
+[2025-04-03T21:29:31.698+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-04-03T21:29:31.781+0000] {taskinstance.py:2776} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2025-04-03T22:22:26.641+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_id_example.task_id_example1 scheduled__2023-11-11T00:00:24+00:00 [queued]>
+[2025-04-03T22:22:26.655+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_id_example.task_id_example1 scheduled__2023-11-11T00:00:24+00:00 [queued]>
+[2025-04-03T22:22:26.655+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2025-04-03T22:22:26.682+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): task_id_example1> on 2023-11-11 00:00:24+00:00
+[2025-04-03T22:22:26.699+0000] {standard_task_runner.py:57} INFO - Started process 1937 to run task
+[2025-04-03T22:22:26.707+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dag_id_example', 'task_id_example1', 'scheduled__2023-11-11T00:00:24+00:00', '--job-id', '1683', '--raw', '--subdir', 'DAGS_FOLDER/example_Dag.py', '--cfg-path', '/tmp/tmp3jzmo8lf']
+[2025-04-03T22:22:26.709+0000] {standard_task_runner.py:85} INFO - Job 1683: Subtask task_id_example1
+[2025-04-03T22:22:26.816+0000] {task_command.py:415} INFO - Running <TaskInstance: dag_id_example.task_id_example1 scheduled__2023-11-11T00:00:24+00:00 [running]> on host e4574b8cd5e2
+[2025-04-03T22:22:27.105+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_id_example' AIRFLOW_CTX_TASK_ID='task_id_example1' AIRFLOW_CTX_EXECUTION_DATE='2023-11-11T00:00:24+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-11T00:00:24+00:00'
+[2025-04-03T22:22:27.106+0000] {logging_mixin.py:151} INFO - Task 1
+[2025-04-03T22:22:27.106+0000] {python.py:194} INFO - Done. Returned value was: Task 1 completed
+[2025-04-03T22:22:27.188+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=dag_id_example, task_id=task_id_example1, execution_date=20231111T000024, start_date=20250403T222226, end_date=20250403T222227
+[2025-04-03T22:22:27.314+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-04-03T22:22:27.391+0000] {taskinstance.py:2776} INFO - 2 downstream tasks scheduled from follow-on schedule check

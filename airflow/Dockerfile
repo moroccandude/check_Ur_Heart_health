@@ -9,16 +9,19 @@ RUN apt-get update && apt-get install -y \
     libffi-dev \
     git \
     && apt-get clean
+# Set default UID if not specified
+ENV AIRFLOW_UID=${AIRFLOW_UID:-50000}
 
-# # Add your user with matching UID/GID
-# RUN groupadd -g 0 airflow && \
-#     useradd -u 1000 -m -g airflow airflow
-
-USER airflow
+# Modify the airflow user to have the specified UID and root group
+RUN usermod -u 1000 airflow && \
+    usermod -g 0 airflow
+    
 # Create required directories
 RUN mkdir -p /opt/airflow/dags /opt/airflow/plugins /opt/airflow/logs /opt/airflow/data \
-    && chown -R airflow:0 /opt/airflow  && chmod -R 775 /opt/airflow
+    && chown -R airflow /opt/airflow  && chmod -R 775 /opt/airflow
 
+
+USER airflow
 # Install Python dependencies - specify your actual requirements
 COPY requirements.txt /requirements.txt
 RUN pip install --no-cache-dir -r /requirements.txt

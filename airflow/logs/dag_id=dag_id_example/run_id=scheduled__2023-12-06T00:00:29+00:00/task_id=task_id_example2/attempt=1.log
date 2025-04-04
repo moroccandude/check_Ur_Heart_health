@@ -1,0 +1,8 @@
+[2025-04-03T22:26:42.085+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_id_example.task_id_example2 scheduled__2023-12-06T00:00:29+00:00 [queued]>
+[2025-04-03T22:26:42.112+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_id_example.task_id_example2 scheduled__2023-12-06T00:00:29+00:00 [queued]>
+[2025-04-03T22:26:42.112+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2025-04-03T22:26:42.190+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-04-03T22:26:42.191+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2025-04-03T22:26:42.215+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/models/taskinstance.py:1371: SAWarning: transaction already deassociated from connection
+  session.commit()
+

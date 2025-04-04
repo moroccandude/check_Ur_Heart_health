@@ -1,0 +1,13 @@
+[2025-04-03T22:26:42.040+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_id_example.task_id_example1 scheduled__2023-12-06T00:00:34+00:00 [queued]>
+[2025-04-03T22:26:42.060+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_id_example.task_id_example1 scheduled__2023-12-06T00:00:34+00:00 [queued]>
+[2025-04-03T22:26:42.061+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2025-04-03T22:26:42.094+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): task_id_example1> on 2023-12-06 00:00:34+00:00
+[2025-04-03T22:26:42.115+0000] {standard_task_runner.py:57} INFO - Started process 2804 to run task
+[2025-04-03T22:26:42.121+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dag_id_example', 'task_id_example1', 'scheduled__2023-12-06T00:00:34+00:00', '--job-id', '2614', '--raw', '--subdir', 'DAGS_FOLDER/example_Dag.py', '--cfg-path', '/tmp/tmpwgoe2d6n']
+[2025-04-03T22:26:42.127+0000] {standard_task_runner.py:85} INFO - Job 2614: Subtask task_id_example1
+[2025-04-03T22:26:42.218+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-04-03T22:26:42.269+0000] {process_utils.py:131} INFO - Sending 15 to group 2804. PIDs of all processes in the group: [2804]
+[2025-04-03T22:26:42.277+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 2804
+[2025-04-03T22:26:42.391+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=2804, status='terminated', exitcode=<Negsignal.SIGTERM: -15>, started='22:26:41') (2804) terminated with exit code -15
+[2025-04-03T22:26:42.392+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2025-04-03T22:26:42.455+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check
