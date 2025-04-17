@@ -1,0 +1,107 @@
+[2025-04-04T12:35:18.836+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.initialize_spark_session scheduled__2025-04-03T00:00:00+00:00 [queued]>
+[2025-04-04T12:35:18.844+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.initialize_spark_session scheduled__2025-04-03T00:00:00+00:00 [queued]>
+[2025-04-04T12:35:18.844+0000] {taskinstance.py:1359} INFO - Starting attempt 4 of 4
+[2025-04-04T12:35:18.855+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): initialize_spark_session> on 2025-04-03 00:00:00+00:00
+[2025-04-04T12:35:18.865+0000] {standard_task_runner.py:57} INFO - Started process 1113 to run task
+[2025-04-04T12:35:18.868+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'hdfs_csv_processing_pipeline', 'initialize_spark_session', 'scheduled__2025-04-03T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmpktux37za']
+[2025-04-04T12:35:18.870+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask initialize_spark_session
+[2025-04-04T12:35:18.920+0000] {task_command.py:415} INFO - Running <TaskInstance: hdfs_csv_processing_pipeline.initialize_spark_session scheduled__2025-04-03T00:00:00+00:00 [running]> on host 40c50420c1d7
+[2025-04-04T12:35:19.029+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='hdfs_csv_processing_pipeline' AIRFLOW_CTX_TASK_ID='initialize_spark_session' AIRFLOW_CTX_EXECUTION_DATE='2025-04-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-03T00:00:00+00:00'
+[2025-04-04T12:35:19.031+0000] {app.py:50} INFO - Creating Spark session
+[2025-04-04T12:35:19.161+0000] {app.py:72} ERROR - Failed to create Spark session: [JAVA_GATEWAY_EXITED] Java gateway process exited before sending its port number.
+Traceback (most recent call last):
+  File "/opt/airflow/dags/app.py", line 53, in initialize_spark
+    spark = (SparkSession.builder
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/session.py", line 497, in getOrCreate
+    sc = SparkContext.getOrCreate(sparkConf)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/context.py", line 515, in getOrCreate
+    SparkContext(conf=conf or SparkConf())
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/context.py", line 201, in __init__
+    SparkContext._ensure_initialized(self, gateway=gateway, conf=conf)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/context.py", line 436, in _ensure_initialized
+    SparkContext._gateway = gateway or launch_gateway(conf)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/java_gateway.py", line 107, in launch_gateway
+    raise PySparkRuntimeError(
+pyspark.errors.exceptions.base.PySparkRuntimeError: [JAVA_GATEWAY_EXITED] Java gateway process exited before sending its port number.
+[2025-04-04T12:35:19.165+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 221, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/app.py", line 53, in initialize_spark
+    spark = (SparkSession.builder
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/session.py", line 497, in getOrCreate
+    sc = SparkContext.getOrCreate(sparkConf)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/context.py", line 515, in getOrCreate
+    SparkContext(conf=conf or SparkConf())
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/context.py", line 201, in __init__
+    SparkContext._ensure_initialized(self, gateway=gateway, conf=conf)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/context.py", line 436, in _ensure_initialized
+    SparkContext._gateway = gateway or launch_gateway(conf)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/java_gateway.py", line 107, in launch_gateway
+    raise PySparkRuntimeError(
+pyspark.errors.exceptions.base.PySparkRuntimeError: [JAVA_GATEWAY_EXITED] Java gateway process exited before sending its port number.
+[2025-04-04T12:35:19.183+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=hdfs_csv_processing_pipeline, task_id=initialize_spark_session, execution_date=20250403T000000, start_date=20250404T123518, end_date=20250404T123519
+[2025-04-04T12:35:19.209+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 12 for task initialize_spark_session ([JAVA_GATEWAY_EXITED] Java gateway process exited before sending its port number.; 1113)
+[2025-04-04T12:35:19.241+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-04-04T12:35:19.294+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-08T19:47:49.225+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.initialize_spark_session scheduled__2025-04-03T00:00:00+00:00 [queued]>
+[2025-04-08T19:47:49.245+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.initialize_spark_session scheduled__2025-04-03T00:00:00+00:00 [queued]>
+[2025-04-08T19:47:49.246+0000] {taskinstance.py:1359} INFO - Starting attempt 4 of 4
+[2025-04-08T19:47:49.263+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): initialize_spark_session> on 2025-04-03 00:00:00+00:00
+[2025-04-08T19:47:49.274+0000] {standard_task_runner.py:57} INFO - Started process 665 to run task
+[2025-04-08T19:47:49.279+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'hdfs_csv_processing_pipeline', 'initialize_spark_session', 'scheduled__2025-04-03T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmpbe3tkyb7']
+[2025-04-08T19:47:49.282+0000] {standard_task_runner.py:85} INFO - Job 8: Subtask initialize_spark_session
+[2025-04-08T19:47:49.335+0000] {task_command.py:415} INFO - Running <TaskInstance: hdfs_csv_processing_pipeline.initialize_spark_session scheduled__2025-04-03T00:00:00+00:00 [running]> on host df848dcc2b59
+[2025-04-08T19:47:49.437+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='hdfs_csv_processing_pipeline' AIRFLOW_CTX_TASK_ID='initialize_spark_session' AIRFLOW_CTX_EXECUTION_DATE='2025-04-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-03T00:00:00+00:00'
+[2025-04-08T19:47:49.439+0000] {app.py:51} INFO - Creating Spark session
+[2025-04-08T19:47:55.490+0000] {app.py:64} INFO - Spark session created successfully with app ID: local-1744141674776
+[2025-04-08T19:47:55.491+0000] {python.py:194} INFO - Done. Returned value was: {'spark': <pyspark.sql.session.SparkSession object at 0x778e88845850>, 'app_id': 'local-1744141674776', 'start_time': '2025-04-08T19:47:55.491620'}
+[2025-04-08T19:47:55.505+0000] {xcom.py:661} ERROR - Object of type SparkSession is not JSON serializable. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config or make sure to decorate your object with attr.
+[2025-04-08T19:47:55.508+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/json.py", line 91, in default
+    return serialize(o)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/serialization/serde.py", line 178, in serialize
+    raise TypeError(f"cannot serialize object of type {cls}")
+TypeError: cannot serialize object of type <class 'pyspark.sql.session.SparkSession'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 222, in execute
+    return self._handle_output(return_value=return_value, context=context, xcom_push=self.xcom_push)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 252, in _handle_output
+    xcom_push(context, key, value)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 1473, in xcom_push
+    context["ti"].xcom_push(key=key, value=value, execution_date=execution_date)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/session.py", line 77, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2477, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/session.py", line 74, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom.py", line 244, in set
+    value = cls.serialize_value(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom.py", line 659, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+  File "/usr/local/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/json.py", line 104, in encode
+    return super().encode(o)
+  File "/usr/local/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/local/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/json.py", line 93, in default
+    return super().default(o)
+  File "/usr/local/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type SparkSession is not JSON serializable
+[2025-04-08T19:47:55.525+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=hdfs_csv_processing_pipeline, task_id=initialize_spark_session, execution_date=20250403T000000, start_date=20250408T194749, end_date=20250408T194755
+[2025-04-08T19:47:55.546+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 8 for task initialize_spark_session (Object of type SparkSession is not JSON serializable; 665)
+[2025-04-08T19:47:55.581+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-04-08T19:47:55.619+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

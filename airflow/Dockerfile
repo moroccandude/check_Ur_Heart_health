@@ -7,8 +7,14 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     libssl-dev \
     libffi-dev \
+    default-jdk \
     git \
-    && apt-get clean
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+    # Java_home
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
 # Set default UID if not specified
 ENV AIRFLOW_UID=${AIRFLOW_UID:-50000}
 
