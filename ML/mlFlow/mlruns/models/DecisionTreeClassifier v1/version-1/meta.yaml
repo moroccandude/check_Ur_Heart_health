@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1741551257942
+current_stage: None
+description: null
+last_updated_timestamp: 1741551257942
+name: DecisionTreeClassifier v1
+run_id: f86f00c239e041738c1e26f225695bb2
+run_link: null
+source: /home/usmail/Desktop/healcare Project/myvenv/test/mlFlow/mlruns/616297391694365595/f86f00c239e041738c1e26f225695bb2/artifacts/DecisionTreeClassifier
+status: READY
+status_message: null
+storage_location: /home/usmail/Desktop/healcare Project/myvenv/test/mlFlow/mlruns/616297391694365595/f86f00c239e041738c1e26f225695bb2/artifacts/DecisionTreeClassifier
+user_id: null
+version: 1

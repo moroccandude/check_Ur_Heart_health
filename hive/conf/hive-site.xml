@@ -45,7 +45,15 @@
     </property>
     <property>
         <name>atlas.hook.hive.synchronous</name>
-        <value>false</value>
+        <value>true</value>
+    </property>
+    <property>
+        <name>atlas.hook.hive.server.url</name>
+        <value>http://atlas-server:21000</value>
+    </property>
+    <property>
+        <name>atlas.rest.address</name>
+        <value>http://atlas:21000</value>
     </property>
     <property>
         <name>atlas.hook.hive.numRetries</name>

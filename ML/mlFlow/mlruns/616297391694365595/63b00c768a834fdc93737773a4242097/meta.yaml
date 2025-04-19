@@ -1,0 +1,15 @@
+artifact_uri: /home/usmail/Desktop/healcare Project/myvenv/test/mlFlow/mlruns/616297391694365595/63b00c768a834fdc93737773a4242097/artifacts
+end_time: 1741551214552
+entry_point_name: ''
+experiment_id: '616297391694365595'
+lifecycle_stage: active
+run_id: 63b00c768a834fdc93737773a4242097
+run_name: stately-hound-522
+run_uuid: 63b00c768a834fdc93737773a4242097
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741551208700
+status: 3
+tags: []
+user_id: usmail

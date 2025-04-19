@@ -85,7 +85,7 @@ def full_pipeline():
                 "start_time": datetime.now().isoformat()
             }
         except Exception as e:
-            logger.error(f"Failed to initialize Spark: {str(e)}", exc_info=True)
+            logger.error(f"Failed to initialize Spark reportage: {str(e)}", exc_info=True)
             raise
 
     @task(task_id="create_hdfs_directories")
@@ -135,9 +135,25 @@ def full_pipeline():
         transferred_files = []
 
         try:
+            # Safe mode retry logic
+            max_retries = 3
+            for attempt in range(max_retries):
+                try:
+                    cmd = ["docker", "exec", "namenode", "hdfs", "dfsadmin", "-safemode", "leave"]
+                    result = subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=60)
+                    logger.info("Successfully left HDFS safe mode")
+                    break
+                except subprocess.CalledProcessError as e:
+                    logger.warning(f"Failed to leave safe mode (attempt {attempt + 1}/{max_retries}): {e.stderr}")
+                    if attempt == max_retries - 1:
+                        logger.error("Max retries reached for leaving safe mode")
+                        raise ValueError("Failed to leave HDFS safe mode after multiple attempts")
+                    time.sleep(10)  # Corrected indentation to be under except block
+
+            # Process CSV files
             for csv_file in csv_files:
                 local_file_path = os.path.join(local_data_path, csv_file)
-
+                logger.info(f"current directory is : {os.getcwd()}")
                 # Check if local file exists
                 if not os.path.exists(local_file_path):
                     logger.warning(f"Local file not found: {local_file_path}")
@@ -146,10 +162,10 @@ def full_pipeline():
                 # Put file to HDFS
                 hdfs_target = f"{hdfs_path}/raw/{csv_file}"
 
+                logger.info(f"path of target file is {hdfs_target}")  # Corrected f-string syntax
                 cmd = [
-                    "docker", "exec", "namenode", "hdfs", "dfs",
-                    "-put", "-f", local_file_path, hdfs_target
-                ]
+                    "docker", "exec", "namenode", "hdfs", "dfs", "-put", "-f", local_file_path, hdfs_target
+                ]  # Corrected command to include docker exec
 
                 # Execute with proper error handling
                 try:
@@ -158,7 +174,7 @@ def full_pipeline():
                         check=True,
                         capture_output=True,
                         text=True,
-                        timeout=60  # Add timeout
+                        timeout=60
                     )
                     logger.info(f"Successfully transferred {csv_file} to HDFS")
                     transferred_files.append(hdfs_target)
@@ -245,9 +261,6 @@ def full_pipeline():
                         "size_bytes": file_size,
                         "column_names": df.columns
                     }
-
-                    # Process data here as needed
-                    # Example: df.write.parquet(f"{hdfs_path}/processed/{dataset_name}.parquet")
 
                 except Exception as e:
                     logger.error(f"Error reading file {hdfs_file_path}: {str(e)}", exc_info=True)

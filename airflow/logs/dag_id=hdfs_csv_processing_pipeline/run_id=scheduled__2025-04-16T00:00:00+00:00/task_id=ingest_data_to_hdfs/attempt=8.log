@@ -1,0 +1,36 @@
+[2025-04-17T20:34:30.393+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.ingest_data_to_hdfs scheduled__2025-04-16T00:00:00+00:00 [queued]>
+[2025-04-17T20:34:30.403+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.ingest_data_to_hdfs scheduled__2025-04-16T00:00:00+00:00 [queued]>
+[2025-04-17T20:34:30.403+0000] {taskinstance.py:1359} INFO - Starting attempt 8 of 10
+[2025-04-17T20:34:30.417+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): ingest_data_to_hdfs> on 2025-04-16 00:00:00+00:00
+[2025-04-17T20:34:30.423+0000] {standard_task_runner.py:57} INFO - Started process 643 to run task
+[2025-04-17T20:34:30.427+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'hdfs_csv_processing_pipeline', 'ingest_data_to_hdfs', 'scheduled__2025-04-16T00:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmpsuskjmao']
+[2025-04-17T20:34:30.431+0000] {standard_task_runner.py:85} INFO - Job 25: Subtask ingest_data_to_hdfs
+[2025-04-17T20:34:30.472+0000] {task_command.py:415} INFO - Running <TaskInstance: hdfs_csv_processing_pipeline.ingest_data_to_hdfs scheduled__2025-04-16T00:00:00+00:00 [running]> on host 6d5fd8b56316
+[2025-04-17T20:34:30.550+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='hdfs_csv_processing_pipeline' AIRFLOW_CTX_TASK_ID='ingest_data_to_hdfs' AIRFLOW_CTX_EXECUTION_DATE='2025-04-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='8' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-16T00:00:00+00:00'
+[2025-04-17T20:34:30.552+0000] {app.py:127} INFO - Ingesting data from ./data to /user/heart_disease/raw
+[2025-04-17T20:34:30.552+0000] {app.py:140} INFO - current directory is : /opt/***
+[2025-04-17T20:34:30.632+0000] {app.py:160} ERROR - Failed to leaved Safe Mode   
+[2025-04-17T20:34:30.632+0000] {app.py:140} INFO - current directory is : /opt/***
+[2025-04-17T20:34:30.706+0000] {app.py:160} ERROR - Failed to leaved Safe Mode   
+[2025-04-17T20:34:30.706+0000] {app.py:140} INFO - current directory is : /opt/***
+[2025-04-17T20:34:30.780+0000] {app.py:160} ERROR - Failed to leaved Safe Mode   
+[2025-04-17T20:34:30.781+0000] {app.py:196} ERROR - Error during data ingestion: No files were transferred to HDFS
+Traceback (most recent call last):
+  File "/opt/airflow/dags/app.py", line 163, in ingest_data_to_hdfs
+    raise ValueError("No files were transferred to HDFS")
+ValueError: No files were transferred to HDFS
+[2025-04-17T20:34:30.781+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 221, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/app.py", line 163, in ingest_data_to_hdfs
+    raise ValueError("No files were transferred to HDFS")
+ValueError: No files were transferred to HDFS
+[2025-04-17T20:34:30.787+0000] {taskinstance.py:1398} INFO - Marking task as UP_FOR_RETRY. dag_id=hdfs_csv_processing_pipeline, task_id=ingest_data_to_hdfs, execution_date=20250416T000000, start_date=20250417T203430, end_date=20250417T203430
+[2025-04-17T20:34:30.798+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 25 for task ingest_data_to_hdfs (No files were transferred to HDFS; 643)
+[2025-04-17T20:34:30.839+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-04-17T20:34:30.871+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

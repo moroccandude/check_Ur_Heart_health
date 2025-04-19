@@ -1,0 +1,15 @@
+artifact_uri: /home/usmail/Desktop/healcare Project/myvenv/test/mlFlow/mlruns/616297391694365595/f86f00c239e041738c1e26f225695bb2/artifacts
+end_time: 1741551257944
+entry_point_name: ''
+experiment_id: '616297391694365595'
+lifecycle_stage: active
+run_id: f86f00c239e041738c1e26f225695bb2
+run_name: gaudy-lark-481
+run_uuid: f86f00c239e041738c1e26f225695bb2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741551253692
+status: 3
+tags: []
+user_id: usmail
