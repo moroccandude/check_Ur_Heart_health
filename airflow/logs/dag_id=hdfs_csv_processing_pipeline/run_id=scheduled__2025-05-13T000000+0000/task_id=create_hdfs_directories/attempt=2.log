@@ -1,0 +1,37 @@
+[2025-05-14T08:32:32.777+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=hdfs_csv_processing_pipeline/run_id=scheduled__2025-05-13T00:00:00+00:00/task_id=create_hdfs_directories permission to 509
+[2025-05-14T08:32:32.832+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=hdfs_csv_processing_pipeline/run_id=scheduled__2025-05-13T00:00:00+00:00/task_id=create_hdfs_directories permission to 509
+[2025-05-14T08:32:32.892+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.create_hdfs_directories scheduled__2025-05-13T00:00:00+00:00 [queued]>
+[2025-05-14T08:32:32.911+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.create_hdfs_directories scheduled__2025-05-13T00:00:00+00:00 [queued]>
+[2025-05-14T08:32:32.912+0000] {taskinstance.py:1359} INFO - Starting attempt 2 of 3
+[2025-05-14T08:32:32.933+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): create_hdfs_directories> on 2025-05-13 00:00:00+00:00
+[2025-05-14T08:32:32.944+0000] {standard_task_runner.py:57} INFO - Started process 405 to run task
+[2025-05-14T08:32:32.949+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'hdfs_csv_processing_pipeline', 'create_hdfs_directories', 'scheduled__2025-05-13T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmp_57mpwqa']
+[2025-05-14T08:32:32.956+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask create_hdfs_directories
+[2025-05-14T08:32:33.052+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=hdfs_csv_processing_pipeline/run_id=scheduled__2025-05-13T00:00:00+00:00/task_id=create_hdfs_directories permission to 509
+[2025-05-14T08:32:33.057+0000] {task_command.py:415} INFO - Running <TaskInstance: hdfs_csv_processing_pipeline.create_hdfs_directories scheduled__2025-05-13T00:00:00+00:00 [running]> on host d03183f1a278
+[2025-05-14T08:32:33.190+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='hdfs_csv_processing_pipeline' AIRFLOW_CTX_TASK_ID='create_hdfs_directories' AIRFLOW_CTX_EXECUTION_DATE='2025-05-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-13T00:00:00+00:00'
+[2025-05-14T08:32:33.193+0000] {app.py:94} INFO - Creating HDFS directories at /user/heart_disease
+[2025-05-14T08:32:33.432+0000] {app.py:121} ERROR - Failed to create HDFS directories: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+Traceback (most recent call last):
+  File "/opt/airflow/dags/app.py", line 98, in create_hdfs_directories
+    result = subprocess.run(
+  File "/usr/local/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['docker', 'exec', 'namenode', 'hdfs', 'dfs', '-mkdir', '-p', '/user/heart_disease']' returned non-zero exit status 1.
+[2025-05-14T08:32:33.441+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 221, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/app.py", line 98, in create_hdfs_directories
+    result = subprocess.run(
+  File "/usr/local/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['docker', 'exec', 'namenode', 'hdfs', 'dfs', '-mkdir', '-p', '/user/heart_disease']' returned non-zero exit status 1.
+[2025-05-14T08:32:33.467+0000] {taskinstance.py:1398} INFO - Marking task as UP_FOR_RETRY. dag_id=hdfs_csv_processing_pipeline, task_id=create_hdfs_directories, execution_date=20250513T000000, start_date=20250514T083232, end_date=20250514T083233
+[2025-05-14T08:32:33.489+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 6 for task create_hdfs_directories (Command '['docker', 'exec', 'namenode', 'hdfs', 'dfs', '-mkdir', '-p', '/user/heart_disease']' returned non-zero exit status 1.; 405)
+[2025-05-14T08:32:33.527+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-05-14T08:32:33.559+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

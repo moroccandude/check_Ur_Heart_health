@@ -255,86 +255,141 @@ services:
 
     restart: unless-stopped
 
-  # hdfs namenode / datanode
   namenode_hadoop:
     image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
     container_name: namenode
     environment:
       - CLUSTER_NAME=hadoop
       - HDFS_NAMENODE_NAME_DIR=/hadoop/dfs/name
+      - HDFS_CONF_dfs_namenode_name_dir=file:///hadoop/dfs/name
+      - HDFS_CONF_dfs_namenode_datanode_registration_ip_hostname_check=false
       - HDFS_CONF_dfs_namenode_safemode_threshold_pct=0
       - HDFS_CONF_dfs_namenode_safemode_min_datanodes=0
       - HDFS_CONF_dfs_namenode_safemode_extension=0
       - HDFS_NAMENODE_HTTP_PORT=9870
-      - HDFS_NAMENODE_RPC_PORT=9000
+      - HDFS_NAMENODE_RPC_PORT=9001
     ports:
       - "9870:9870" #UI
-      - "9000:9000" # for connection
+      - "9001:9001" # for connection
     hostname: namenode
     volumes:
-      - ./hadoop/namenode:/hadoop/dfs/name
+      - ./hadoop_namenode_data:/hadoop/dfs/name
       - ./hadoop/configurations/core-site.xml:/etc/hadoop/core-site.xml
       - ./hadoop/configurations/hdfs-site.xml:/etc/hadoop/hdfs-site.xml
       - ./data:/data
     networks:
-      - project_network
+      - project_network    
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9870"]
       interval: 30s
       timeout: 10s
       retries: 5
-
     restart: unless-stopped
 
-  datanode_hadoop:
+  datanode_hadoop: 
     image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
     container_name: datanode
     environment:
       - CLUSTER_NAME=hadoop
       - SERVICE_PRECONDITION=namenode:9870
-      - CORE_CONF_fs_defaultFS=hdfs://namenode:9000
+      - CORE_CONF_fs_defaultFS=hdfs://namenode:9001
       - CORE_CONF_hadoop_http_staticuser_user=root
       - HDFS_CONF_dfs_datanode_data_dir=/hadoop/dfs/data
     ports:
       - "9864:9864" #UI
     depends_on:
-      - namenode_hadoop
+      namenode_hadoop:
+        condition: service_healthy
     hostname: datanode
     volumes:
-      - ./hadoop/datanode:/hadoop/dfs/data
+      - ./hadoop/datanode:/hadoop/dfs/data  # Changed from ./hadoop/datanodee
       - ./hadoop/configurations/core-site.xml:/etc/hadoop/core-site.xml
       - ./hadoop/configurations/hdfs-site.xml:/etc/hadoop/hdfs-site.xml
+    
     networks:
       - project_network
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9864"]
-      interval: 30s
-      timeout: 40s
-      retries: 5
-
+    healthcheck: 
+     test: ["CMD", "curl", "-f", "http://localhost:9864"]
+     interval: 30s
+     timeout: 40s
+     retries: 5
     restart: unless-stopped
 
   hiveserver2:
     image: apache/hive:4.0.1
     depends_on:
       metastore:
-        condition: service_started
+        condition: service_healthy
+      namenode_hadoop:
+        condition: service_healthy
+      datanode_hadoop:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
     restart: unless-stopped
     container_name: hiveserver2
+    user: "0:0"
     hostname: hiveserver2
     environment:
       SERVICE_NAME: 'hiveserver2'
       HIVE_SERVER2_THRIFT_PORT: 10000
-    ports:
-      - '10000:10000'
+      HDFS_USER: "hive"
+      HDFS_GROUP: "supergroup"
+      HADOOP_HOME: /opt/hadoop
+      HADOOP_CLASSPATH: /opt/hadoop/share/hadoop/tools/lib/*
+      HIVE_CONF_hive_server2_enable_doAs: "false"
+      HIVE_CONF_hive_server2_thrift_port: 10000
+      HIVE_CONF_hive_server2_thrift_bind_host: "0.0.0.0"
+      HIVE_CONF_hive_server2_use_SSL: "false"
+      HIVE_METASTORE_DB_TYPE: postgres
+      HIVE_METASTORE_DB_HOST: postgres_metastore_hive
+      HIVE_METASTORE_DB_PORT: 5432
+      HIVE_METASTORE_DB_NAME: metastore_db
+      HIVE_METASTORE_DB_USER: hive
+      HIVE_METASTORE_DB_PASSWORD: password
+      HIVE_METASTORE_URIS: thrift://metastore:9083   
+      DEBIAN_FRONTEND: noninteractive
+      POSTGRESQL_JDBC_VERSION: "42.6.0"
+    entrypoint: >
+      /bin/bash -c "
+      apt-get update && 
+      apt-get install -y netcat-traditional curl &&
+      mkdir -p /opt/hive/lib &&
+      echo 'Waiting for metastore...' &&
+      until nc -z metastore 9083; do 
+        echo 'waiting for metastore...'; 
+        sleep 2; 
+      done &&
+      echo 'Starting HiveServer2...' &&
+      /opt/hive/bin/hiveserver2 --hiveconf hive.server2.enable.doAs=false &&
+      sleep 10 &&
+      echo 'Running create_hive_tables.sh ...' &&
+      chmod +x /hive/create_hive_tables.sh &&
+      /hive/create_hive_tables.sh"
     volumes:
       - ./hive/conf/hive-site.xml:/opt/hive/conf/hive-site.xml
+      - ./hadoop/configurations/core-site.xml:/etc/hadoop/core-site.xml
+      - ./jars/postgresql-42.6.0.jar:/opt/hive/lib/postgresql-42.6.0.jar
+      - ./create_hive_tables.sh:/hive/create_hive_tables.sh
+    ports:
+      - "10000:10000"
     networks:
       - project_network
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "10000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
 
   # Hive Metastore Database
   postgres_metastore_hive:
-    image: postgres:13
+    image: postgres
     restart: unless-stopped
     container_name: postgres_metastore
     environment:
@@ -348,12 +403,11 @@ services:
       retries: 5
     ports:
       - '5438:5432'
-    volumes:
-      - ./hive-db:/var/lib/postgresql/data
+    # volumes:
+    #   - ./hive_data:/var/lib/postgresql/data
     networks:
       - project_network
 
-  # Hive Metastore
   metastore:
     image: apache/hive:4.0.1
     depends_on:
@@ -362,28 +416,63 @@ services:
     restart: unless-stopped
     container_name: metastore
     hostname: metastore
+    user: "0:0"
     environment:
-      DB_DRIVER: postgres
       SERVICE_NAME: 'metastore'
-      HIVE_METASTORE_URI: thrift://metastore:9083
-      SERVICE_OPTS: >
-        -Xmx1G
-        -Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver
-        -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://postgres_metastore_hive:5432/metastore_db
-        -Djavax.jdo.option.ConnectionUserName=hive
-        -Djavax.jdo.option.ConnectionPassword=password
-        -Ddatanucleus.autoCreateSchema=true
-        -Dhive.metastore.schema.verification=false
-        -Dhive.metastore.schema.verification.record.version=false
+      HADOOP_HOME: /opt/hadoop
+      HADOOP_CLASSPATH: /opt/hadoop/share/hadoop/tools/lib/*
+      # Logging configuration
+      HIVE_METASTORE_URIS: thrift://metastore:9083   
+      LOG4J_CONF: /opt/hive/conf/log4j2.properties
+      HADOOP_OPTS: "-Dlog4j.configurationFile=/opt/hive/conf/log4j2.properties"
+      SLF4J_LOGGER: "org.apache.logging.slf4j.Log4jLoggerFactory"
+      # Metastore configuration
+      HIVE_METASTORE_JDBC_URL: "jdbc:postgresql://postgres_metastore_hive:5432/metastore_db"
+      HIVE_METASTORE_DRIVER: "org.postgresql.Driver"
+      HIVE_METASTORE_USER: "hive"
+      HIVE_METASTORE_PASSWORD: "password"
+    entrypoint: >
+      /bin/bash -c "
+      apt-get update && 
+      apt-get install -y netcat-traditional postgresql-client &&
+      echo 'Waiting for PostgreSQL...' &&
+      until pg_isready -h postgres_metastore_hive -p 5432 -U hive; do
+        echo 'Waiting for postgres...'
+        sleep 2
+      done &&
+      echo 'PostgreSQL is ready!' &&
+      echo 'Dropping and recreating database schema...' &&
+      PGPASSWORD=password psql -h postgres_metastore_hive -U hive -d metastore_db -c 'DROP SCHEMA IF EXISTS public CASCADE;' &&
+      PGPASSWORD=password psql -h postgres_metastore_hive -U hive -d metastore_db -c 'CREATE SCHEMA public;' &&
+      echo 'Initializing Hive schema...' &&
+      /opt/hive/bin/schematool -dbType postgres -initSchema --verbose &&
+      echo 'Starting Hive Metastore...' &&
+      /opt/hive/bin/hive --service metastore"
+   
     ports:
       - '9083:9083'
     volumes:
-      - ./postgresql-42.6.0.jar:/opt/hive/lib/postgresql-42.6.0.jar
+      - ./jars/postgresql-42.6.0.jar:/opt/hive/lib/postgresql-42.6.0.jar
       - ./hive/conf/hive-site.xml:/opt/hive/conf/hive-site.xml
+      - ./hive/conf/log4j2.properties:/opt/hive/conf/log4j2.properties
+      - hive_warehouse:/opt/hive/data/warehouse
+
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "9083"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
     networks:
       - project_network
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
 
-  # Apache Atlas (Data Governance and Metadata Framework)
+
+
   atlas:
     image: sburn/apache-atlas
     container_name: atlas
@@ -397,15 +486,17 @@ services:
       - ATLAS_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
       - ATLAS_GRAPH_STORAGE_BACKEND=hbase
       - ATLAS_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ATLAS_GRAPH_STORAGE_HOSTNAME=zookeeper:2181
+      - ATLAS_GRAPH_STORAGE_HBASE_TABLE=apache_atlas_janus
     depends_on:
       - zookeeper
-      - kafka
-      - namenode_hadoop
-      - datanode_hadoop
+      - hbase
       - hiveserver2
-    volumes:
-      - ./atlas/conf:/opt/atlas/conf
-      - ./atlas/data:/opt/atlas/data
+      - metastore
+#      - atlas-init
+#    volumes:
+#      - ./atlas_conf/atlas-application.properties:/apache-atlas/conf/atlas-application.properties
+#      - ./atlas/data:/opt/atlas/data
     networks:
       - project_network
     restart: unless-stopped
@@ -420,12 +511,17 @@ services:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
-    volumes:
-      - ./zookeeper/data:/var/lib/zookeeper/data
-      - ./zookeeper/log:/var/lib/zookeeper/log
+#    volumes:
+#      - ./zookeeper/data:/var/lib/zookeeper/data
+#      - ./zookeeper/log:/var/lib/zookeeper/log
     networks:
       - project_network
     restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "nc -z localhost 2181" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   # Kafka (required for Atlas)
   kafka:
@@ -442,13 +538,18 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
-    volumes:
-      - ./kafka/data:/var/lib/kafka/data
+#    volumes:
+#      - ./kafka/data:/var/lib/kafka/data
     networks:
       - project_network
     restart: unless-stopped
+    healthcheck:
+     test: [ "CMD-SHELL", "/usr/bin/kafka-topics --bootstrap-server kafka:9092 --list" ]
+     interval: 30s
+     timeout: 10s
+     retries: 5
 
-  # HBase (required for Atlas for graph storage)
+# HBase (required for Atlas for graph storage)
   hbase:
     image: harisekhon/hbase:latest
     container_name: hbase
@@ -458,13 +559,27 @@ services:
       - "16010:16010"  # HBase Master Web UI
       - "16020:16020"  # HBase RegionServer
       - "16030:16030"  # HBase RegionServer Web UI
+#    user: "0:0"
     environment:
       HBASE_MANAGES_ZK: "false"
-      HBASE_ZOOKEEPER_QUORUM: zookeeper
+      HBASE_ZOOKEEPER_QUORUM: zookeeper:2181
+      HBASE_MASTER_PORT: 16000
+#      HBASE_ROOTDIR: hdfs://namenode:9001/hbase
+#      HBASE_HEAPSIZE: "1G"
+#      HBASE_MASTER_INFO_PORT: 16010
     depends_on:
       - zookeeper
-    volumes:
-      - ./hbase/data:/hbase-data
+      - datanode_hadoop
+      - namenode_hadoop
+#        condition: service_healthy
+    # volumes:
+    #  - ./hbase/conf/hbase-site.xml:/hbase/conf/hbase-site.xml
+#      - ./hbase/data:/hbase-data
+    healthcheck:
+      test: [ "CMD", "curl", "--fail", "http://localhost:16010/master-status" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
     networks:
       - project_network
     restart: unless-stopped
@@ -486,14 +601,43 @@ services:
     networks:
       - project_network
     restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "curl", "--fail", "http://localhost:8983/solr/" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    
+  streamlit:
+   build:
+    context: ./report
+    dockerfile: Dockerfile
+   container_name: streamlit
+   user: "0:0"
+   entrypoint: ["streamlit", "run", "app.py", "--server.address=0.0.0.0"]
+   command: ["pip install --no-cache-dir -r requirements.txt"]
+   ports:
+    - "8501:8501"
+   networks:
+    - project_network
+   restart: unless-stopped
+   healthcheck:
+    test: ["CMD", "curl", "--fail", "http://localhost:8501/_stcore/health", "||", "exit", "1"]
+    interval: 30s
+    timeout: 10s
+    retries: 5
+   volumes:
+    - ./report:/app
 
 volumes:
-  hive_postgres_data:
-  postgres_data:
-  hive:
-  hadoop:
+  hadoop_datanode_data:
     driver: local
-
+  hadoop_namenode_data:
+    driver: local
+  postgres_data:
+  hive_postgres_data:
+    driver: local
+  hive_warehouse:
+    driver: local
 networks:
   project_network:
     driver: bridge

@@ -204,22 +204,8 @@ def full_pipeline():
         try:
             for hdfs_file_path in hdfs_files:
                 try:
-                    # Check if file exists in HDFS
-                    check_cmd = [
-                        "docker", "exec", "namenode", "hdfs", "dfs",
-                        "-test", "-e", hdfs_file_path
-                    ]
-
-                    file_exists = subprocess.run(
-                        check_cmd,
-                        capture_output=True,
-                        text=True
-                    ).returncode == 0
-
-                    if not file_exists:
-                        logger.warning(f"File does not exist in HDFS: {hdfs_file_path}")
-                        continue
-
+                  
+                    print(f"{hdfs_file_path} === path of hdfs file")
                     # Get file size for logging
                     size_cmd = [
                         "docker", "exec", "namenode", "hdfs", "dfs",
@@ -240,13 +226,15 @@ def full_pipeline():
 
                     # Extract file name from path
                     file_name = os.path.basename(hdfs_file_path)
+                    print(f"{file_name} === file name")
                     dataset_name = os.path.splitext(file_name)[0]
+                    print(f"{dataset_name} === dataset name")
 
-                    # Read with proper options
+                    # # Read with proper options
                     df = spark.read.option("header", "true") \
                         .option("inferSchema", "true") \
                         .option("mode", "DROPMALFORMED") \
-                        .csv(hdfs_file_path)
+                        .csv(f"hdfs://namenode:9000/{hdfs_file_path}")
 
                     row_count = df.count()
                     col_count = len(df.columns)
@@ -261,7 +249,7 @@ def full_pipeline():
                         "size_bytes": file_size,
                         "column_names": df.columns
                     }
-
+                 
                 except Exception as e:
                     logger.error(f"Error reading file {hdfs_file_path}: {str(e)}", exc_info=True)
 

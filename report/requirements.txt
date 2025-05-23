@@ -1,0 +1,29 @@
+# requirements.txt for Streamlit with Hive connectivity
+
+# Core Streamlit and data processing
+streamlit==1.26.0
+pandas==2.1.0
+numpy==1.24.3
+
+# Data visualization
+plotly==5.17.0
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# Hive connectivity
+pyhive[hive]==0.6.5
+thrift==0.16.0
+thrift-sasl==0.4.3
+sasl==0.3.1
+sqlalchemy==1.4.46
+
+# Optional - for JDBC/ODBC connectivity as fallback
+jaydebeapi==1.2.3
+pyodbc==4.0.39
+
+# Performance enhancements
+numba==0.57.1
+
+# Utility libraries
+python-dateutil==2.8.2
+pytz==2023.3

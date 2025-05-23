@@ -139,6 +139,12 @@ Publication Request:
         -- Value 4: asymptomatic
      10 trestbps: resting blood pressure (in mm Hg on admission to the 
         hospital)
+         |  Normal: Less than 120/80 mm Hg
+         |  Elevated: Systolic 120-129 mm Hg and diastolic less than 80 mm Hg  
+         |  Hypertension Stage 1: Systolic 130-139 mm Hg or diastolic 80-89 mm Hg
+         |  Hypertension Stage 2: Systolic 140 mm Hg or higher or diastolic 100 mm Hg or higher
+         |  Hypertensive Crisis: Higher than 180/120 mm Hg
+       
      11 htn
      12 chol: serum cholestoral in mg/dl
      13 smoke: I believe this is 1 = yes; 0 = no (is or is not a smoker)

@@ -1,0 +1,21 @@
+[2025-05-22T09:03:13.151+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.read_hdfs_csv_files manual__2025-05-22T09:00:22.243833+00:00 [queued]>
+[2025-05-22T09:03:13.165+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.read_hdfs_csv_files manual__2025-05-22T09:00:22.243833+00:00 [queued]>
+[2025-05-22T09:03:13.165+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 3
+[2025-05-22T09:03:13.183+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): read_hdfs_csv_files> on 2025-05-22 09:00:22.243833+00:00
+[2025-05-22T09:03:13.192+0000] {standard_task_runner.py:57} INFO - Started process 1461 to run task
+[2025-05-22T09:03:13.196+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'hdfs_csv_processing_pipeline', 'read_hdfs_csv_files', 'manual__2025-05-22T09:00:22.243833+00:00', '--job-id', '39', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmpwh7t8bfk']
+[2025-05-22T09:03:13.200+0000] {standard_task_runner.py:85} INFO - Job 39: Subtask read_hdfs_csv_files
+[2025-05-22T09:03:13.259+0000] {task_command.py:415} INFO - Running <TaskInstance: hdfs_csv_processing_pipeline.read_hdfs_csv_files manual__2025-05-22T09:00:22.243833+00:00 [running]> on host 45cc16d869be
+[2025-05-22T09:03:13.376+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='hdfs_csv_processing_pipeline' AIRFLOW_CTX_TASK_ID='read_hdfs_csv_files' AIRFLOW_CTX_EXECUTION_DATE='2025-05-22T09:00:22.243833+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-22T09:00:22.243833+00:00'
+[2025-05-22T09:03:13.378+0000] {app.py:198} INFO - Reading 1 CSV files from HDFS
+[2025-05-22T09:03:13.379+0000] {app.py:40} INFO - Creating Spark session
+[2025-05-22T09:03:21.275+0000] {app.py:53} INFO - Spark session created successfully with app ID: local-1747904600389
+[2025-05-22T09:03:21.276+0000] {logging_mixin.py:151} INFO - /user/heart_disease/raw/heart_statlog_cleveland_hungary_final.csv === path of hdfs file
+[2025-05-22T09:03:25.358+0000] {app.py:225} INFO - Reading file: /user/heart_disease/raw/heart_statlog_cleveland_hungary_final.csv (size: 39689 bytes)
+[2025-05-22T09:03:25.360+0000] {logging_mixin.py:151} INFO - heart_statlog_cleveland_hungary_final.csv === file name
+[2025-05-22T09:03:25.361+0000] {logging_mixin.py:151} INFO - heart_statlog_cleveland_hungary_final === dataset name
+[2025-05-22T09:03:38.095+0000] {app.py:242} INFO - Successfully read heart_statlog_cleveland_hungary_final: 1190 rows, 12 columns
+[2025-05-22T09:03:38.772+0000] {python.py:194} INFO - Done. Returned value was: {'stats': {'heart_statlog_cleveland_hungary_final': {'path': '/user/heart_disease/raw/heart_statlog_cleveland_hungary_final.csv', 'rows': 1190, 'columns': 12, 'size_bytes': '39689', 'column_names': ['age', 'sex', 'chest pain type', 'resting bp s', 'cholesterol', 'fasting blood sugar', 'resting ecg', 'max heart rate', 'exercise angina', 'oldpeak', 'ST slope', 'target']}}, 'total_files_read': 1}
+[2025-05-22T09:03:38.876+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=hdfs_csv_processing_pipeline, task_id=read_hdfs_csv_files, execution_date=20250522T090022, start_date=20250522T090313, end_date=20250522T090338
+[2025-05-22T09:03:38.939+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-22T09:03:38.964+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

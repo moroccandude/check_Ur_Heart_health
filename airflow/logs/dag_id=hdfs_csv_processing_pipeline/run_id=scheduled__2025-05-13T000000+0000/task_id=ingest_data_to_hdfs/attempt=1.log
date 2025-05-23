@@ -1,0 +1,27 @@
+[2025-05-14T09:03:20.591+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=hdfs_csv_processing_pipeline/run_id=scheduled__2025-05-13T00:00:00+00:00/task_id=ingest_data_to_hdfs permission to 509
+[2025-05-14T09:03:20.632+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=hdfs_csv_processing_pipeline/run_id=scheduled__2025-05-13T00:00:00+00:00/task_id=ingest_data_to_hdfs permission to 509
+[2025-05-14T09:03:20.681+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.ingest_data_to_hdfs scheduled__2025-05-13T00:00:00+00:00 [queued]>
+[2025-05-14T09:03:20.693+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.ingest_data_to_hdfs scheduled__2025-05-13T00:00:00+00:00 [queued]>
+[2025-05-14T09:03:20.694+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 3
+[2025-05-14T09:03:20.710+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): ingest_data_to_hdfs> on 2025-05-13 00:00:00+00:00
+[2025-05-14T09:03:20.721+0000] {standard_task_runner.py:57} INFO - Started process 81 to run task
+[2025-05-14T09:03:20.724+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'hdfs_csv_processing_pipeline', 'ingest_data_to_hdfs', 'scheduled__2025-05-13T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmpyi6o6l60']
+[2025-05-14T09:03:20.728+0000] {standard_task_runner.py:85} INFO - Job 4: Subtask ingest_data_to_hdfs
+[2025-05-14T09:03:20.786+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=hdfs_csv_processing_pipeline/run_id=scheduled__2025-05-13T00:00:00+00:00/task_id=ingest_data_to_hdfs permission to 509
+[2025-05-14T09:03:20.790+0000] {task_command.py:415} INFO - Running <TaskInstance: hdfs_csv_processing_pipeline.ingest_data_to_hdfs scheduled__2025-05-13T00:00:00+00:00 [running]> on host 340d00777aea
+[2025-05-14T09:03:20.892+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='hdfs_csv_processing_pipeline' AIRFLOW_CTX_TASK_ID='ingest_data_to_hdfs' AIRFLOW_CTX_EXECUTION_DATE='2025-05-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-13T00:00:00+00:00'
+[2025-05-14T09:03:20.894+0000] {app.py:127} INFO - Ingesting data from ./data to /user/heart_disease/raw
+[2025-05-14T09:03:23.136+0000] {app.py:144} INFO - Successfully left HDFS safe mode
+[2025-05-14T09:03:23.137+0000] {app.py:156} INFO - current directory is : /opt/***
+[2025-05-14T09:03:23.140+0000] {app.py:165} INFO - path of target file is /user/heart_disease/raw/coronary_artery_disease.csv
+[2025-05-14T09:03:28.544+0000] {app.py:179} INFO - Successfully transferred coronary_artery_disease.csv to HDFS
+[2025-05-14T09:03:28.545+0000] {app.py:156} INFO - current directory is : /opt/***
+[2025-05-14T09:03:28.548+0000] {app.py:165} INFO - path of target file is /user/heart_disease/raw/heart_statlog_cleveland_hungary_final.csv
+[2025-05-14T09:03:31.550+0000] {app.py:179} INFO - Successfully transferred heart_statlog_cleveland_hungary_final.csv to HDFS
+[2025-05-14T09:03:31.551+0000] {app.py:156} INFO - current directory is : /opt/***
+[2025-05-14T09:03:31.553+0000] {app.py:165} INFO - path of target file is /user/heart_disease/raw/heart_failure_clinical_records_dataset.csv
+[2025-05-14T09:03:34.773+0000] {app.py:179} INFO - Successfully transferred heart_failure_clinical_records_dataset.csv to HDFS
+[2025-05-14T09:03:34.785+0000] {python.py:194} INFO - Done. Returned value was: ['/user/heart_disease/raw/coronary_artery_disease.csv', '/user/heart_disease/raw/heart_statlog_cleveland_hungary_final.csv', '/user/heart_disease/raw/heart_failure_clinical_records_dataset.csv']
+[2025-05-14T09:03:34.835+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=hdfs_csv_processing_pipeline, task_id=ingest_data_to_hdfs, execution_date=20250513T000000, start_date=20250514T090320, end_date=20250514T090334
+[2025-05-14T09:03:34.873+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-14T09:03:34.905+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

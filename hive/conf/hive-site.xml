@@ -1,70 +1,181 @@
+<!-- Updated hive-site.xml with improvements -->
 <configuration>
+    <!-- Hive Server2 Configuration -->
+    <property>
+        <name>hive.server2.thrift.bind.host</name>
+        <value>0.0.0.0</value>
+    </property>
+    <property>
+        <name>hive.server2.thrift.port</name>
+        <value>10000</value>
+    </property>
+    <property>
+        <name>hive.server2.authentication</name>
+        <value>NONE</value>
+    </property>
     <property>
         <name>hive.server2.enable.doAs</name>
         <value>false</value>
     </property>
+
+    <!-- Metastore Configuration -->
     <property>
-        <name>hive.tez.exec.inplace.progress</name>
+        <name>hive.metastore.uris</name>
+        <value>thrift://metastore:9083</value>
+    </property>
+    <property>
+        <name>hive.metastore.schema.verification</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>hive.metastore.warehouse.dir</name>
+        <value>hdfs://namenode:9000/warehouse</value>
+    </property>
+
+    <!-- PostgreSQL Metastore Database Configuration -->
+    <property>
+        <name>javax.jdo.option.ConnectionURL</name>
+        <value>jdbc:postgresql://postgres_metastore_hive:5432/metastore_db</value>
+    </property>
+    <property>
+        <name>javax.jdo.option.ConnectionUserName</name>
+        <value>hive</value>
+    </property>
+    <property>
+        <name>javax.jdo.option.ConnectionPassword</name>
+        <value>password</value>
+    </property>
+    <property>
+        <name>javax.jdo.option.ConnectionDriverName</name>
+        <value>org.postgresql.Driver</value>
+    </property>
+
+    <!-- DataNucleus Configuration for Auto Schema Creation -->
+    <property>
+        <name>datanucleus.schema.autoCreateAll</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>datanucleus.fixedDatastore</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>datanucleus.autoCreateSchema</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>datanucleus.autoStartMechanism</name>
+        <value>SchemaTable</value>
+    </property>
+
+    <!-- Execution Engine Configuration -->
+    <property>
+        <name>hive.execution.engine</name>
+        <value>mr</value>
+        <description>Use MapReduce as execution engine (change to tez if available)</description>
+    </property>
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>local</value>
+    </property>
+
+    <!-- Local Task Configuration -->
+    <property>
+        <name>hive.exec.submit.local.task.via.child</name>
         <value>false</value>
     </property>
     <property>
         <name>hive.exec.scratchdir</name>
         <value>/opt/hive/scratch_dir</value>
     </property>
-<!--    <property>-->
-<!--        <name>hive.user.install.directory</name>-->
-<!--        <value>/opt/hive/install_dir</value>-->
-<!--    </property>-->
+
+    <!-- Dynamic Partitioning -->
+    <property>
+        <name>hive.exec.dynamic.partition</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.exec.dynamic.partition.mode</name>
+        <value>nonstrict</value>
+    </property>
+
+    <!-- Memory and Performance Settings -->
+    <property>
+        <name>hive.auto.convert.join</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.mapjoin.smalltable.filesize</name>
+        <value>25000000</value>
+    </property>
+
+    <!-- Stats and CBO -->
+    <property>
+        <name>hive.stats.autogather</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.cbo.enable</name>
+        <value>true</value>
+    </property>
+
+    <!-- Tez Configuration (if using Tez) -->
     <property>
         <name>tez.runtime.optimize.local.fetch</name>
         <value>true</value>
     </property>
     <property>
-        <name>hive.exec.submit.local.task.via.child</name>
+        <name>hive.tez.exec.inplace.progress</name>
+        <value>false</value>
+    </property>
+
+    <!-- Metastore Event Configuration -->
+    <property>
+        <name>hive.metastore.event.db.notification.api.auth</name>
         <value>false</value>
     </property>
     <property>
-        <name>mapreduce.framework.name</name>
-        <value>local</value>
+        <name>hive.metastore.event.db.listener.timetolive</name>
+        <value>86400</value>
     </property>
     <property>
-        <name>tez.local.mode</name>
+        <name>hive.metastore.event.clean.freq</name>
+        <value>3600s</value>
+    </property>
+    <property>
+        <name>hive.metastore.event.expiry.duration</name>
+        <value>7d</value>
+    </property>
+
+    <!-- Additional Stability Settings -->
+    <property>
+        <name>hive.metastore.try.direct.sql</name>
         <value>true</value>
     </property>
     <property>
-        <name>hive.execution.engine</name>
-        <value>tez</value>
-    </property>
-    <property>
-        <name>hive.metastore.warehouse.dir</name>
-        <value>hdfs://namenode:9000/warehouse</value>
-    </property>
-    <property>
-        <name>metastore.metastore.event.db.notification.api.auth</name>
-        <value>false</value>
-    </property>
-    <property>
-        <name>atlas.hook.hive.synchronous</name>
+        <name>hive.metastore.try.direct.sql.ddl</name>
         <value>true</value>
     </property>
     <property>
-        <name>atlas.hook.hive.server.url</name>
-        <value>http://atlas-server:21000</value>
+        <name>hive.metastore.client.socket.timeout</name>
+        <value>600</value>
     </property>
     <property>
-        <name>atlas.rest.address</name>
-        <value>http://atlas:21000</value>
+        <name>hive.metastore.connect.retries</name>
+        <value>5</value>
     </property>
     <property>
-        <name>atlas.hook.hive.numRetries</name>
+        <name>hive.metastore.failure.retries</name>
         <value>3</value>
     </property>
+
+    <!-- Security Settings -->
     <property>
-        <name>atlas.hook.hive.queueSize</name>
-        <value>10000</value>
+        <name>hive.metastore.sasl.enabled</name>
+        <value>false</value>
     </property>
     <property>
-        <name>atlas.cluster.name</name>
-        <value>primary</value>
+        <name>hive.security.authorization.enabled</name>
+        <value>false</value>
     </property>
 </configuration>
