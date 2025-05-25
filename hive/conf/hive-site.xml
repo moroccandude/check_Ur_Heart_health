@@ -29,7 +29,7 @@
     </property>
     <property>
         <name>hive.metastore.warehouse.dir</name>
-        <value>hdfs://namenode:9000/warehouse</value>
+        <value>hdfs://namenode:9001/warehouse</value>
     </property>
 
     <!-- PostgreSQL Metastore Database Configuration -->

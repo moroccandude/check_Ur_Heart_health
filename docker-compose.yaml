@@ -263,20 +263,21 @@ services:
       - HDFS_NAMENODE_NAME_DIR=/hadoop/dfs/name
       - HDFS_CONF_dfs_namenode_name_dir=file:///hadoop/dfs/name
       - HDFS_CONF_dfs_namenode_datanode_registration_ip_hostname_check=false
-      - HDFS_CONF_dfs_namenode_safemode_threshold_pct=0
-      - HDFS_CONF_dfs_namenode_safemode_min_datanodes=0
+      - HDFS_CONF_dfs_namenode_safemode_threshold_pct=1 # 100% of data nodes must be available to exit safemode
+      - HDFS_CONF_dfs_namenode_safemode_min_datanodes=1 # Minimum number of data nodes to exit safemode
+      - HDFS_CONF_dfs_namenode_safemode_min_replication=1 # Minimum replication factor to exit safemode
       - HDFS_CONF_dfs_namenode_safemode_extension=0
-      - HDFS_NAMENODE_HTTP_PORT=9870
-      - HDFS_NAMENODE_RPC_PORT=9001
     ports:
       - "9870:9870" #UI
       - "9001:9001" # for connection
     hostname: namenode
+    # entrypoint: ["bin/bash","-c","sleep 30 && ./prepare_hdfs.sh"]
     volumes:
-      - ./hadoop_namenode_data:/hadoop/dfs/name
+      - ./hadoop/namenode:/hadoop/dfs/name
       - ./hadoop/configurations/core-site.xml:/etc/hadoop/core-site.xml
       - ./hadoop/configurations/hdfs-site.xml:/etc/hadoop/hdfs-site.xml
       - ./data:/data
+      - ./prepare_hdfs.sh:/prepare_hdfs.sh
     networks:
       - project_network    
     healthcheck:
@@ -294,7 +295,6 @@ services:
       - SERVICE_PRECONDITION=namenode:9870
       - CORE_CONF_fs_defaultFS=hdfs://namenode:9001
       - CORE_CONF_hadoop_http_staticuser_user=root
-      - HDFS_CONF_dfs_datanode_data_dir=/hadoop/dfs/data
     ports:
       - "9864:9864" #UI
     depends_on:
@@ -302,10 +302,10 @@ services:
         condition: service_healthy
     hostname: datanode
     volumes:
-      - ./hadoop/datanode:/hadoop/dfs/data  # Changed from ./hadoop/datanodee
+      - ./hadoop/datanode:/hadoop/dfs/data 
       - ./hadoop/configurations/core-site.xml:/etc/hadoop/core-site.xml
       - ./hadoop/configurations/hdfs-site.xml:/etc/hadoop/hdfs-site.xml
-    
+      
     networks:
       - project_network
     healthcheck: 
@@ -364,13 +364,13 @@ services:
       /opt/hive/bin/hiveserver2 --hiveconf hive.server2.enable.doAs=false &&
       sleep 10 &&
       echo 'Running create_hive_tables.sh ...' &&
-      chmod +x /hive/create_hive_tables.sh &&
-      /hive/create_hive_tables.sh"
+      chmod +x ./create_hive_tables.sh && sleep 5 &&
+      ./create_hive_tables.sh"
     volumes:
       - ./hive/conf/hive-site.xml:/opt/hive/conf/hive-site.xml
       - ./hadoop/configurations/core-site.xml:/etc/hadoop/core-site.xml
       - ./jars/postgresql-42.6.0.jar:/opt/hive/lib/postgresql-42.6.0.jar
-      - ./create_hive_tables.sh:/hive/create_hive_tables.sh
+      - ./create_hive_tables.sh:/opt/hive/create_hive_tables.sh
     ports:
       - "10000:10000"
     networks:
@@ -403,8 +403,8 @@ services:
       retries: 5
     ports:
       - '5438:5432'
-    # volumes:
-    #   - ./hive_data:/var/lib/postgresql/data
+    volumes:
+      - ./hive_data:/var/lib/postgresql/data
     networks:
       - project_network
 
@@ -455,7 +455,6 @@ services:
       - ./jars/postgresql-42.6.0.jar:/opt/hive/lib/postgresql-42.6.0.jar
       - ./hive/conf/hive-site.xml:/opt/hive/conf/hive-site.xml
       - ./hive/conf/log4j2.properties:/opt/hive/conf/log4j2.properties
-      - hive_warehouse:/opt/hive/data/warehouse
 
     healthcheck:
       test: ["CMD", "nc", "-z", "localhost", "9083"]
@@ -629,15 +628,12 @@ services:
     - ./report:/app
 
 volumes:
-  hadoop_datanode_data:
-    driver: local
-  hadoop_namenode_data:
-    driver: local
+  hadoop:
+   driver: local
   postgres_data:
-  hive_postgres_data:
+  hive_data:
     driver: local
-  hive_warehouse:
-    driver: local
+
 networks:
   project_network:
     driver: bridge

@@ -55,13 +55,13 @@ ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 STORED AS TEXTFILE
-LOCATION 'hdfs://namenode:9000/user/heart_disease/raw';"
+LOCATION 'hdfs://namenode:9001/user/heart_disease/raw';"
 
 execute_hive_query "$heart_failure_query" "Creating heart_failure_clinical_records_dataset table"
 
 # Create coronary artery disease table (raw data)
 coronary_raw_query="
-CREATE EXTERNAL TABLE IF NOT EXISTS coronary_artery_disease (
+CREATE EXTERNAL TABLE IF NOT EXISTS coronary_artery_disease_raw (
     age INT,
     sex INT,
     cp INT,
@@ -81,7 +81,7 @@ ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 STORED AS TEXTFILE
-LOCATION 'hdfs://namenode:9000/user/heart_disease/raw';"
+LOCATION 'hdfs://namenode:9001/user/heart_disease/raw';"
 
 execute_hive_query "$coronary_raw_query" "Creating coronary_artery_disease_raw table"
 
@@ -104,7 +104,7 @@ ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 STORED AS TEXTFILE
-LOCATION 'hdfs://namenode:9000/user/heart_disease/raw';"
+LOCATION 'hdfs://namenode:9001/user/heart_disease/raw';"
 
 execute_hive_query "$heart_statlog_query" "Creating heart_statlog_cleveland_hungary_final"
 

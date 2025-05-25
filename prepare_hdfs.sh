@@ -1,10 +1,25 @@
-# check if Dirrectories doesn't exist on hdfs
-docker exec -i namenode hdfs dfs -check /user/heart_disease/raw || exist 0
-=> create folder if doesn't exist
+#!/bin/bash
 
-docker exec -i namenode hdfs dfs -check /warehouse || exit 
-=> create if doesn't exit
-docker exec -i namenode chmod 777 /warehouse && chown hive:root  /warehouse\
+# Wait for NameNode to be ready
+# echo "Waiting for NameNode to be ready..."
+# until hdfs dfsadmin -safemode get 2>&1 | grep -q "Safe mode is"; do
+#   sleep 2
+# done
 
-docker exec -i namenode hdfs dfs -check /hbase || exit 
-=> create if doesn't exit
+# # Optionally, wait until out of safe mode
+# until hdfs dfsadmin -safemode get 2>&1 | grep -q "Safe mode is OFF"; do
+#   echo "Waiting for NameNode to leave safe mode..."
+#   sleep 2
+# done
+
+# Ensure /user/heart_disease/raw exists
+hdfs dfs -test -d /user/heart_disease/raw || hdfs dfs -mkdir -p /user/heart_disease/raw
+
+# Ensure /warehouse exists
+hdfs dfs -test -d /warehouse || hdfs dfs -mkdir -p /warehouse
+
+# Set permissions for /warehouse
+hdfs dfs -chmod 777 /warehouse
+
+# Ensure /hbase exists
+hdfs dfs -test -d /hbase || hdfs dfs -mkdir -p /hbase

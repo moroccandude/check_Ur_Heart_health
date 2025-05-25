@@ -102,7 +102,10 @@ def full_pipeline():
                 text=True
             )
             logger.info(f"Base directory created: {base_path}")
-
+            logging.info("create dir for hive")
+            cmd = ["docker", "exec", "namenode", "hdfs", "dfs", "-mkdir", "-p", "/warehouse"]
+            subprocess.run(cmd,check=True, capture_output=True, text=True)
+            logger.info("Hive directory created successfully")
             # Create subdirectories for raw, processed, and archive
             subdirs = ["/raw", "/processed", "/archive"]
             for subdir in subdirs:
@@ -234,7 +237,7 @@ def full_pipeline():
                     df = spark.read.option("header", "true") \
                         .option("inferSchema", "true") \
                         .option("mode", "DROPMALFORMED") \
-                        .csv(f"hdfs://namenode:9000/{hdfs_file_path}")
+                        .csv(f"hdfs://namenode:9001/{hdfs_file_path}")
 
                     row_count = df.count()
                     col_count = len(df.columns)

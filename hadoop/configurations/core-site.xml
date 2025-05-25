@@ -3,6 +3,13 @@
         <name>fs.defaultFS</name>
         <value>hdfs://namenode:9001</value>
     </property>
+
+    
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:///data/hadoop/datanode</value>
+        <description>Directory for DataNode storage</description>
+    </property>
     <property>
         <name>io.file.buffer.size</name>
         <value>131072</value>
@@ -17,38 +24,4 @@
         <value>org.apache.hadoop.hdfs.DistributedFileSystem</value>
         <description>Implementation class for HDFS</description>
      </property>
-<property><name>fs.defaultFS</name><value>hdfs://f6880085c740:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://f6880085c740:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-<property><name>fs.defaultFS</name><value>hdfs://1a476944a2e4:8020</value></property>
-</configuration>
+     </configuration>
