@@ -1,9 +1,5 @@
 version: '3.8'
 
-networks:
-  spark-network:
-    driver: bridge
-
 services:
   spark-master:
     image: bitnami/spark:3.5
@@ -12,13 +8,13 @@ services:
       - "7077:7077"
       - "8080:8080"
     networks:
-      - spark-network
+      - heartchecker_net
     environment:
       - SPARK_MODE=master
-      - SPARK_RPC_AUTHENTICATION_ENABLED=no
-      - SPARK_RPC_ENCRYPTION_ENABLED=no
-      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
-      - SPARK_SSL_ENABLED=no
+      # - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      # - SPARK_RPC_ENCRYPTION_ENABLED=no
+      # - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      # - SPARK_SSL_ENABLED=no
     volumes:
        - ./pyspark.py:/opt/host-scripts/pyspark.py
 
@@ -27,16 +23,16 @@ services:
     image: bitnami/spark:3.5
     container_name: spark-worker-1
     networks:
-      - spark-network
+      - heartchecker_net
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark-master:7077
       - SPARK_WORKER_MEMORY=2g
       - SPARK_WORKER_CORES=2
-      - SPARK_RPC_AUTHENTICATION_ENABLED=no
-      - SPARK_RPC_ENCRYPTION_ENABLED=no
-      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
-      - SPARK_SSL_ENABLED=no
+      # - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      # - SPARK_RPC_ENCRYPTION_ENABLED=no
+      # - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      # - SPARK_SSL_ENABLED=no
     volumes:
        - ./pyspark.py:/opt/host-scripts/pyspark.py
 
@@ -47,60 +43,22 @@ services:
     image: bitnami/spark:3.5
     container_name: spark-worker-2
     networks:
-      - spark-network
+      - heartchecker_net
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark-master:7077
       - SPARK_WORKER_MEMORY=2g
       - SPARK_WORKER_CORES=2
-      - SPARK_RPC_AUTHENTICATION_ENABLED=no
-      - SPARK_RPC_ENCRYPTION_ENABLED=no
-      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
-      - SPARK_SSL_ENABLED=no
+      # - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      # - SPARK_RPC_ENCRYPTION_ENABLED=no
+      # - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      # - SPARK_SSL_ENABLED=no
     volumes:
        - ./pyspark.py:/opt/host-scripts/pyspark.py
 
     depends_on:
       - spark-master
 
-  spark-worker-3:
-    image: bitnami/spark:3.5
-    container_name: spark-worker-3
-    networks:
-      - spark-network
-    environment:
-      - SPARK_MODE=worker
-      - SPARK_MASTER_URL=spark://spark-master:7077
-      - SPARK_WORKER_MEMORY=2g
-      - SPARK_WORKER_CORES=2
-      - SPARK_RPC_AUTHENTICATION_ENABLED=no
-      - SPARK_RPC_ENCRYPTION_ENABLED=no
-      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
-      - SPARK_SSL_ENABLED=no
-    volumes:
-       - ./pyspark.py:/opt/host-scripts/pyspark.py
-
-    depends_on:
-      - spark-master
-
-  spark-worker-4:
-    image: bitnami/spark:3.5
-    container_name: spark-worker-4
-    networks:
-      - spark-network
-    environment:
-      - SPARK_MODE=worker
-      - SPARK_MASTER_URL=spark://spark-master:7077
-      - SPARK_WORKER_MEMORY=2g
-      - SPARK_WORKER_CORES=2
-      - SPARK_RPC_AUTHENTICATION_ENABLED=no
-      - SPARK_RPC_ENCRYPTION_ENABLED=no
-      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
-      - SPARK_SSL_ENABLED=no
-    volumes:
-      - ./pyspark.py:/opt/host-scripts/pyspark.py
-    depends_on:
-      - spark-master
   
   grafana:
     image: grafana/grafana:latest
@@ -108,9 +66,103 @@ services:
     ports:
       - "3000:3000"
     networks:
-      - spark-network
+      - heartchecker_net
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
-      
+  
 
-    
+  # Zookeeper (required for Atlas)
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    container_name: zookeeper
+    hostname: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000    
+    networks:
+      - heartchecker_net
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "nc -z localhost 2181" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Kafka (required for Atlas)
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    container_name: kafka
+    hostname: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9091:9091"  # Host port 9091 -> container port 9091
+      - "9092:9092"  # Host port 9092 -> container port 9092
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:9091
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:9091
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CREATE_TOPICS: "patient:1"
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+#    volumes:
+#      - ./kafka/data:/var/lib/kafka/data
+    networks:
+      - heartchecker_net
+    restart: unless-stopped
+    healthcheck:
+     test: [ "CMD-SHELL", "/usr/bin/kafka-topics --bootstrap-server kafka:9092 --list" ]
+     interval: 30s
+     timeout: 10s
+     retries: 5
+  
+  predictor:
+    build:
+      context: ./ml_registry
+    container_name: mlflow
+    ports:
+      - "5000:5000"
+    networks:
+      - heartchecker_net
+    environment:
+      - MLFLOW_TRACKING_URI=http://localhost:5000
+      - MLFLOW_ARTIFACT_ROOT=/mlflow/artifacts
+    volumes:
+      - ./mlflow:/mlflow
+    # Use python -m to run mlflow
+    command: python -m mlflow server --host 0.0.0.0 --port 5000
+
+  db:
+    container_name: postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: usmail
+      POSTGRES_PASSWORD: dbspassword
+      PGDATA: /data/postgres
+      POSTGRES_DB: db
+    volumes:
+      - db:/data/postgres
+    ports:
+      - "5332:5432"
+    networks:
+      - heartchecker_net
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d postgres" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+
+
+networks:
+  heartchecker_net:
+    driver: bridge
+
+volumes:
+ db:
+   driver: local

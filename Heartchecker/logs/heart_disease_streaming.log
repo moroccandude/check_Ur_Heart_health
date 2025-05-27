@@ -1,0 +1,1265 @@
+2025-05-27 18:35:14,998 - HeartDiseaseStreaming - INFO - [run:289] - ============================================================
+2025-05-27 18:35:14,998 - HeartDiseaseStreaming - INFO - [run:290] - Starting Heart Disease Streaming Application
+2025-05-27 18:35:14,999 - HeartDiseaseStreaming - INFO - [run:291] - ============================================================
+2025-05-27 18:35:14,999 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 18:35:19,559 - HeartDiseaseStreaming - INFO - [initialize_spark_session:126] - Spark session initialized successfully
+2025-05-27 18:35:19,562 - HeartDiseaseStreaming - INFO - [initialize_spark_session:127] - Application ID: app-20250527173518-0000
+2025-05-27 18:35:19,563 - HeartDiseaseStreaming - INFO - [initialize_spark_session:128] - Spark version: 3.5.0
+2025-05-27 18:35:19,564 - HeartDiseaseStreaming - INFO - [initialize_spark_session:129] - Master URL: spark://localhost:7077
+2025-05-27 18:35:19,565 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:140] - Creating Kafka consumer...
+2025-05-27 18:35:21,841 - HeartDiseaseStreaming - INFO - [process_streaming_data:170] - Setting up data processing pipeline...
+2025-05-27 18:35:22,895 - HeartDiseaseStreaming - INFO - [process_streaming_data:197] - Data processing pipeline configured
+2025-05-27 18:35:22,896 - HeartDiseaseStreaming - INFO - [start_streaming:207] - Starting streaming query with output mode: console
+2025-05-27 18:35:23,468 - HeartDiseaseStreaming - INFO - [start_streaming:232] - Streaming query started successfully
+2025-05-27 18:35:23,469 - HeartDiseaseStreaming - INFO - [run:312] - Application started successfully!
+2025-05-27 18:35:23,469 - HeartDiseaseStreaming - INFO - [run:313] - Press Ctrl+C to stop the application
+2025-05-27 18:35:23,470 - HeartDiseaseStreaming - INFO - [monitor_stream:245] - Starting stream monitoring...
+2025-05-27 18:55:06,478 - HeartDiseaseStreaming - INFO - [run:323] - Received keyboard interrupt
+2025-05-27 18:55:06,479 - HeartDiseaseStreaming - INFO - [stop_streaming:268] - Stopping streaming application...
+2025-05-27 18:55:06,517 - HeartDiseaseStreaming - INFO - [stop_streaming:273] - Streaming query stopped
+2025-05-27 18:55:07,026 - HeartDiseaseStreaming - INFO - [stop_streaming:280] - Spark session stopped
+2025-05-27 18:55:07,027 - HeartDiseaseStreaming - INFO - [stop_streaming:284] - Application shutdown complete
+2025-05-27 18:56:02,958 - HeartDiseaseStreaming - INFO - [run:291] - ============================================================
+2025-05-27 18:56:02,958 - HeartDiseaseStreaming - INFO - [run:292] - Starting Heart Disease Streaming Application
+2025-05-27 18:56:02,958 - HeartDiseaseStreaming - INFO - [run:293] - ============================================================
+2025-05-27 18:56:02,959 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 18:56:07,537 - HeartDiseaseStreaming - INFO - [initialize_spark_session:128] - Spark session initialized successfully
+2025-05-27 18:56:07,540 - HeartDiseaseStreaming - INFO - [initialize_spark_session:129] - Application ID: app-20250527175606-0001
+2025-05-27 18:56:07,541 - HeartDiseaseStreaming - INFO - [initialize_spark_session:130] - Spark version: 3.5.0
+2025-05-27 18:56:07,542 - HeartDiseaseStreaming - INFO - [initialize_spark_session:131] - Master URL: spark://localhost:7077
+2025-05-27 18:56:07,543 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:142] - Creating Kafka consumer...
+2025-05-27 18:56:09,924 - HeartDiseaseStreaming - INFO - [process_streaming_data:172] - Setting up data processing pipeline...
+2025-05-27 18:56:10,413 - HeartDiseaseStreaming - INFO - [process_streaming_data:199] - Data processing pipeline configured
+2025-05-27 18:56:10,413 - HeartDiseaseStreaming - INFO - [start_streaming:209] - Starting streaming query with output mode: console
+2025-05-27 18:56:11,177 - HeartDiseaseStreaming - INFO - [start_streaming:234] - Streaming query started successfully
+2025-05-27 18:56:11,186 - HeartDiseaseStreaming - INFO - [run:314] - Application started successfully!
+2025-05-27 18:56:11,187 - HeartDiseaseStreaming - INFO - [run:315] - Press Ctrl+C to stop the application
+2025-05-27 18:56:11,188 - HeartDiseaseStreaming - INFO - [monitor_stream:247] - Starting stream monitoring...
+2025-05-27 18:57:26,416 - HeartDiseaseStreaming - INFO - [run:325] - Received keyboard interrupt
+2025-05-27 18:57:26,416 - HeartDiseaseStreaming - INFO - [stop_streaming:270] - Stopping streaming application...
+2025-05-27 18:57:26,466 - HeartDiseaseStreaming - INFO - [stop_streaming:275] - Streaming query stopped
+2025-05-27 18:57:26,703 - HeartDiseaseStreaming - INFO - [stop_streaming:282] - Spark session stopped
+2025-05-27 18:57:26,705 - HeartDiseaseStreaming - INFO - [stop_streaming:286] - Application shutdown complete
+2025-05-27 18:57:48,002 - HeartDiseaseStreaming - INFO - [run:291] - ============================================================
+2025-05-27 18:57:48,002 - HeartDiseaseStreaming - INFO - [run:292] - Starting Heart Disease Streaming Application
+2025-05-27 18:57:48,003 - HeartDiseaseStreaming - INFO - [run:293] - ============================================================
+2025-05-27 18:57:48,003 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 18:57:51,014 - HeartDiseaseStreaming - ERROR - [initialize_spark_session:136] - Failed to initialize Spark session: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+: java.net.BindException: Cannot assign requested address: Service 'sparkDriver' failed after 16 retries (on a random free port)! Consider explicitly setting the appropriate binding address for the service 'sparkDriver' (for example spark.driver.bindAddress for SparkDriver) to the correct binding address.
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:555)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:337)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:294)
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:141)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:562)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:600)
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:579)
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973)
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:260)
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:356)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-27 18:57:51,015 - HeartDiseaseStreaming - ERROR - [run:327] - Application failed: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+: java.net.BindException: Cannot assign requested address: Service 'sparkDriver' failed after 16 retries (on a random free port)! Consider explicitly setting the appropriate binding address for the service 'sparkDriver' (for example spark.driver.bindAddress for SparkDriver) to the correct binding address.
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:555)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:337)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:294)
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:141)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:562)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:600)
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:579)
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973)
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:260)
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:356)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Traceback (most recent call last):
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 303, in run
+    self.initialize_spark_session(master_url)
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 122, in initialize_spark_session
+    self.spark = builder.getOrCreate()
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/sql/session.py", line 497, in getOrCreate
+    sc = SparkContext.getOrCreate(sparkConf)
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/context.py", line 515, in getOrCreate
+    SparkContext(conf=conf or SparkConf())
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/context.py", line 203, in __init__
+    self._do_init(
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/context.py", line 296, in _do_init
+    self._jsc = jsc or self._initialize_context(self._conf._jconf)
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/context.py", line 421, in _initialize_context
+    return self._jvm.JavaSparkContext(jconf)
+  File "/home/usmail/.local/lib/python3.10/site-packages/py4j/java_gateway.py", line 1587, in __call__
+    return_value = get_return_value(
+  File "/home/usmail/.local/lib/python3.10/site-packages/py4j/protocol.py", line 326, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+: java.net.BindException: Cannot assign requested address: Service 'sparkDriver' failed after 16 retries (on a random free port)! Consider explicitly setting the appropriate binding address for the service 'sparkDriver' (for example spark.driver.bindAddress for SparkDriver) to the correct binding address.
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:555)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:337)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:294)
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:141)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:562)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:600)
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:579)
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973)
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:260)
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:356)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-27 18:57:51,022 - HeartDiseaseStreaming - INFO - [stop_streaming:270] - Stopping streaming application...
+2025-05-27 18:57:51,022 - HeartDiseaseStreaming - INFO - [stop_streaming:286] - Application shutdown complete
+2025-05-27 18:59:35,476 - HeartDiseaseStreaming - INFO - [run:291] - ============================================================
+2025-05-27 18:59:35,477 - HeartDiseaseStreaming - INFO - [run:292] - Starting Heart Disease Streaming Application
+2025-05-27 18:59:35,477 - HeartDiseaseStreaming - INFO - [run:293] - ============================================================
+2025-05-27 18:59:35,477 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 18:59:38,479 - HeartDiseaseStreaming - ERROR - [initialize_spark_session:136] - Failed to initialize Spark session: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+: java.net.BindException: Cannot assign requested address: Service 'sparkDriver' failed after 16 retries (on a random free port)! Consider explicitly setting the appropriate binding address for the service 'sparkDriver' (for example spark.driver.bindAddress for SparkDriver) to the correct binding address.
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:555)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:337)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:294)
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:141)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:562)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:600)
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:579)
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973)
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:260)
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:356)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-27 18:59:38,480 - HeartDiseaseStreaming - ERROR - [run:327] - Application failed: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+: java.net.BindException: Cannot assign requested address: Service 'sparkDriver' failed after 16 retries (on a random free port)! Consider explicitly setting the appropriate binding address for the service 'sparkDriver' (for example spark.driver.bindAddress for SparkDriver) to the correct binding address.
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:555)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:337)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:294)
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:141)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:562)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:600)
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:579)
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973)
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:260)
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:356)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Traceback (most recent call last):
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 303, in run
+    self.initialize_spark_session(master_url)
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 122, in initialize_spark_session
+    self.spark = builder.getOrCreate()
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/sql/session.py", line 497, in getOrCreate
+    sc = SparkContext.getOrCreate(sparkConf)
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/context.py", line 515, in getOrCreate
+    SparkContext(conf=conf or SparkConf())
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/context.py", line 203, in __init__
+    self._do_init(
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/context.py", line 296, in _do_init
+    self._jsc = jsc or self._initialize_context(self._conf._jconf)
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/context.py", line 421, in _initialize_context
+    return self._jvm.JavaSparkContext(jconf)
+  File "/home/usmail/.local/lib/python3.10/site-packages/py4j/java_gateway.py", line 1587, in __call__
+    return_value = get_return_value(
+  File "/home/usmail/.local/lib/python3.10/site-packages/py4j/protocol.py", line 326, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+: java.net.BindException: Cannot assign requested address: Service 'sparkDriver' failed after 16 retries (on a random free port)! Consider explicitly setting the appropriate binding address for the service 'sparkDriver' (for example spark.driver.bindAddress for SparkDriver) to the correct binding address.
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:555)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:337)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:294)
+	at io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:141)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:562)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:600)
+	at io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:579)
+	at io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:973)
+	at io.netty.channel.AbstractChannel.bind(AbstractChannel.java:260)
+	at io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:356)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-27 18:59:38,484 - HeartDiseaseStreaming - INFO - [stop_streaming:270] - Stopping streaming application...
+2025-05-27 18:59:38,484 - HeartDiseaseStreaming - INFO - [stop_streaming:286] - Application shutdown complete
+2025-05-27 19:00:02,334 - HeartDiseaseStreaming - INFO - [run:291] - ============================================================
+2025-05-27 19:00:02,334 - HeartDiseaseStreaming - INFO - [run:292] - Starting Heart Disease Streaming Application
+2025-05-27 19:00:02,335 - HeartDiseaseStreaming - INFO - [run:293] - ============================================================
+2025-05-27 19:00:02,335 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 19:00:06,681 - HeartDiseaseStreaming - INFO - [initialize_spark_session:128] - Spark session initialized successfully
+2025-05-27 19:00:06,682 - HeartDiseaseStreaming - INFO - [initialize_spark_session:129] - Application ID: app-20250527180006-0002
+2025-05-27 19:00:06,682 - HeartDiseaseStreaming - INFO - [initialize_spark_session:130] - Spark version: 3.5.0
+2025-05-27 19:00:06,683 - HeartDiseaseStreaming - INFO - [initialize_spark_session:131] - Master URL: spark://localhost:7077
+2025-05-27 19:00:06,683 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:142] - Creating Kafka consumer...
+2025-05-27 19:00:09,016 - HeartDiseaseStreaming - INFO - [process_streaming_data:172] - Setting up data processing pipeline...
+2025-05-27 19:00:09,591 - HeartDiseaseStreaming - INFO - [process_streaming_data:199] - Data processing pipeline configured
+2025-05-27 19:00:09,592 - HeartDiseaseStreaming - INFO - [start_streaming:209] - Starting streaming query with output mode: console
+2025-05-27 19:00:10,226 - HeartDiseaseStreaming - INFO - [start_streaming:234] - Streaming query started successfully
+2025-05-27 19:00:10,236 - HeartDiseaseStreaming - INFO - [run:314] - Application started successfully!
+2025-05-27 19:00:10,237 - HeartDiseaseStreaming - INFO - [run:315] - Press Ctrl+C to stop the application
+2025-05-27 19:00:10,237 - HeartDiseaseStreaming - INFO - [monitor_stream:247] - Starting stream monitoring...
+2025-05-27 19:00:56,054 - HeartDiseaseStreaming - INFO - [run:325] - Received keyboard interrupt
+2025-05-27 19:00:56,054 - HeartDiseaseStreaming - INFO - [stop_streaming:270] - Stopping streaming application...
+2025-05-27 19:00:56,114 - HeartDiseaseStreaming - INFO - [stop_streaming:275] - Streaming query stopped
+2025-05-27 19:00:56,329 - HeartDiseaseStreaming - INFO - [stop_streaming:282] - Spark session stopped
+2025-05-27 19:00:56,330 - HeartDiseaseStreaming - INFO - [stop_streaming:286] - Application shutdown complete
+2025-05-27 19:12:37,409 - HeartDiseaseStreaming - INFO - [run:297] - ============================================================
+2025-05-27 19:12:37,410 - HeartDiseaseStreaming - INFO - [run:298] - Starting Heart Disease Streaming Application
+2025-05-27 19:12:37,410 - HeartDiseaseStreaming - INFO - [run:299] - ============================================================
+2025-05-27 19:12:37,411 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 19:12:41,694 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Spark session initialized successfully
+2025-05-27 19:12:41,696 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Application ID: app-20250527181240-0003
+2025-05-27 19:12:41,698 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Spark version: 3.5.0
+2025-05-27 19:12:41,698 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Master URL: spark://localhost:7077
+2025-05-27 19:12:41,699 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:148] - Creating Kafka consumer...
+2025-05-27 19:12:44,054 - HeartDiseaseStreaming - INFO - [process_streaming_data:178] - Setting up data processing pipeline...
+2025-05-27 19:12:44,618 - HeartDiseaseStreaming - INFO - [process_streaming_data:205] - Data processing pipeline configured
+2025-05-27 19:12:44,619 - HeartDiseaseStreaming - INFO - [start_streaming:215] - Starting streaming query with output mode: console
+2025-05-27 19:12:45,340 - HeartDiseaseStreaming - INFO - [start_streaming:240] - Streaming query started successfully
+2025-05-27 19:12:45,341 - HeartDiseaseStreaming - INFO - [run:320] - Application started successfully!
+2025-05-27 19:12:45,341 - HeartDiseaseStreaming - INFO - [run:321] - Press Ctrl+C to stop the application
+2025-05-27 19:12:45,343 - HeartDiseaseStreaming - INFO - [monitor_stream:253] - Starting stream monitoring...
+2025-05-27 19:16:14,728 - HeartDiseaseStreaming - INFO - [run:331] - Received keyboard interrupt
+2025-05-27 19:16:14,743 - HeartDiseaseStreaming - INFO - [stop_streaming:276] - Stopping streaming application...
+2025-05-27 19:16:14,820 - HeartDiseaseStreaming - INFO - [stop_streaming:281] - Streaming query stopped
+2025-05-27 19:16:15,215 - HeartDiseaseStreaming - INFO - [stop_streaming:288] - Spark session stopped
+2025-05-27 19:16:15,217 - HeartDiseaseStreaming - INFO - [stop_streaming:292] - Application shutdown complete
+2025-05-27 21:19:05,686 - HeartDiseaseStreaming - INFO - [run:321] - ============================================================
+2025-05-27 21:19:05,687 - HeartDiseaseStreaming - INFO - [run:322] - Starting Heart Disease Streaming Application
+2025-05-27 21:19:05,687 - HeartDiseaseStreaming - INFO - [run:323] - ============================================================
+2025-05-27 21:19:05,687 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 21:19:10,745 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 21:19:10,746 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748377149916
+2025-05-27 21:19:10,747 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 21:19:10,748 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: None
+2025-05-27 21:19:10,748 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at localhost:9091 , topic: patients
+2025-05-27 21:19:10,748 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:148] - Creating Kafka consumer...
+2025-05-27 21:19:11,464 - HeartDiseaseStreaming - ERROR - [create_kafka_consumer:171] - Failed to create Kafka consumer: An error occurred while calling o63.load.
+: java.lang.NullPointerException: Cannot invoke "String.split(String)" because "value" is null
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.validateGeneralOptions(KafkaSourceProvider.scala:246)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.org$apache$spark$sql$kafka010$KafkaSourceProvider$$validateStreamOptions(KafkaSourceProvider.scala:343)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.sourceSchema(KafkaSourceProvider.scala:71)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceSchema(DataSource.scala:233)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo$lzycompute(DataSource.scala:118)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo(DataSource.scala:118)
+	at org.apache.spark.sql.execution.streaming.StreamingRelation$.apply(StreamingRelation.scala:36)
+	at org.apache.spark.sql.streaming.DataStreamReader.loadInternal(DataStreamReader.scala:169)
+	at org.apache.spark.sql.streaming.DataStreamReader.load(DataStreamReader.scala:145)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-27 21:19:11,465 - HeartDiseaseStreaming - ERROR - [run:358] - Application failed: An error occurred while calling o63.load.
+: java.lang.NullPointerException: Cannot invoke "String.split(String)" because "value" is null
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.validateGeneralOptions(KafkaSourceProvider.scala:246)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.org$apache$spark$sql$kafka010$KafkaSourceProvider$$validateStreamOptions(KafkaSourceProvider.scala:343)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.sourceSchema(KafkaSourceProvider.scala:71)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceSchema(DataSource.scala:233)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo$lzycompute(DataSource.scala:118)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo(DataSource.scala:118)
+	at org.apache.spark.sql.execution.streaming.StreamingRelation$.apply(StreamingRelation.scala:36)
+	at org.apache.spark.sql.streaming.DataStreamReader.loadInternal(DataStreamReader.scala:169)
+	at org.apache.spark.sql.streaming.DataStreamReader.load(DataStreamReader.scala:145)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Traceback (most recent call last):
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 337, in run
+    kafka_df = self.create_kafka_consumer(bootstrap_servers, topic)
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 168, in create_kafka_consumer
+    return kafka_df.load()
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/sql/streaming/readwriter.py", line 304, in load
+    return self._df(self._jreader.load())
+  File "/home/usmail/.local/lib/python3.10/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/errors/exceptions/captured.py", line 179, in deco
+    return f(*a, **kw)
+  File "/home/usmail/.local/lib/python3.10/site-packages/py4j/protocol.py", line 326, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling o63.load.
+: java.lang.NullPointerException: Cannot invoke "String.split(String)" because "value" is null
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.validateGeneralOptions(KafkaSourceProvider.scala:246)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.org$apache$spark$sql$kafka010$KafkaSourceProvider$$validateStreamOptions(KafkaSourceProvider.scala:343)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.sourceSchema(KafkaSourceProvider.scala:71)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceSchema(DataSource.scala:233)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo$lzycompute(DataSource.scala:118)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo(DataSource.scala:118)
+	at org.apache.spark.sql.execution.streaming.StreamingRelation$.apply(StreamingRelation.scala:36)
+	at org.apache.spark.sql.streaming.DataStreamReader.loadInternal(DataStreamReader.scala:169)
+	at org.apache.spark.sql.streaming.DataStreamReader.load(DataStreamReader.scala:145)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-27 21:19:11,470 - HeartDiseaseStreaming - INFO - [stop_streaming:300] - Stopping streaming application...
+2025-05-27 21:19:11,580 - HeartDiseaseStreaming - INFO - [stop_streaming:312] - Spark session stopped
+2025-05-27 21:19:11,582 - HeartDiseaseStreaming - INFO - [stop_streaming:316] - Application shutdown complete
+2025-05-27 21:20:39,695 - HeartDiseaseStreaming - INFO - [run:321] - ============================================================
+2025-05-27 21:20:39,696 - HeartDiseaseStreaming - INFO - [run:322] - Starting Heart Disease Streaming Application
+2025-05-27 21:20:39,696 - HeartDiseaseStreaming - INFO - [run:323] - ============================================================
+2025-05-27 21:20:39,696 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 21:20:44,080 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 21:20:44,082 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748377243284
+2025-05-27 21:20:44,083 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 21:20:44,083 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: None
+2025-05-27 21:20:44,084 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at None , topic: None
+2025-05-27 21:20:44,085 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:148] - Creating Kafka consumer...
+2025-05-27 21:20:44,974 - HeartDiseaseStreaming - ERROR - [create_kafka_consumer:171] - Failed to create Kafka consumer: An error occurred while calling o63.load.
+: java.lang.NullPointerException: Cannot invoke "String.split(String)" because "value" is null
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.validateGeneralOptions(KafkaSourceProvider.scala:246)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.org$apache$spark$sql$kafka010$KafkaSourceProvider$$validateStreamOptions(KafkaSourceProvider.scala:343)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.sourceSchema(KafkaSourceProvider.scala:71)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceSchema(DataSource.scala:233)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo$lzycompute(DataSource.scala:118)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo(DataSource.scala:118)
+	at org.apache.spark.sql.execution.streaming.StreamingRelation$.apply(StreamingRelation.scala:36)
+	at org.apache.spark.sql.streaming.DataStreamReader.loadInternal(DataStreamReader.scala:169)
+	at org.apache.spark.sql.streaming.DataStreamReader.load(DataStreamReader.scala:145)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-27 21:20:44,975 - HeartDiseaseStreaming - ERROR - [run:358] - Application failed: An error occurred while calling o63.load.
+: java.lang.NullPointerException: Cannot invoke "String.split(String)" because "value" is null
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.validateGeneralOptions(KafkaSourceProvider.scala:246)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.org$apache$spark$sql$kafka010$KafkaSourceProvider$$validateStreamOptions(KafkaSourceProvider.scala:343)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.sourceSchema(KafkaSourceProvider.scala:71)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceSchema(DataSource.scala:233)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo$lzycompute(DataSource.scala:118)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo(DataSource.scala:118)
+	at org.apache.spark.sql.execution.streaming.StreamingRelation$.apply(StreamingRelation.scala:36)
+	at org.apache.spark.sql.streaming.DataStreamReader.loadInternal(DataStreamReader.scala:169)
+	at org.apache.spark.sql.streaming.DataStreamReader.load(DataStreamReader.scala:145)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Traceback (most recent call last):
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 337, in run
+    kafka_df = self.create_kafka_consumer(bootstrap_servers, topic)
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 168, in create_kafka_consumer
+    return kafka_df.load()
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/sql/streaming/readwriter.py", line 304, in load
+    return self._df(self._jreader.load())
+  File "/home/usmail/.local/lib/python3.10/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/errors/exceptions/captured.py", line 179, in deco
+    return f(*a, **kw)
+  File "/home/usmail/.local/lib/python3.10/site-packages/py4j/protocol.py", line 326, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling o63.load.
+: java.lang.NullPointerException: Cannot invoke "String.split(String)" because "value" is null
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.validateGeneralOptions(KafkaSourceProvider.scala:246)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.org$apache$spark$sql$kafka010$KafkaSourceProvider$$validateStreamOptions(KafkaSourceProvider.scala:343)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.sourceSchema(KafkaSourceProvider.scala:71)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceSchema(DataSource.scala:233)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo$lzycompute(DataSource.scala:118)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo(DataSource.scala:118)
+	at org.apache.spark.sql.execution.streaming.StreamingRelation$.apply(StreamingRelation.scala:36)
+	at org.apache.spark.sql.streaming.DataStreamReader.loadInternal(DataStreamReader.scala:169)
+	at org.apache.spark.sql.streaming.DataStreamReader.load(DataStreamReader.scala:145)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-27 21:20:44,979 - HeartDiseaseStreaming - INFO - [stop_streaming:300] - Stopping streaming application...
+2025-05-27 21:20:45,408 - HeartDiseaseStreaming - INFO - [stop_streaming:312] - Spark session stopped
+2025-05-27 21:20:45,412 - HeartDiseaseStreaming - INFO - [stop_streaming:316] - Application shutdown complete
+2025-05-27 21:21:49,744 - HeartDiseaseStreaming - INFO - [run:321] - ============================================================
+2025-05-27 21:21:49,745 - HeartDiseaseStreaming - INFO - [run:322] - Starting Heart Disease Streaming Application
+2025-05-27 21:21:49,745 - HeartDiseaseStreaming - INFO - [run:323] - ============================================================
+2025-05-27 21:21:49,745 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 21:21:54,426 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 21:21:54,428 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748377313533
+2025-05-27 21:21:54,429 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 21:21:54,429 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: None
+2025-05-27 21:21:54,430 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at localhost:9091 , topic: patients
+2025-05-27 21:21:54,430 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:148] - Creating Kafka consumer...
+2025-05-27 21:21:55,132 - HeartDiseaseStreaming - ERROR - [create_kafka_consumer:171] - Failed to create Kafka consumer: An error occurred while calling o63.load.
+: java.lang.NullPointerException: Cannot invoke "String.split(String)" because "value" is null
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.validateGeneralOptions(KafkaSourceProvider.scala:246)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.org$apache$spark$sql$kafka010$KafkaSourceProvider$$validateStreamOptions(KafkaSourceProvider.scala:343)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.sourceSchema(KafkaSourceProvider.scala:71)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceSchema(DataSource.scala:233)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo$lzycompute(DataSource.scala:118)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo(DataSource.scala:118)
+	at org.apache.spark.sql.execution.streaming.StreamingRelation$.apply(StreamingRelation.scala:36)
+	at org.apache.spark.sql.streaming.DataStreamReader.loadInternal(DataStreamReader.scala:169)
+	at org.apache.spark.sql.streaming.DataStreamReader.load(DataStreamReader.scala:145)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-27 21:21:55,132 - HeartDiseaseStreaming - ERROR - [run:358] - Application failed: An error occurred while calling o63.load.
+: java.lang.NullPointerException: Cannot invoke "String.split(String)" because "value" is null
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.validateGeneralOptions(KafkaSourceProvider.scala:246)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.org$apache$spark$sql$kafka010$KafkaSourceProvider$$validateStreamOptions(KafkaSourceProvider.scala:343)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.sourceSchema(KafkaSourceProvider.scala:71)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceSchema(DataSource.scala:233)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo$lzycompute(DataSource.scala:118)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo(DataSource.scala:118)
+	at org.apache.spark.sql.execution.streaming.StreamingRelation$.apply(StreamingRelation.scala:36)
+	at org.apache.spark.sql.streaming.DataStreamReader.loadInternal(DataStreamReader.scala:169)
+	at org.apache.spark.sql.streaming.DataStreamReader.load(DataStreamReader.scala:145)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Traceback (most recent call last):
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 337, in run
+    kafka_df = self.create_kafka_consumer(bootstrap_servers, topic)
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 168, in create_kafka_consumer
+    return kafka_df.load()
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/sql/streaming/readwriter.py", line 304, in load
+    return self._df(self._jreader.load())
+  File "/home/usmail/.local/lib/python3.10/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/errors/exceptions/captured.py", line 179, in deco
+    return f(*a, **kw)
+  File "/home/usmail/.local/lib/python3.10/site-packages/py4j/protocol.py", line 326, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling o63.load.
+: java.lang.NullPointerException: Cannot invoke "String.split(String)" because "value" is null
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.validateGeneralOptions(KafkaSourceProvider.scala:246)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.org$apache$spark$sql$kafka010$KafkaSourceProvider$$validateStreamOptions(KafkaSourceProvider.scala:343)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider.sourceSchema(KafkaSourceProvider.scala:71)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceSchema(DataSource.scala:233)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo$lzycompute(DataSource.scala:118)
+	at org.apache.spark.sql.execution.datasources.DataSource.sourceInfo(DataSource.scala:118)
+	at org.apache.spark.sql.execution.streaming.StreamingRelation$.apply(StreamingRelation.scala:36)
+	at org.apache.spark.sql.streaming.DataStreamReader.loadInternal(DataStreamReader.scala:169)
+	at org.apache.spark.sql.streaming.DataStreamReader.load(DataStreamReader.scala:145)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025-05-27 21:21:55,136 - HeartDiseaseStreaming - INFO - [stop_streaming:300] - Stopping streaming application...
+2025-05-27 21:21:55,275 - HeartDiseaseStreaming - INFO - [stop_streaming:312] - Spark session stopped
+2025-05-27 21:21:55,278 - HeartDiseaseStreaming - INFO - [stop_streaming:316] - Application shutdown complete
+2025-05-27 21:28:44,828 - HeartDiseaseStreaming - INFO - [run:329] - ============================================================
+2025-05-27 21:28:44,829 - HeartDiseaseStreaming - INFO - [run:330] - Starting Heart Disease Streaming Application
+2025-05-27 21:28:44,829 - HeartDiseaseStreaming - INFO - [run:331] - ============================================================
+2025-05-27 21:28:44,830 - HeartDiseaseStreaming - INFO - [run:346] - Using configuration:
+2025-05-27 21:28:44,830 - HeartDiseaseStreaming - INFO - [run:347] - Bootstrap Servers: localhost:9091
+2025-05-27 21:28:44,830 - HeartDiseaseStreaming - INFO - [run:348] - Topic: patients
+2025-05-27 21:28:44,831 - HeartDiseaseStreaming - INFO - [run:349] - Master URL: local[*]
+2025-05-27 21:28:44,831 - HeartDiseaseStreaming - INFO - [run:350] - Output Mode: console
+2025-05-27 21:28:44,833 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 21:28:49,188 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 21:28:49,190 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748377728329
+2025-05-27 21:28:49,191 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 21:28:49,191 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 21:28:49,191 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at None , topic: None
+2025-05-27 21:28:49,441 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:205] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 21:28:49,441 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9091, topic: patients
+2025-05-27 21:28:50,867 - HeartDiseaseStreaming - INFO - [process_streaming_data:210] - Setting up data processing pipeline...
+2025-05-27 21:28:51,474 - HeartDiseaseStreaming - INFO - [process_streaming_data:237] - Data processing pipeline configured
+2025-05-27 21:28:51,474 - HeartDiseaseStreaming - INFO - [start_streaming:247] - Starting streaming query with output mode: console
+2025-05-27 21:28:52,021 - HeartDiseaseStreaming - INFO - [start_streaming:272] - Streaming query started successfully
+2025-05-27 21:28:52,022 - HeartDiseaseStreaming - INFO - [run:367] - Application started successfully!
+2025-05-27 21:28:52,023 - HeartDiseaseStreaming - INFO - [run:368] - Press Ctrl+C to stop the application
+2025-05-27 21:28:52,023 - HeartDiseaseStreaming - INFO - [monitor_stream:285] - Starting stream monitoring...
+2025-05-27 21:29:02,032 - HeartDiseaseStreaming - INFO - [monitor_stream:304] - Stream monitoring stopped
+2025-05-27 21:29:02,190 - HeartDiseaseStreaming - ERROR - [run:380] - Application failed: [STREAM_FAILED] Query [id = eb7b745a-c063-4d4e-89f7-b5363fc11233, runId = edacf8e1-88ad-4ce2-b889-d587eb2dd4b7] terminated with exception: org.apache.kafka.common.errors.UnknownTopicOrPartitionException: This server does not host this topic-partition.
+Traceback (most recent call last):
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 375, in run
+    self.query.awaitTermination()
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/sql/streaming/query.py", line 221, in awaitTermination
+    return self._jsq.awaitTermination()
+  File "/home/usmail/.local/lib/python3.10/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.StreamingQueryException: [STREAM_FAILED] Query [id = eb7b745a-c063-4d4e-89f7-b5363fc11233, runId = edacf8e1-88ad-4ce2-b889-d587eb2dd4b7] terminated with exception: org.apache.kafka.common.errors.UnknownTopicOrPartitionException: This server does not host this topic-partition.
+2025-05-27 21:29:02,199 - HeartDiseaseStreaming - INFO - [stop_streaming:308] - Stopping streaming application...
+2025-05-27 21:29:02,201 - HeartDiseaseStreaming - INFO - [stop_streaming:313] - Streaming query stopped
+2025-05-27 21:29:02,540 - HeartDiseaseStreaming - INFO - [stop_streaming:320] - Spark session stopped
+2025-05-27 21:29:02,541 - HeartDiseaseStreaming - INFO - [stop_streaming:324] - Application shutdown complete
+2025-05-27 21:37:49,550 - HeartDiseaseStreaming - INFO - [run:343] - ============================================================
+2025-05-27 21:37:49,550 - HeartDiseaseStreaming - INFO - [run:344] - Starting Heart Disease Streaming Application
+2025-05-27 21:37:49,551 - HeartDiseaseStreaming - INFO - [run:345] - ============================================================
+2025-05-27 21:37:49,551 - HeartDiseaseStreaming - INFO - [run:358] - Configuration details:
+2025-05-27 21:37:49,551 - HeartDiseaseStreaming - INFO - [run:359] - Bootstrap Servers: localhost:9091
+2025-05-27 21:37:49,551 - HeartDiseaseStreaming - INFO - [run:360] - Topic: patient
+2025-05-27 21:37:49,552 - HeartDiseaseStreaming - INFO - [run:361] - Master URL: local[*]
+2025-05-27 21:37:49,552 - HeartDiseaseStreaming - INFO - [run:362] - Output Mode: console
+2025-05-27 21:37:49,552 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 21:37:56,728 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 21:37:56,730 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748378273014
+2025-05-27 21:37:56,731 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 21:37:56,731 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 21:37:56,732 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at None , topic: None
+2025-05-27 21:37:57,004 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:219] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 21:37:57,005 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9091, topic: patient
+2025-05-27 21:37:58,345 - HeartDiseaseStreaming - INFO - [process_streaming_data:224] - Setting up data processing pipeline...
+2025-05-27 21:37:58,767 - HeartDiseaseStreaming - INFO - [process_streaming_data:251] - Data processing pipeline configured
+2025-05-27 21:37:58,768 - HeartDiseaseStreaming - INFO - [start_streaming:261] - Starting streaming query with output mode: console
+2025-05-27 21:37:59,160 - HeartDiseaseStreaming - INFO - [start_streaming:286] - Streaming query started successfully
+2025-05-27 21:37:59,161 - HeartDiseaseStreaming - INFO - [run:387] - Application started successfully!
+2025-05-27 21:37:59,161 - HeartDiseaseStreaming - INFO - [run:388] - Press Ctrl+C to stop the application
+2025-05-27 21:37:59,161 - HeartDiseaseStreaming - INFO - [monitor_stream:299] - Starting stream monitoring...
+2025-05-27 21:38:09,194 - HeartDiseaseStreaming - INFO - [monitor_stream:310] - Batch 0: Input rate: 0.00 rows/sec, Processing time: 2930ms
+2025-05-27 21:38:19,203 - HeartDiseaseStreaming - INFO - [monitor_stream:310] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 23ms
+2025-05-27 21:38:32,173 - HeartDiseaseStreaming - INFO - [monitor_stream:310] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 12ms
+2025-05-27 21:38:42,186 - HeartDiseaseStreaming - INFO - [monitor_stream:310] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 21ms
+2025-05-27 21:38:52,202 - HeartDiseaseStreaming - INFO - [monitor_stream:310] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 21ms
+2025-05-27 21:39:05,105 - HeartDiseaseStreaming - INFO - [monitor_stream:310] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 10ms
+2025-05-27 21:39:15,110 - HeartDiseaseStreaming - INFO - [monitor_stream:310] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 17ms
+2025-05-27 21:39:25,121 - HeartDiseaseStreaming - INFO - [monitor_stream:310] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 10ms
+2025-05-27 21:39:36,879 - HeartDiseaseStreaming - INFO - [run:398] - Received keyboard interrupt
+2025-05-27 21:39:36,880 - HeartDiseaseStreaming - INFO - [stop_streaming:322] - Stopping streaming application...
+2025-05-27 21:39:36,907 - HeartDiseaseStreaming - INFO - [stop_streaming:327] - Streaming query stopped
+2025-05-27 21:39:37,460 - HeartDiseaseStreaming - INFO - [stop_streaming:334] - Spark session stopped
+2025-05-27 21:39:37,460 - HeartDiseaseStreaming - INFO - [stop_streaming:338] - Application shutdown complete
+2025-05-27 21:41:31,332 - HeartDiseaseStreaming - INFO - [run:343] - ============================================================
+2025-05-27 21:41:31,332 - HeartDiseaseStreaming - INFO - [run:344] - Starting Heart Disease Streaming Application
+2025-05-27 21:41:31,333 - HeartDiseaseStreaming - INFO - [run:345] - ============================================================
+2025-05-27 21:41:31,333 - HeartDiseaseStreaming - INFO - [run:358] - Configuration details:
+2025-05-27 21:41:31,333 - HeartDiseaseStreaming - INFO - [run:359] - Bootstrap Servers: localhost:9091
+2025-05-27 21:41:31,334 - HeartDiseaseStreaming - INFO - [run:360] - Topic: patient
+2025-05-27 21:41:31,334 - HeartDiseaseStreaming - INFO - [run:361] - Master URL: local[*]
+2025-05-27 21:41:31,334 - HeartDiseaseStreaming - INFO - [run:362] - Output Mode: console
+2025-05-27 21:41:31,335 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 21:41:35,576 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 21:41:35,577 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748378494811
+2025-05-27 21:41:35,578 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 21:41:35,579 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 21:41:35,579 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at None , topic: None
+2025-05-27 21:41:35,791 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:219] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 21:41:35,792 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9091, topic: patient
+2025-05-27 21:41:37,006 - HeartDiseaseStreaming - INFO - [process_streaming_data:224] - Setting up data processing pipeline...
+2025-05-27 21:41:37,425 - HeartDiseaseStreaming - INFO - [process_streaming_data:251] - Data processing pipeline configured
+2025-05-27 21:41:37,426 - HeartDiseaseStreaming - INFO - [start_streaming:261] - Starting streaming query with output mode: console
+2025-05-27 21:41:37,866 - HeartDiseaseStreaming - INFO - [start_streaming:286] - Streaming query started successfully
+2025-05-27 21:41:37,866 - HeartDiseaseStreaming - INFO - [run:387] - Application started successfully!
+2025-05-27 21:41:37,867 - HeartDiseaseStreaming - INFO - [run:388] - Press Ctrl+C to stop the application
+2025-05-27 21:41:37,867 - HeartDiseaseStreaming - INFO - [monitor_stream:299] - Starting stream monitoring...
+2025-05-27 21:41:50,754 - HeartDiseaseStreaming - INFO - [monitor_stream:310] - Batch 0: Input rate: 0.00 rows/sec, Processing time: 2755ms
+2025-05-27 21:42:00,770 - HeartDiseaseStreaming - INFO - [monitor_stream:310] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 21:42:10,776 - HeartDiseaseStreaming - INFO - [monitor_stream:310] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 24ms
+2025-05-27 21:42:11,433 - HeartDiseaseStreaming - INFO - [run:398] - Received keyboard interrupt
+2025-05-27 21:42:11,433 - HeartDiseaseStreaming - INFO - [stop_streaming:322] - Stopping streaming application...
+2025-05-27 21:42:11,450 - HeartDiseaseStreaming - INFO - [stop_streaming:327] - Streaming query stopped
+2025-05-27 21:42:11,829 - HeartDiseaseStreaming - INFO - [stop_streaming:334] - Spark session stopped
+2025-05-27 21:42:11,845 - HeartDiseaseStreaming - INFO - [stop_streaming:338] - Application shutdown complete
+2025-05-27 21:42:12,943 - HeartDiseaseStreaming - INFO - [run:344] - ============================================================
+2025-05-27 21:42:12,944 - HeartDiseaseStreaming - INFO - [run:345] - Starting Heart Disease Streaming Application
+2025-05-27 21:42:12,944 - HeartDiseaseStreaming - INFO - [run:346] - ============================================================
+2025-05-27 21:42:12,945 - HeartDiseaseStreaming - INFO - [run:359] - Configuration details:
+2025-05-27 21:42:12,945 - HeartDiseaseStreaming - INFO - [run:360] - Bootstrap Servers: localhost:9091
+2025-05-27 21:42:12,945 - HeartDiseaseStreaming - INFO - [run:361] - Topic: patient
+2025-05-27 21:42:12,945 - HeartDiseaseStreaming - INFO - [run:362] - Master URL: local[*]
+2025-05-27 21:42:12,946 - HeartDiseaseStreaming - INFO - [run:363] - Output Mode: console
+2025-05-27 21:42:12,946 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 21:42:20,215 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Spark session initialized successfully
+2025-05-27 21:42:20,217 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Application ID: local-1748378536430
+2025-05-27 21:42:20,218 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Spark version: 3.5.0
+2025-05-27 21:42:20,218 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Master URL: local[*]
+2025-05-27 21:42:20,219 - HeartDiseaseStreaming - INFO - [initialize_spark_session:138] - Connecting to Kafka broker at None , topic: None
+2025-05-27 21:42:20,407 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:220] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 21:42:20,408 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:152] - Creating Kafka consumer for localhost:9091, topic: patient
+2025-05-27 21:42:21,538 - HeartDiseaseStreaming - INFO - [process_streaming_data:225] - Setting up data processing pipeline...
+2025-05-27 21:42:21,949 - HeartDiseaseStreaming - INFO - [process_streaming_data:252] - Data processing pipeline configured
+2025-05-27 21:42:21,950 - HeartDiseaseStreaming - INFO - [start_streaming:262] - Starting streaming query with output mode: console
+2025-05-27 21:42:22,322 - HeartDiseaseStreaming - INFO - [start_streaming:287] - Streaming query started successfully
+2025-05-27 21:42:22,323 - HeartDiseaseStreaming - INFO - [run:388] - Application started successfully!
+2025-05-27 21:42:22,323 - HeartDiseaseStreaming - INFO - [run:389] - Press Ctrl+C to stop the application
+2025-05-27 21:42:22,323 - HeartDiseaseStreaming - INFO - [monitor_stream:300] - Starting stream monitoring...
+2025-05-27 21:42:32,344 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 0: Input rate: 0.00 rows/sec, Processing time: 3210ms
+2025-05-27 21:42:42,352 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 14ms
+2025-05-27 21:42:55,394 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 21:43:05,407 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 8ms
+2025-05-27 21:43:15,419 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 21:43:28,367 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 13ms
+2025-05-27 21:43:38,377 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 13ms
+2025-05-27 21:43:48,383 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 21:44:01,297 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 32ms
+2025-05-27 21:44:11,313 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 32ms
+2025-05-27 21:44:21,338 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 21:44:34,394 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 28ms
+2025-05-27 21:44:44,407 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 10ms
+2025-05-27 21:44:54,418 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 22ms
+2025-05-27 21:45:07,420 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 13ms
+2025-05-27 21:45:17,433 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 14ms
+2025-05-27 21:45:27,442 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 14ms
+2025-05-27 21:45:40,394 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 10ms
+2025-05-27 21:45:50,405 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 17ms
+2025-05-27 21:46:00,420 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 17ms
+2025-05-27 21:46:13,373 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 21:46:23,392 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 15ms
+2025-05-27 21:46:33,401 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 16ms
+2025-05-27 21:46:46,416 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 11ms
+2025-05-27 21:46:56,432 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 12ms
+2025-05-27 21:47:06,439 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 12ms
+2025-05-27 21:47:19,464 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 13ms
+2025-05-27 21:47:29,482 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 8ms
+2025-05-27 21:47:39,490 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 8ms
+2025-05-27 21:47:52,452 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 16ms
+2025-05-27 21:48:02,465 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 16ms
+2025-05-27 21:48:12,475 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 21:48:25,252 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 17ms
+2025-05-27 21:48:35,266 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 8ms
+2025-05-27 21:48:45,276 - HeartDiseaseStreaming - INFO - [monitor_stream:311] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 11ms
+2025-05-27 21:48:45,689 - HeartDiseaseStreaming - INFO - [run:399] - Received keyboard interrupt
+2025-05-27 21:48:45,689 - HeartDiseaseStreaming - INFO - [stop_streaming:323] - Stopping streaming application...
+2025-05-27 21:48:45,722 - HeartDiseaseStreaming - INFO - [stop_streaming:328] - Streaming query stopped
+2025-05-27 21:48:45,933 - HeartDiseaseStreaming - INFO - [stop_streaming:335] - Spark session stopped
+2025-05-27 21:48:45,933 - HeartDiseaseStreaming - INFO - [stop_streaming:339] - Application shutdown complete
+2025-05-27 21:55:26,480 - HeartDiseaseStreaming - INFO - [run:341] - ============================================================
+2025-05-27 21:55:26,481 - HeartDiseaseStreaming - INFO - [run:342] - Starting Heart Disease Streaming Application
+2025-05-27 21:55:26,481 - HeartDiseaseStreaming - INFO - [run:343] - ============================================================
+2025-05-27 21:55:26,482 - HeartDiseaseStreaming - INFO - [run:356] - Configuration details:
+2025-05-27 21:55:26,482 - HeartDiseaseStreaming - INFO - [run:357] - Bootstrap Servers: localhost:9091
+2025-05-27 21:55:26,482 - HeartDiseaseStreaming - INFO - [run:358] - Topic: patient
+2025-05-27 21:55:26,483 - HeartDiseaseStreaming - INFO - [run:359] - Master URL: local[*]
+2025-05-27 21:55:26,483 - HeartDiseaseStreaming - INFO - [run:360] - Output Mode: console
+2025-05-27 21:55:26,483 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 21:55:34,322 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 21:55:34,323 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748379333346
+2025-05-27 21:55:34,324 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 21:55:34,324 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 21:55:34,325 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at None , topic: None
+2025-05-27 21:55:34,511 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:217] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 21:55:34,512 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9091, topic: patient
+2025-05-27 21:55:35,731 - HeartDiseaseStreaming - INFO - [process_streaming_data:222] - Setting up data processing pipeline...
+2025-05-27 21:55:36,242 - HeartDiseaseStreaming - INFO - [process_streaming_data:249] - Data processing pipeline configured
+2025-05-27 21:55:36,242 - HeartDiseaseStreaming - INFO - [start_streaming:259] - Starting streaming query with output mode: console
+2025-05-27 21:55:36,694 - HeartDiseaseStreaming - INFO - [start_streaming:284] - Streaming query started successfully
+2025-05-27 21:55:36,696 - HeartDiseaseStreaming - INFO - [run:385] - Application started successfully!
+2025-05-27 21:55:36,696 - HeartDiseaseStreaming - INFO - [run:386] - Press Ctrl+C to stop the application
+2025-05-27 21:55:36,697 - HeartDiseaseStreaming - INFO - [monitor_stream:297] - Starting stream monitoring...
+2025-05-27 21:55:46,731 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 0: Input rate: 0.00 rows/sec, Processing time: 2898ms
+2025-05-27 21:55:56,738 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 12ms
+2025-05-27 21:56:09,773 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 10ms
+2025-05-27 21:56:19,785 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 10ms
+2025-05-27 21:56:24,795 - HeartDiseaseStreaming - INFO - [run:396] - Received keyboard interrupt
+2025-05-27 21:56:24,797 - HeartDiseaseStreaming - INFO - [stop_streaming:320] - Stopping streaming application...
+2025-05-27 21:56:24,826 - HeartDiseaseStreaming - INFO - [stop_streaming:325] - Streaming query stopped
+2025-05-27 21:56:25,222 - HeartDiseaseStreaming - INFO - [stop_streaming:332] - Spark session stopped
+2025-05-27 21:56:25,222 - HeartDiseaseStreaming - INFO - [stop_streaming:336] - Application shutdown complete
+2025-05-27 22:00:12,699 - HeartDiseaseStreaming - INFO - [run:317] - ============================================================
+2025-05-27 22:00:12,699 - HeartDiseaseStreaming - INFO - [run:318] - Starting Heart Disease Streaming Application
+2025-05-27 22:00:12,700 - HeartDiseaseStreaming - INFO - [run:319] - ============================================================
+2025-05-27 22:00:12,700 - HeartDiseaseStreaming - INFO - [run:332] - Configuration details:
+2025-05-27 22:00:12,700 - HeartDiseaseStreaming - INFO - [run:333] - Bootstrap Servers: localhost:9092
+2025-05-27 22:00:12,701 - HeartDiseaseStreaming - INFO - [run:334] - Topic: heart-disease-topic
+2025-05-27 22:00:12,701 - HeartDiseaseStreaming - INFO - [run:335] - Master URL: local[*]
+2025-05-27 22:00:12,701 - HeartDiseaseStreaming - INFO - [run:336] - Output Mode: console
+2025-05-27 22:00:12,701 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 22:00:16,993 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 22:00:16,994 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748379616173
+2025-05-27 22:00:16,995 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 22:00:16,996 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 22:00:16,996 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at localhost:9091 , topic: patients
+2025-05-27 22:00:17,200 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:204] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 22:00:17,200 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9092, topic: heart-disease-topic
+2025-05-27 22:00:18,500 - HeartDiseaseStreaming - INFO - [process_streaming_data:209] - Setting up data processing pipeline...
+2025-05-27 22:00:19,666 - HeartDiseaseStreaming - ERROR - [process_streaming_data:229] - Error in data processing: Queries with streaming sources must be executed with writeStream.start();
+kafka
+2025-05-27 22:00:19,669 - HeartDiseaseStreaming - ERROR - [run:374] - Application failed: Queries with streaming sources must be executed with writeStream.start();
+kafka
+Traceback (most recent call last):
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 356, in run
+    processed_df = self.process_streaming_data(kafka_df)
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 224, in process_streaming_data
+    processed_df.show(5, truncate=False)
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/sql/dataframe.py", line 972, in show
+    print(self._jdf.showString(n, int_truncate, vertical))
+  File "/home/usmail/.local/lib/python3.10/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: Queries with streaming sources must be executed with writeStream.start();
+kafka
+2025-05-27 22:00:19,688 - HeartDiseaseStreaming - INFO - [stop_streaming:296] - Stopping streaming application...
+2025-05-27 22:00:19,851 - HeartDiseaseStreaming - INFO - [stop_streaming:308] - Spark session stopped
+2025-05-27 22:00:19,851 - HeartDiseaseStreaming - INFO - [stop_streaming:312] - Application shutdown complete
+2025-05-27 22:05:29,678 - HeartDiseaseStreaming - INFO - [run:341] - ============================================================
+2025-05-27 22:05:29,678 - HeartDiseaseStreaming - INFO - [run:342] - Starting Heart Disease Streaming Application
+2025-05-27 22:05:29,678 - HeartDiseaseStreaming - INFO - [run:343] - ============================================================
+2025-05-27 22:05:29,678 - HeartDiseaseStreaming - INFO - [run:356] - Configuration details:
+2025-05-27 22:05:29,679 - HeartDiseaseStreaming - INFO - [run:357] - Bootstrap Servers: localhost:9092
+2025-05-27 22:05:29,679 - HeartDiseaseStreaming - INFO - [run:358] - Topic: heart-disease-topic
+2025-05-27 22:05:29,679 - HeartDiseaseStreaming - INFO - [run:359] - Master URL: local[*]
+2025-05-27 22:05:29,680 - HeartDiseaseStreaming - INFO - [run:360] - Output Mode: console
+2025-05-27 22:05:29,680 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 22:05:34,240 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 22:05:34,242 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748379933351
+2025-05-27 22:05:34,243 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 22:05:34,243 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 22:05:34,243 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at localhost:9091 , topic: patients
+2025-05-27 22:05:34,448 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:217] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 22:05:34,448 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9092, topic: heart-disease-topic
+2025-05-27 22:05:35,600 - HeartDiseaseStreaming - INFO - [process_streaming_data:222] - Setting up data processing pipeline...
+2025-05-27 22:05:36,073 - HeartDiseaseStreaming - INFO - [process_streaming_data:249] - Data processing pipeline configured
+2025-05-27 22:05:36,073 - HeartDiseaseStreaming - INFO - [start_streaming:259] - Starting streaming query with output mode: console
+2025-05-27 22:05:36,522 - HeartDiseaseStreaming - INFO - [start_streaming:284] - Streaming query started successfully
+2025-05-27 22:05:36,522 - HeartDiseaseStreaming - INFO - [run:385] - Application started successfully!
+2025-05-27 22:05:36,523 - HeartDiseaseStreaming - INFO - [run:386] - Press Ctrl+C to stop the application
+2025-05-27 22:05:36,523 - HeartDiseaseStreaming - INFO - [monitor_stream:297] - Starting stream monitoring...
+2025-05-27 22:10:00,083 - HeartDiseaseStreaming - INFO - [run:396] - Received keyboard interrupt
+2025-05-27 22:10:00,085 - HeartDiseaseStreaming - INFO - [stop_streaming:320] - Stopping streaming application...
+2025-05-27 22:10:00,816 - HeartDiseaseStreaming - WARNING - [stop_streaming:327] - Error stopping query: An error occurred while calling o129.stop
+2025-05-27 22:10:01,077 - HeartDiseaseStreaming - INFO - [stop_streaming:332] - Spark session stopped
+2025-05-27 22:10:01,077 - HeartDiseaseStreaming - INFO - [stop_streaming:336] - Application shutdown complete
+2025-05-27 22:21:01,257 - HeartDiseaseStreaming - INFO - [run:341] - ============================================================
+2025-05-27 22:21:01,257 - HeartDiseaseStreaming - INFO - [run:342] - Starting Heart Disease Streaming Application
+2025-05-27 22:21:01,257 - HeartDiseaseStreaming - INFO - [run:343] - ============================================================
+2025-05-27 22:21:01,258 - HeartDiseaseStreaming - INFO - [run:356] - Configuration details:
+2025-05-27 22:21:01,258 - HeartDiseaseStreaming - INFO - [run:357] - Bootstrap Servers: localhost:9092
+2025-05-27 22:21:01,258 - HeartDiseaseStreaming - INFO - [run:358] - Topic: heart-disease-data
+2025-05-27 22:21:01,259 - HeartDiseaseStreaming - INFO - [run:359] - Master URL: local[*]
+2025-05-27 22:21:01,259 - HeartDiseaseStreaming - INFO - [run:360] - Output Mode: console
+2025-05-27 22:21:01,259 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 22:21:05,896 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 22:21:05,898 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748380865080
+2025-05-27 22:21:05,899 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 22:21:05,899 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 22:21:05,899 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at localhost:9091 , topic: patients
+2025-05-27 22:21:06,091 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:217] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 22:21:06,092 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9092, topic: heart-disease-data
+2025-05-27 22:21:07,197 - HeartDiseaseStreaming - INFO - [process_streaming_data:222] - Setting up data processing pipeline...
+2025-05-27 22:21:07,687 - HeartDiseaseStreaming - INFO - [process_streaming_data:249] - Data processing pipeline configured
+2025-05-27 22:21:07,687 - HeartDiseaseStreaming - INFO - [start_streaming:259] - Starting streaming query with output mode: console
+2025-05-27 22:21:08,125 - HeartDiseaseStreaming - INFO - [start_streaming:284] - Streaming query started successfully
+2025-05-27 22:21:08,126 - HeartDiseaseStreaming - INFO - [run:385] - Application started successfully!
+2025-05-27 22:21:08,126 - HeartDiseaseStreaming - INFO - [run:386] - Press Ctrl+C to stop the application
+2025-05-27 22:21:08,127 - HeartDiseaseStreaming - INFO - [monitor_stream:297] - Starting stream monitoring...
+2025-05-27 22:21:46,164 - HeartDiseaseStreaming - INFO - [run:396] - Received keyboard interrupt
+2025-05-27 22:21:46,198 - HeartDiseaseStreaming - INFO - [stop_streaming:320] - Stopping streaming application...
+2025-05-27 22:21:51,353 - HeartDiseaseStreaming - WARNING - [stop_streaming:327] - Error stopping query: An error occurred while calling o129.stop
+2025-05-27 22:21:51,591 - HeartDiseaseStreaming - WARNING - [stop_streaming:334] - Error stopping Spark session: 'NoneType' object has no attribute 'sc'
+2025-05-27 22:21:51,592 - HeartDiseaseStreaming - INFO - [stop_streaming:336] - Application shutdown complete
+2025-05-27 22:21:56,295 - HeartDiseaseStreaming - INFO - [run:341] - ============================================================
+2025-05-27 22:21:56,295 - HeartDiseaseStreaming - INFO - [run:342] - Starting Heart Disease Streaming Application
+2025-05-27 22:21:56,296 - HeartDiseaseStreaming - INFO - [run:343] - ============================================================
+2025-05-27 22:21:56,296 - HeartDiseaseStreaming - INFO - [run:356] - Configuration details:
+2025-05-27 22:21:56,296 - HeartDiseaseStreaming - INFO - [run:357] - Bootstrap Servers: localhost:9091
+2025-05-27 22:21:56,297 - HeartDiseaseStreaming - INFO - [run:358] - Topic: heart-disease-data
+2025-05-27 22:21:56,297 - HeartDiseaseStreaming - INFO - [run:359] - Master URL: local[*]
+2025-05-27 22:21:56,297 - HeartDiseaseStreaming - INFO - [run:360] - Output Mode: console
+2025-05-27 22:21:56,297 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 22:22:00,689 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 22:22:00,690 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748380919915
+2025-05-27 22:22:00,691 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 22:22:00,692 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 22:22:00,692 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at localhost:9091 , topic: patients
+2025-05-27 22:22:00,893 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:217] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 22:22:00,894 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9091, topic: heart-disease-data
+2025-05-27 22:22:02,142 - HeartDiseaseStreaming - INFO - [process_streaming_data:222] - Setting up data processing pipeline...
+2025-05-27 22:22:02,568 - HeartDiseaseStreaming - INFO - [process_streaming_data:249] - Data processing pipeline configured
+2025-05-27 22:22:02,569 - HeartDiseaseStreaming - INFO - [start_streaming:259] - Starting streaming query with output mode: console
+2025-05-27 22:22:02,981 - HeartDiseaseStreaming - INFO - [start_streaming:284] - Streaming query started successfully
+2025-05-27 22:22:02,982 - HeartDiseaseStreaming - INFO - [run:385] - Application started successfully!
+2025-05-27 22:22:02,982 - HeartDiseaseStreaming - INFO - [run:386] - Press Ctrl+C to stop the application
+2025-05-27 22:22:02,983 - HeartDiseaseStreaming - INFO - [monitor_stream:297] - Starting stream monitoring...
+2025-05-27 22:22:13,010 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 0: Input rate: 0.00 rows/sec, Processing time: 2817ms
+2025-05-27 22:22:23,026 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 21ms
+2025-05-27 22:22:35,996 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 12ms
+2025-05-27 22:22:46,007 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 32ms
+2025-05-27 22:22:56,021 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 32ms
+2025-05-27 22:23:08,981 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 13ms
+2025-05-27 22:23:18,987 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:23:29,001 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 12ms
+2025-05-27 22:23:42,016 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 11ms
+2025-05-27 22:23:52,034 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:24:02,039 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 15ms
+2025-05-27 22:24:15,066 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 10ms
+2025-05-27 22:24:25,069 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 10ms
+2025-05-27 22:24:35,074 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:24:48,036 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 8ms
+2025-05-27 22:24:58,047 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 16ms
+2025-05-27 22:25:08,058 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 16ms
+2025-05-27 22:25:21,208 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 15ms
+2025-05-27 22:25:31,214 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 15ms
+2025-05-27 22:25:41,222 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 15ms
+2025-05-27 22:25:54,167 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 18ms
+2025-05-27 22:26:04,178 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 22ms
+2025-05-27 22:26:14,191 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 22ms
+2025-05-27 22:26:27,229 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:26:37,240 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 14ms
+2025-05-27 22:26:47,253 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 14ms
+2025-05-27 22:27:00,307 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 8ms
+2025-05-27 22:27:10,325 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:27:20,343 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:27:33,308 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:27:38,659 - HeartDiseaseStreaming - INFO - [run:396] - Received keyboard interrupt
+2025-05-27 22:27:38,660 - HeartDiseaseStreaming - INFO - [stop_streaming:320] - Stopping streaming application...
+2025-05-27 22:27:38,677 - HeartDiseaseStreaming - INFO - [stop_streaming:325] - Streaming query stopped
+2025-05-27 22:27:38,808 - HeartDiseaseStreaming - INFO - [stop_streaming:332] - Spark session stopped
+2025-05-27 22:27:38,808 - HeartDiseaseStreaming - INFO - [stop_streaming:336] - Application shutdown complete
+2025-05-27 22:33:17,383 - HeartDiseaseStreaming - INFO - [run:342] - ============================================================
+2025-05-27 22:33:17,384 - HeartDiseaseStreaming - INFO - [run:343] - Starting Heart Disease Streaming Application
+2025-05-27 22:33:17,384 - HeartDiseaseStreaming - INFO - [run:344] - ============================================================
+2025-05-27 22:33:17,385 - HeartDiseaseStreaming - INFO - [run:357] - Configuration details:
+2025-05-27 22:33:17,385 - HeartDiseaseStreaming - INFO - [run:358] - Bootstrap Servers: localhost:9091
+2025-05-27 22:33:17,386 - HeartDiseaseStreaming - INFO - [run:359] - Topic: heart-disease-data
+2025-05-27 22:33:17,386 - HeartDiseaseStreaming - INFO - [run:360] - Master URL: local[*]
+2025-05-27 22:33:17,386 - HeartDiseaseStreaming - INFO - [run:361] - Output Mode: console
+2025-05-27 22:33:17,387 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 22:33:21,539 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 22:33:21,540 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748381600763
+2025-05-27 22:33:21,541 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 22:33:21,541 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 22:33:21,542 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at localhost:9091 , topic: patients
+2025-05-27 22:33:21,736 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:217] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 22:33:21,736 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9091, topic: heart-disease-data
+2025-05-27 22:33:22,830 - HeartDiseaseStreaming - INFO - [process_streaming_data:222] - Setting up data processing pipeline...
+2025-05-27 22:33:23,270 - HeartDiseaseStreaming - ERROR - [process_streaming_data:254] - Error in data processing: 'DataFrame' object has no attribute 'display'
+2025-05-27 22:33:23,270 - HeartDiseaseStreaming - ERROR - [run:399] - Application failed: 'DataFrame' object has no attribute 'display'
+Traceback (most recent call last):
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 381, in run
+    processed_df = self.process_streaming_data(kafka_df)
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 249, in process_streaming_data
+    quality_checked_df.display()
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/sql/dataframe.py", line 3123, in __getattr__
+    raise AttributeError(
+AttributeError: 'DataFrame' object has no attribute 'display'
+2025-05-27 22:33:23,273 - HeartDiseaseStreaming - INFO - [stop_streaming:321] - Stopping streaming application...
+2025-05-27 22:33:23,391 - HeartDiseaseStreaming - INFO - [stop_streaming:333] - Spark session stopped
+2025-05-27 22:33:23,392 - HeartDiseaseStreaming - INFO - [stop_streaming:337] - Application shutdown complete
+2025-05-27 22:34:26,516 - HeartDiseaseStreaming - INFO - [run:342] - ============================================================
+2025-05-27 22:34:26,517 - HeartDiseaseStreaming - INFO - [run:343] - Starting Heart Disease Streaming Application
+2025-05-27 22:34:26,517 - HeartDiseaseStreaming - INFO - [run:344] - ============================================================
+2025-05-27 22:34:26,517 - HeartDiseaseStreaming - INFO - [run:357] - Configuration details:
+2025-05-27 22:34:26,517 - HeartDiseaseStreaming - INFO - [run:358] - Bootstrap Servers: localhost:9091
+2025-05-27 22:34:26,518 - HeartDiseaseStreaming - INFO - [run:359] - Topic: heart-disease-data
+2025-05-27 22:34:26,518 - HeartDiseaseStreaming - INFO - [run:360] - Master URL: local[*]
+2025-05-27 22:34:26,518 - HeartDiseaseStreaming - INFO - [run:361] - Output Mode: console
+2025-05-27 22:34:26,519 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 22:34:30,887 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 22:34:30,889 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748381670052
+2025-05-27 22:34:30,890 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 22:34:30,891 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 22:34:30,891 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at localhost:9091 , topic: patients
+2025-05-27 22:34:31,156 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:217] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 22:34:31,156 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9091, topic: heart-disease-data
+2025-05-27 22:34:32,290 - HeartDiseaseStreaming - INFO - [process_streaming_data:222] - Setting up data processing pipeline...
+2025-05-27 22:34:36,436 - HeartDiseaseStreaming - ERROR - [process_streaming_data:254] - Error in data processing: Queries with streaming sources must be executed with writeStream.start();
+kafka
+2025-05-27 22:34:36,439 - HeartDiseaseStreaming - ERROR - [run:399] - Application failed: Queries with streaming sources must be executed with writeStream.start();
+kafka
+Traceback (most recent call last):
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 381, in run
+    processed_df = self.process_streaming_data(kafka_df)
+  File "/mnt/c/Users/ismsamil/Desktop/health_care/health_care/health_care/heart_disease/heart_disease/Heartchecker/consumers/sparkJob1.py", line 241, in process_streaming_data
+    processed_df.show()
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/sql/dataframe.py", line 959, in show
+    print(self._jdf.showString(n, 20, vertical))
+  File "/home/usmail/.local/lib/python3.10/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/home/usmail/.local/lib/python3.10/site-packages/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: Queries with streaming sources must be executed with writeStream.start();
+kafka
+2025-05-27 22:34:36,446 - HeartDiseaseStreaming - INFO - [stop_streaming:321] - Stopping streaming application...
+2025-05-27 22:34:36,732 - HeartDiseaseStreaming - INFO - [stop_streaming:333] - Spark session stopped
+2025-05-27 22:34:36,733 - HeartDiseaseStreaming - INFO - [stop_streaming:337] - Application shutdown complete
+2025-05-27 22:35:04,958 - HeartDiseaseStreaming - INFO - [run:341] - ============================================================
+2025-05-27 22:35:04,959 - HeartDiseaseStreaming - INFO - [run:342] - Starting Heart Disease Streaming Application
+2025-05-27 22:35:04,959 - HeartDiseaseStreaming - INFO - [run:343] - ============================================================
+2025-05-27 22:35:04,960 - HeartDiseaseStreaming - INFO - [run:356] - Configuration details:
+2025-05-27 22:35:04,960 - HeartDiseaseStreaming - INFO - [run:357] - Bootstrap Servers: localhost:9091
+2025-05-27 22:35:04,960 - HeartDiseaseStreaming - INFO - [run:358] - Topic: heart-disease-data
+2025-05-27 22:35:04,960 - HeartDiseaseStreaming - INFO - [run:359] - Master URL: local[*]
+2025-05-27 22:35:04,961 - HeartDiseaseStreaming - INFO - [run:360] - Output Mode: console
+2025-05-27 22:35:04,961 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 22:35:12,765 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 22:35:12,767 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748381711842
+2025-05-27 22:35:12,768 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 22:35:12,768 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 22:35:12,769 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at localhost:9091 , topic: patients
+2025-05-27 22:35:12,967 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:217] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 22:35:12,968 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9091, topic: heart-disease-data
+2025-05-27 22:35:13,995 - HeartDiseaseStreaming - INFO - [process_streaming_data:222] - Setting up data processing pipeline...
+2025-05-27 22:35:14,448 - HeartDiseaseStreaming - INFO - [process_streaming_data:249] - Data processing pipeline configured
+2025-05-27 22:35:14,449 - HeartDiseaseStreaming - INFO - [start_streaming:259] - Starting streaming query with output mode: console
+2025-05-27 22:35:14,838 - HeartDiseaseStreaming - INFO - [start_streaming:284] - Streaming query started successfully
+2025-05-27 22:35:14,839 - HeartDiseaseStreaming - INFO - [run:385] - Application started successfully!
+2025-05-27 22:35:14,840 - HeartDiseaseStreaming - INFO - [run:386] - Press Ctrl+C to stop the application
+2025-05-27 22:35:14,840 - HeartDiseaseStreaming - INFO - [monitor_stream:297] - Starting stream monitoring...
+2025-05-27 22:35:24,863 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 0: Input rate: 0.00 rows/sec, Processing time: 2793ms
+2025-05-27 22:35:34,874 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:35:47,934 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 14ms
+2025-05-27 22:35:57,946 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 23ms
+2025-05-27 22:36:07,959 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 23ms
+2025-05-27 22:36:19,071 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 11ms
+2025-05-27 22:36:29,075 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:36:39,083 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 18ms
+2025-05-27 22:36:53,302 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 20ms
+2025-05-27 22:37:03,318 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 14ms
+2025-05-27 22:37:13,331 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 14ms
+2025-05-27 22:37:26,313 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 13ms
+2025-05-27 22:37:36,328 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 14ms
+2025-05-27 22:37:46,334 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 15ms
+2025-05-27 22:37:59,348 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 23ms
+2025-05-27 22:38:09,366 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 23ms
+2025-05-27 22:38:19,377 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 15ms
+2025-05-27 22:38:32,276 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:38:42,285 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:38:52,298 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:39:05,335 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:39:15,340 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:39:25,351 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:39:38,362 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:39:48,373 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 5ms
+2025-05-27 22:39:58,383 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:40:11,404 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:40:21,412 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:40:31,423 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:40:44,309 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 8ms
+2025-05-27 22:40:54,321 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 8ms
+2025-05-27 22:41:04,332 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:41:17,355 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 14ms
+2025-05-27 22:41:27,367 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:41:37,378 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 10ms
+2025-05-27 22:41:50,400 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:42:00,413 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 10ms
+2025-05-27 22:42:10,424 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 14ms
+2025-05-27 22:42:23,452 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 14ms
+2025-05-27 22:42:33,463 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 16ms
+2025-05-27 22:42:43,476 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:42:56,448 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 10ms
+2025-05-27 22:43:06,459 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 16ms
+2025-05-27 22:43:16,466 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 16ms
+2025-05-27 22:43:29,494 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 20ms
+2025-05-27 22:43:39,505 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 18ms
+2025-05-27 22:43:49,512 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 18ms
+2025-05-27 22:43:49,688 - HeartDiseaseStreaming - INFO - [run:396] - Received keyboard interrupt
+2025-05-27 22:43:49,689 - HeartDiseaseStreaming - INFO - [stop_streaming:320] - Stopping streaming application...
+2025-05-27 22:43:49,718 - HeartDiseaseStreaming - INFO - [stop_streaming:325] - Streaming query stopped
+2025-05-27 22:43:50,177 - HeartDiseaseStreaming - INFO - [stop_streaming:332] - Spark session stopped
+2025-05-27 22:43:50,178 - HeartDiseaseStreaming - INFO - [stop_streaming:336] - Application shutdown complete
+2025-05-27 22:43:56,037 - HeartDiseaseStreaming - INFO - [run:341] - ============================================================
+2025-05-27 22:43:56,037 - HeartDiseaseStreaming - INFO - [run:342] - Starting Heart Disease Streaming Application
+2025-05-27 22:43:56,038 - HeartDiseaseStreaming - INFO - [run:343] - ============================================================
+2025-05-27 22:43:56,038 - HeartDiseaseStreaming - INFO - [run:356] - Configuration details:
+2025-05-27 22:43:56,038 - HeartDiseaseStreaming - INFO - [run:357] - Bootstrap Servers: localhost:9091
+2025-05-27 22:43:56,039 - HeartDiseaseStreaming - INFO - [run:358] - Topic: heart-disease-data
+2025-05-27 22:43:56,039 - HeartDiseaseStreaming - INFO - [run:359] - Master URL: local[*]
+2025-05-27 22:43:56,039 - HeartDiseaseStreaming - INFO - [run:360] - Output Mode: console
+2025-05-27 22:43:56,040 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 22:44:01,324 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 22:44:01,325 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748382240467
+2025-05-27 22:44:01,326 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 22:44:01,326 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 22:44:01,326 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at localhost:9091 , topic: patient
+2025-05-27 22:44:01,536 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:217] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 22:44:01,537 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9091, topic: heart-disease-data
+2025-05-27 22:44:02,728 - HeartDiseaseStreaming - INFO - [process_streaming_data:222] - Setting up data processing pipeline...
+2025-05-27 22:44:03,130 - HeartDiseaseStreaming - INFO - [process_streaming_data:249] - Data processing pipeline configured
+2025-05-27 22:44:03,130 - HeartDiseaseStreaming - INFO - [start_streaming:259] - Starting streaming query with output mode: console
+2025-05-27 22:44:03,531 - HeartDiseaseStreaming - INFO - [start_streaming:284] - Streaming query started successfully
+2025-05-27 22:44:03,532 - HeartDiseaseStreaming - INFO - [run:385] - Application started successfully!
+2025-05-27 22:44:03,532 - HeartDiseaseStreaming - INFO - [run:386] - Press Ctrl+C to stop the application
+2025-05-27 22:44:03,533 - HeartDiseaseStreaming - INFO - [monitor_stream:297] - Starting stream monitoring...
+2025-05-27 22:44:13,559 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 0: Input rate: 0.00 rows/sec, Processing time: 2755ms
+2025-05-27 22:44:23,574 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 22ms
+2025-05-27 22:44:30,227 - HeartDiseaseStreaming - INFO - [run:396] - Received keyboard interrupt
+2025-05-27 22:44:30,228 - HeartDiseaseStreaming - INFO - [stop_streaming:320] - Stopping streaming application...
+2025-05-27 22:44:30,262 - HeartDiseaseStreaming - INFO - [stop_streaming:325] - Streaming query stopped
+2025-05-27 22:44:30,781 - HeartDiseaseStreaming - INFO - [stop_streaming:332] - Spark session stopped
+2025-05-27 22:44:30,781 - HeartDiseaseStreaming - INFO - [stop_streaming:336] - Application shutdown complete
+2025-05-27 22:45:43,146 - HeartDiseaseStreaming - INFO - [run:341] - ============================================================
+2025-05-27 22:45:43,146 - HeartDiseaseStreaming - INFO - [run:342] - Starting Heart Disease Streaming Application
+2025-05-27 22:45:43,146 - HeartDiseaseStreaming - INFO - [run:343] - ============================================================
+2025-05-27 22:45:43,147 - HeartDiseaseStreaming - INFO - [run:356] - Configuration details:
+2025-05-27 22:45:43,147 - HeartDiseaseStreaming - INFO - [run:357] - Bootstrap Servers: localhost:9091
+2025-05-27 22:45:43,147 - HeartDiseaseStreaming - INFO - [run:358] - Topic: heart-disease-data
+2025-05-27 22:45:43,148 - HeartDiseaseStreaming - INFO - [run:359] - Master URL: local[*]
+2025-05-27 22:45:43,148 - HeartDiseaseStreaming - INFO - [run:360] - Output Mode: console
+2025-05-27 22:45:43,148 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 22:45:47,310 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 22:45:47,312 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748382346380
+2025-05-27 22:45:47,313 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 22:45:47,313 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 22:45:47,314 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at localhost:9091 , topic: patient
+2025-05-27 22:45:47,496 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:217] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 22:45:47,497 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9091, topic: heart-disease-data
+2025-05-27 22:45:48,720 - HeartDiseaseStreaming - INFO - [process_streaming_data:222] - Setting up data processing pipeline...
+2025-05-27 22:45:49,243 - HeartDiseaseStreaming - INFO - [process_streaming_data:249] - Data processing pipeline configured
+2025-05-27 22:45:49,244 - HeartDiseaseStreaming - INFO - [start_streaming:259] - Starting streaming query with output mode: console
+2025-05-27 22:45:49,726 - HeartDiseaseStreaming - INFO - [start_streaming:284] - Streaming query started successfully
+2025-05-27 22:45:49,727 - HeartDiseaseStreaming - INFO - [run:385] - Application started successfully!
+2025-05-27 22:45:49,727 - HeartDiseaseStreaming - INFO - [run:386] - Press Ctrl+C to stop the application
+2025-05-27 22:45:49,728 - HeartDiseaseStreaming - INFO - [monitor_stream:297] - Starting stream monitoring...
+2025-05-27 22:45:59,746 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 0: Input rate: 0.00 rows/sec, Processing time: 3148ms
+2025-05-27 22:46:12,736 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:46:22,747 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:46:32,752 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 8ms
+2025-05-27 22:46:45,770 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:46:55,783 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 15ms
+2025-05-27 22:47:05,789 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 15ms
+2025-05-27 22:47:18,784 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:47:28,796 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 31ms
+2025-05-27 22:47:38,814 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:47:51,866 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 8ms
+2025-05-27 22:48:01,881 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 18ms
+2025-05-27 22:48:11,891 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 18ms
+2025-05-27 22:48:23,476 - HeartDiseaseStreaming - INFO - [run:396] - Received keyboard interrupt
+2025-05-27 22:48:23,476 - HeartDiseaseStreaming - INFO - [stop_streaming:320] - Stopping streaming application...
+2025-05-27 22:48:23,495 - HeartDiseaseStreaming - INFO - [stop_streaming:325] - Streaming query stopped
+2025-05-27 22:48:23,841 - HeartDiseaseStreaming - INFO - [stop_streaming:332] - Spark session stopped
+2025-05-27 22:48:23,841 - HeartDiseaseStreaming - INFO - [stop_streaming:336] - Application shutdown complete
+2025-05-27 22:48:25,478 - HeartDiseaseStreaming - INFO - [run:341] - ============================================================
+2025-05-27 22:48:25,479 - HeartDiseaseStreaming - INFO - [run:342] - Starting Heart Disease Streaming Application
+2025-05-27 22:48:25,479 - HeartDiseaseStreaming - INFO - [run:343] - ============================================================
+2025-05-27 22:48:25,479 - HeartDiseaseStreaming - INFO - [run:356] - Configuration details:
+2025-05-27 22:48:25,479 - HeartDiseaseStreaming - INFO - [run:357] - Bootstrap Servers: localhost:9091
+2025-05-27 22:48:25,480 - HeartDiseaseStreaming - INFO - [run:358] - Topic: patient
+2025-05-27 22:48:25,480 - HeartDiseaseStreaming - INFO - [run:359] - Master URL: local[*]
+2025-05-27 22:48:25,480 - HeartDiseaseStreaming - INFO - [run:360] - Output Mode: console
+2025-05-27 22:48:25,481 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 22:48:29,810 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 22:48:29,812 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748382508985
+2025-05-27 22:48:29,812 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 22:48:29,813 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 22:48:29,813 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at localhost:9091 , topic: patient
+2025-05-27 22:48:30,004 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:217] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 22:48:30,005 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9091, topic: patient
+2025-05-27 22:48:31,238 - HeartDiseaseStreaming - INFO - [process_streaming_data:222] - Setting up data processing pipeline...
+2025-05-27 22:48:31,651 - HeartDiseaseStreaming - INFO - [process_streaming_data:249] - Data processing pipeline configured
+2025-05-27 22:48:31,651 - HeartDiseaseStreaming - INFO - [start_streaming:259] - Starting streaming query with output mode: console
+2025-05-27 22:48:32,092 - HeartDiseaseStreaming - INFO - [start_streaming:284] - Streaming query started successfully
+2025-05-27 22:48:32,092 - HeartDiseaseStreaming - INFO - [run:385] - Application started successfully!
+2025-05-27 22:48:32,093 - HeartDiseaseStreaming - INFO - [run:386] - Press Ctrl+C to stop the application
+2025-05-27 22:48:32,093 - HeartDiseaseStreaming - INFO - [monitor_stream:297] - Starting stream monitoring...
+2025-05-27 22:48:42,129 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 0: Input rate: 0.00 rows/sec, Processing time: 2763ms
+2025-05-27 22:48:55,211 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 23ms
+2025-05-27 22:49:05,215 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 23ms
+2025-05-27 22:49:15,225 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 22ms
+2025-05-27 22:49:28,401 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 22ms
+2025-05-27 22:49:38,413 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 19ms
+2025-05-27 22:49:48,424 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 19ms
+2025-05-27 22:50:01,471 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:50:11,484 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:50:21,499 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 19ms
+2025-05-27 22:50:34,706 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 15ms
+2025-05-27 22:50:42,858 - HeartDiseaseStreaming - INFO - [run:396] - Received keyboard interrupt
+2025-05-27 22:50:42,859 - HeartDiseaseStreaming - INFO - [stop_streaming:320] - Stopping streaming application...
+2025-05-27 22:50:42,877 - HeartDiseaseStreaming - INFO - [stop_streaming:325] - Streaming query stopped
+2025-05-27 22:50:43,212 - HeartDiseaseStreaming - INFO - [stop_streaming:332] - Spark session stopped
+2025-05-27 22:50:43,213 - HeartDiseaseStreaming - INFO - [stop_streaming:336] - Application shutdown complete
+2025-05-27 22:51:41,035 - HeartDiseaseStreaming - INFO - [run:341] - ============================================================
+2025-05-27 22:51:41,036 - HeartDiseaseStreaming - INFO - [run:342] - Starting Heart Disease Streaming Application
+2025-05-27 22:51:41,036 - HeartDiseaseStreaming - INFO - [run:343] - ============================================================
+2025-05-27 22:51:41,036 - HeartDiseaseStreaming - INFO - [run:353] - Configuration details:
+2025-05-27 22:51:41,037 - HeartDiseaseStreaming - INFO - [run:354] - Bootstrap Servers: localhost:9091
+2025-05-27 22:51:41,037 - HeartDiseaseStreaming - INFO - [run:355] - Topic: patient
+2025-05-27 22:51:41,038 - HeartDiseaseStreaming - INFO - [run:356] - Master URL: local[*]
+2025-05-27 22:51:41,038 - HeartDiseaseStreaming - INFO - [run:357] - Output Mode: console
+2025-05-27 22:51:41,038 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 22:51:45,098 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Spark session initialized successfully
+2025-05-27 22:51:45,099 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Application ID: local-1748382704332
+2025-05-27 22:51:45,100 - HeartDiseaseStreaming - INFO - [initialize_spark_session:135] - Spark version: 3.5.0
+2025-05-27 22:51:45,101 - HeartDiseaseStreaming - INFO - [initialize_spark_session:136] - Master URL: local[*]
+2025-05-27 22:51:45,101 - HeartDiseaseStreaming - INFO - [initialize_spark_session:137] - Connecting to Kafka broker at localhost:9091 , topic: patient
+2025-05-27 22:51:45,290 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:217] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 22:51:45,290 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:151] - Creating Kafka consumer for localhost:9091, topic: patient
+2025-05-27 22:51:46,441 - HeartDiseaseStreaming - INFO - [process_streaming_data:222] - Setting up data processing pipeline...
+2025-05-27 22:51:46,887 - HeartDiseaseStreaming - INFO - [process_streaming_data:249] - Data processing pipeline configured
+2025-05-27 22:51:46,888 - HeartDiseaseStreaming - INFO - [start_streaming:259] - Starting streaming query with output mode: console
+2025-05-27 22:51:47,318 - HeartDiseaseStreaming - INFO - [start_streaming:284] - Streaming query started successfully
+2025-05-27 22:51:47,319 - HeartDiseaseStreaming - INFO - [run:382] - Application started successfully!
+2025-05-27 22:51:47,319 - HeartDiseaseStreaming - INFO - [run:383] - Press Ctrl+C to stop the application
+2025-05-27 22:51:47,320 - HeartDiseaseStreaming - INFO - [monitor_stream:297] - Starting stream monitoring...
+2025-05-27 22:51:57,349 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 0: Input rate: 0.00 rows/sec, Processing time: 2602ms
+2025-05-27 22:52:07,360 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 12ms
+2025-05-27 22:52:20,440 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:52:30,447 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 19ms
+2025-05-27 22:52:40,463 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 18ms
+2025-05-27 22:52:53,440 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 18ms
+2025-05-27 22:53:03,451 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 8ms
+2025-05-27 22:53:13,472 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 12ms
+2025-05-27 22:53:26,591 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:53:36,597 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 5ms
+2025-05-27 22:53:46,602 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:53:59,686 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:54:09,698 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:54:19,709 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:54:32,800 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:54:42,810 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:54:52,822 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:55:05,900 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:55:15,911 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:55:25,917 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:55:37,109 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:55:50,437 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:56:00,447 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 5ms
+2025-05-27 22:56:11,985 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:56:21,997 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 22ms
+2025-05-27 22:56:32,007 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 14ms
+2025-05-27 22:56:45,223 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:56:55,235 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:57:05,248 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 8ms
+2025-05-27 22:57:18,316 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 8ms
+2025-05-27 22:57:28,321 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 16ms
+2025-05-27 22:57:38,331 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:57:51,381 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:58:01,391 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 8ms
+2025-05-27 22:58:11,399 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:58:24,510 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 7ms
+2025-05-27 22:58:34,522 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:58:44,530 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:58:57,614 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 13ms
+2025-05-27 22:59:07,625 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 19ms
+2025-05-27 22:59:17,637 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 19ms
+2025-05-27 22:59:30,710 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:59:40,723 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 6ms
+2025-05-27 22:59:50,736 - HeartDiseaseStreaming - INFO - [monitor_stream:308] - Batch 1: Input rate: 0.00 rows/sec, Processing time: 9ms
+2025-05-27 22:59:56,766 - HeartDiseaseStreaming - INFO - [run:393] - Received keyboard interrupt
+2025-05-27 22:59:56,768 - HeartDiseaseStreaming - INFO - [stop_streaming:320] - Stopping streaming application...
+2025-05-27 22:59:56,799 - HeartDiseaseStreaming - INFO - [stop_streaming:325] - Streaming query stopped
+2025-05-27 22:59:56,963 - HeartDiseaseStreaming - INFO - [stop_streaming:332] - Spark session stopped
+2025-05-27 22:59:56,964 - HeartDiseaseStreaming - INFO - [stop_streaming:336] - Application shutdown complete
+2025-05-27 23:00:54,273 - HeartDiseaseStreaming - INFO - [run:338] - ============================================================
+2025-05-27 23:00:54,274 - HeartDiseaseStreaming - INFO - [run:339] - Starting Heart Disease Streaming Application
+2025-05-27 23:00:54,274 - HeartDiseaseStreaming - INFO - [run:340] - ============================================================
+2025-05-27 23:00:54,275 - HeartDiseaseStreaming - INFO - [run:350] - Configuration details:
+2025-05-27 23:00:54,275 - HeartDiseaseStreaming - INFO - [run:351] - Bootstrap Servers: localhost:9091
+2025-05-27 23:00:54,276 - HeartDiseaseStreaming - INFO - [run:352] - Topic: patients
+2025-05-27 23:00:54,276 - HeartDiseaseStreaming - INFO - [run:353] - Master URL: local[*]
+2025-05-27 23:00:54,276 - HeartDiseaseStreaming - INFO - [run:354] - Output Mode: console
+2025-05-27 23:00:54,277 - HeartDiseaseStreaming - INFO - [initialize_spark_session:85] - Initializing Spark session...
+2025-05-27 23:01:01,818 - HeartDiseaseStreaming - INFO - [initialize_spark_session:130] - Spark session initialized successfully
+2025-05-27 23:01:01,820 - HeartDiseaseStreaming - INFO - [initialize_spark_session:131] - Application ID: local-1748383257800
+2025-05-27 23:01:01,822 - HeartDiseaseStreaming - INFO - [initialize_spark_session:132] - Spark version: 3.5.0
+2025-05-27 23:01:01,822 - HeartDiseaseStreaming - INFO - [initialize_spark_session:133] - Master URL: local[*]
+2025-05-27 23:01:01,823 - HeartDiseaseStreaming - INFO - [initialize_spark_session:134] - Connecting to Kafka broker at localhost:9091 , topic: patients
+2025-05-27 23:01:02,022 - HeartDiseaseStreaming - WARNING - [_test_kafka_connection:214] - Kafka connectivity test failed: invalid syntax (simple.py, line 54)
+2025-05-27 23:01:02,023 - HeartDiseaseStreaming - INFO - [create_kafka_consumer:148] - Creating Kafka consumer for localhost:9091, topic: patients
+2025-05-27 23:01:03,118 - HeartDiseaseStreaming - INFO - [process_streaming_data:219] - Setting up data processing pipeline...
+2025-05-27 23:01:03,561 - HeartDiseaseStreaming - INFO - [process_streaming_data:246] - Data processing pipeline configured
+2025-05-27 23:01:03,562 - HeartDiseaseStreaming - INFO - [start_streaming:256] - Starting streaming query with output mode: console
+2025-05-27 23:01:03,961 - HeartDiseaseStreaming - INFO - [start_streaming:281] - Streaming query started successfully
+2025-05-27 23:01:03,961 - HeartDiseaseStreaming - INFO - [run:379] - Application started successfully!
+2025-05-27 23:01:03,962 - HeartDiseaseStreaming - INFO - [run:380] - Press Ctrl+C to stop the application
+2025-05-27 23:01:03,962 - HeartDiseaseStreaming - INFO - [monitor_stream:294] - Starting stream monitoring...
+2025-05-27 23:01:05,609 - HeartDiseaseStreaming - INFO - [run:390] - Received keyboard interrupt
+2025-05-27 23:01:05,610 - HeartDiseaseStreaming - INFO - [stop_streaming:317] - Stopping streaming application...
+2025-05-27 23:01:05,626 - HeartDiseaseStreaming - INFO - [stop_streaming:322] - Streaming query stopped
+2025-05-27 23:01:06,175 - HeartDiseaseStreaming - INFO - [stop_streaming:329] - Spark session stopped
+2025-05-27 23:01:06,176 - HeartDiseaseStreaming - INFO - [stop_streaming:333] - Application shutdown complete

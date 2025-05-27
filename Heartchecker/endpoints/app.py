@@ -3,7 +3,7 @@ import json
 
 app = FastAPI()
 
-with open("./data/coronary_artery_disease.json") as f:
+with open("./data/patiences.json") as f:
     records = json.load(f)
 
 current_index = {"idx": 0}
