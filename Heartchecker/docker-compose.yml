@@ -11,13 +11,17 @@ services:
       - heartchecker_net
     environment:
       - SPARK_MODE=master
+      - SPARK_CLASSPATH=/opt/spark/drivers/*  # Add this line
       # - SPARK_RPC_AUTHENTICATION_ENABLED=no
       # - SPARK_RPC_ENCRYPTION_ENABLED=no
       # - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       # - SPARK_SSL_ENABLED=no
     volumes:
-       - ./pyspark.py:/opt/host-scripts/pyspark.py
+       - /consumers/sparkJob1.py:/opt/host-scripts/sparkJob1.py
+       - /consumers/jars/spark-streaming-kafka-0-10_2.12-3.5.0.jar:/opt/bitnami/spark/jars/spark-streaming-kafka-0-10_2.12-3.5.0.jar/
+       - /consumers/jars/mongo-spark-connector_2.12-10.4.0.jar:/opt/bitnami/spark/jars/mongo-spark-connector_2.12-10.4.0.jar
 
+      #  - /drivers:/opt/spark/drivers  # Add this line
 
   spark-worker-1:
     image: bitnami/spark:3.5
@@ -29,12 +33,15 @@ services:
       - SPARK_MASTER_URL=spark://spark-master:7077
       - SPARK_WORKER_MEMORY=2g
       - SPARK_WORKER_CORES=2
+      - SPARK_CLASSPATH=/opt/spark/drivers/*  # Add this line
       # - SPARK_RPC_AUTHENTICATION_ENABLED=no
       # - SPARK_RPC_ENCRYPTION_ENABLED=no
       # - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       # - SPARK_SSL_ENABLED=no
     volumes:
-       - ./pyspark.py:/opt/host-scripts/pyspark.py
+       - /consumers/sparkJob1.py:/opt/host-scripts/sparkJob1.py
+       - /consumers/jars/spark-streaming-kafka-0-10_2.12-3.5.0.jar:/opt/bitnami/spark/jars/spark-streaming-kafka-0-10_2.12-3.5.0.jar/
+       - /consumers/jars/mongo-spark-connector_2.12-10.4.0.jar:/opt/bitnami/spark/jars/mongo-spark-connector_2.12-10.4.0.jar
 
     depends_on:
       - spark-master
@@ -49,12 +56,14 @@ services:
       - SPARK_MASTER_URL=spark://spark-master:7077
       - SPARK_WORKER_MEMORY=2g
       - SPARK_WORKER_CORES=2
+      - SPARK_CLASSPATH=/opt/spark/drivers/*  # Add this line
       # - SPARK_RPC_AUTHENTICATION_ENABLED=no
       # - SPARK_RPC_ENCRYPTION_ENABLED=no
       # - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       # - SPARK_SSL_ENABLED=no
     volumes:
-       - ./pyspark.py:/opt/host-scripts/pyspark.py
+       - /consumers/sparkJob1.py:/opt/host-scripts/sparkJob1.py
+       - /consumers/jars/mongo-spark-connector_2.12-10.4.0.jar:/opt/bitnami/spark/jars/mongo-spark-connector_2.12-10.4.0.jar
 
     depends_on:
       - spark-master
@@ -90,7 +99,7 @@ services:
       timeout: 10s
       retries: 5
 
-  # Kafka (required for Atlas)
+  # Kafka (required for Atlas)v
   kafka:
     image: confluentinc/cp-kafka:latest
     container_name: kafka
@@ -110,7 +119,7 @@ services:
       KAFKA_CREATE_TOPICS: "patient:1"
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
 #    volumes:
-#      - ./kafka/data:/var/lib/kafka/data
+#      - /kafka/data:/var/lib/kafka/data
     networks:
       - heartchecker_net
     restart: unless-stopped
@@ -132,37 +141,34 @@ services:
       - MLFLOW_TRACKING_URI=http://localhost:5000
       - MLFLOW_ARTIFACT_ROOT=/mlflow/artifacts
     volumes:
-      - ./mlflow:/mlflow
+      - /mlflow:/mlflow
     # Use python -m to run mlflow
     command: python -m mlflow server --host 0.0.0.0 --port 5000
 
-  db:
-    container_name: postgres
-    image: postgres
-    environment:
-      POSTGRES_USER: usmail
-      POSTGRES_PASSWORD: dbspassword
-      PGDATA: /data/postgres
-      POSTGRES_DB: db
-    volumes:
-      - db:/data/postgres
+  
+  mongo:
+    image: mongo
+    restart: always
     ports:
-      - "5332:5432"
+      - 27017:27017
+    environment:
+      MONGO_INITDB_DATABASE: db
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: usmail1244
+      MONGODB_DB: db
+      MONGODB_USER: admin
+      MONGODB_PASSWORD: password
     networks:
       - heartchecker_net
-    restart: unless-stopped
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -d postgres" ]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-
-
-
+    volumes:
+      - mongo-data:/data/db            
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js 
 networks:
   heartchecker_net:
     driver: bridge
 
 volumes:
  db:
+   driver: local
+ mongo-data:
    driver: local
