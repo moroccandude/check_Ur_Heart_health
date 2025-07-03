@@ -1,0 +1,43 @@
+[2025-05-22T07:10:27.523+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.create_hdfs_directories scheduled__2025-05-21T00:00:00+00:00 [queued]>
+[2025-05-22T07:10:27.539+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.create_hdfs_directories scheduled__2025-05-21T00:00:00+00:00 [queued]>
+[2025-05-22T07:10:27.540+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 3
+[2025-05-22T07:10:27.562+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): create_hdfs_directories> on 2025-05-21 00:00:00+00:00
+[2025-05-22T07:10:27.571+0000] {standard_task_runner.py:57} INFO - Started process 219 to run task
+[2025-05-22T07:10:27.576+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'hdfs_csv_processing_pipeline', 'create_hdfs_directories', 'scheduled__2025-05-21T00:00:00+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmpgqu6g0ro']
+[2025-05-22T07:10:27.580+0000] {standard_task_runner.py:85} INFO - Job 24: Subtask create_hdfs_directories
+[2025-05-22T07:10:27.648+0000] {task_command.py:415} INFO - Running <TaskInstance: hdfs_csv_processing_pipeline.create_hdfs_directories scheduled__2025-05-21T00:00:00+00:00 [running]> on host 58ea556cbb6b
+[2025-05-22T07:10:27.753+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='hdfs_csv_processing_pipeline' AIRFLOW_CTX_TASK_ID='create_hdfs_directories' AIRFLOW_CTX_EXECUTION_DATE='2025-05-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-21T00:00:00+00:00'
+[2025-05-22T07:10:27.755+0000] {app.py:94} INFO - Creating HDFS directories at /user/heart_disease
+[2025-05-22T07:10:31.185+0000] {app.py:104} INFO - Base directory created: /user/heart_disease
+[2025-05-22T07:10:33.097+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-05-22T07:10:33.130+0000] {process_utils.py:131} INFO - Sending 15 to group 219. PIDs of all processes in the group: [231, 219]
+[2025-05-22T07:10:33.165+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 219
+[2025-05-22T07:10:33.184+0000] {taskinstance.py:1630} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-05-22T07:10:33.235+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 221, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/app.py", line 111, in create_hdfs_directories
+    result = subprocess.run(
+  File "/usr/local/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/local/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/local/lib/python3.8/subprocess.py", line 1884, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/local/lib/python3.8/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1632, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-05-22T07:10:33.286+0000] {taskinstance.py:1398} INFO - Marking task as UP_FOR_RETRY. dag_id=hdfs_csv_processing_pipeline, task_id=create_hdfs_directories, execution_date=20250521T000000, start_date=20250522T071027, end_date=20250522T071033
+[2025-05-22T07:10:33.356+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 24 for task create_hdfs_directories (Task received SIGTERM signal; 219)
+[2025-05-22T07:10:33.464+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=219, status='terminated', exitcode=1, started='07:10:26') (219) terminated with exit code 1
+[2025-05-22T07:10:33.466+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=231, status='terminated', started='07:10:30') (231) terminated with exit code None
+[2025-05-22T07:10:33.470+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2025-05-22T07:10:33.564+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-22T07:10:37.631+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses

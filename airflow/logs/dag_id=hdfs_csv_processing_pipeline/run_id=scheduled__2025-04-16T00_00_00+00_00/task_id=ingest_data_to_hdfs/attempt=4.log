@@ -1,0 +1,135 @@
+[2025-04-17T20:14:26.821+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.ingest_data_to_hdfs scheduled__2025-04-16T00:00:00+00:00 [queued]>
+[2025-04-17T20:14:26.834+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.ingest_data_to_hdfs scheduled__2025-04-16T00:00:00+00:00 [queued]>
+[2025-04-17T20:14:26.834+0000] {taskinstance.py:1359} INFO - Starting attempt 4 of 6
+[2025-04-17T20:14:26.850+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): ingest_data_to_hdfs> on 2025-04-16 00:00:00+00:00
+[2025-04-17T20:14:26.859+0000] {standard_task_runner.py:57} INFO - Started process 495 to run task
+[2025-04-17T20:14:26.864+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'hdfs_csv_processing_pipeline', 'ingest_data_to_hdfs', 'scheduled__2025-04-16T00:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmpu59opw7w']
+[2025-04-17T20:14:26.866+0000] {standard_task_runner.py:85} INFO - Job 17: Subtask ingest_data_to_hdfs
+[2025-04-17T20:14:26.915+0000] {task_command.py:415} INFO - Running <TaskInstance: hdfs_csv_processing_pipeline.ingest_data_to_hdfs scheduled__2025-04-16T00:00:00+00:00 [running]> on host 6d5fd8b56316
+[2025-04-17T20:14:26.999+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='hdfs_csv_processing_pipeline' AIRFLOW_CTX_TASK_ID='ingest_data_to_hdfs' AIRFLOW_CTX_EXECUTION_DATE='2025-04-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-16T00:00:00+00:00'
+[2025-04-17T20:14:27.000+0000] {app.py:127} INFO - Ingesting data from ./data to /user/heart_disease/raw
+[2025-04-17T20:14:27.000+0000] {app.py:143} WARNING - Local file not found: ./data/coronary_artery_disease.csv
+[2025-04-17T20:14:27.701+0000] {app.py:165} ERROR - Failed to transfer heart_statlog_cleveland_hungary_final.csv: ??safemode: Unknown command
+Usage: hdfs dfsadmin
+Note: Administrative commands can only be run as the HDFS superuser.
+	[-report [-live] [-dead] [-decommissioning] [-enteringmaintenance] [-inmaintenance]]
+	[-safemode <enter | leave | get | wait>]
+	[-saveNamespace [-beforeShutdown]]
+	[-rollEdits]
+	[-restoreFailedStorage true|false|check]
+	[-refreshNodes]
+	[-setQuota <quota> <dirname>...<dirname>]
+	[-clrQuota <dirname>...<dirname>]
+	[-setSpaceQuota <quota> [-storageType <storagetype>] <dirname>...<dirname>]
+	[-clrSpaceQuota [-storageType <storagetype>] <dirname>...<dirname>]
+	[-finalizeUpgrade]
+	[-rollingUpgrade [<query|prepare|finalize>]]
+	[-upgrade <query | finalize>]
+	[-refreshServiceAcl]
+	[-refreshUserToGroupsMappings]
+	[-refreshSuperUserGroupsConfiguration]
+	[-refreshCallQueue]
+	[-refresh <host:ipc_port> <key> [arg1..argn]
+	[-reconfig <namenode|datanode> <host:ipc_port> <start|status|properties>]
+	[-printTopology]
+	[-refreshNamenodes datanode_host:ipc_port]
+	[-getVolumeReport datanode_host:ipc_port]
+	[-deleteBlockPool datanode_host:ipc_port blockpoolId [force]]
+	[-setBalancerBandwidth <bandwidth in bytes per second>]
+	[-getBalancerBandwidth <datanode_host:ipc_port>]
+	[-fetchImage <local directory>]
+	[-allowSnapshot <snapshotDir>]
+	[-disallowSnapshot <snapshotDir>]
+	[-shutdownDatanode <datanode_host:ipc_port> [upgrade]]
+	[-evictWriters <datanode_host:ipc_port>]
+	[-getDatanodeInfo <datanode_host:ipc_port>]
+	[-metasave filename]
+	[-triggerBlockReport [-incremental] <datanode_host:ipc_port>]
+	[-listOpenFiles [-blockingDecommission] [-path <path>]]
+	[-help [cmd]]
+
+Generic options supported are:
+-conf <configuration file>        specify an application configuration file
+-D <property=value>               define a value for a given property
+-fs <file:///|hdfs://namenode:port> specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.
+-jt <local|resourcemanager:port>  specify a ResourceManager
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines
+
+The general command line syntax is:
+command [genericOptions] [commandOptions]
+
+
+[2025-04-17T20:14:28.352+0000] {app.py:165} ERROR - Failed to transfer heart_failure_clinical_records_dataset.csv: ??safemode: Unknown command
+Usage: hdfs dfsadmin
+Note: Administrative commands can only be run as the HDFS superuser.
+	[-report [-live] [-dead] [-decommissioning] [-enteringmaintenance] [-inmaintenance]]
+	[-safemode <enter | leave | get | wait>]
+	[-saveNamespace [-beforeShutdown]]
+	[-rollEdits]
+	[-restoreFailedStorage true|false|check]
+	[-refreshNodes]
+	[-setQuota <quota> <dirname>...<dirname>]
+	[-clrQuota <dirname>...<dirname>]
+	[-setSpaceQuota <quota> [-storageType <storagetype>] <dirname>...<dirname>]
+	[-clrSpaceQuota [-storageType <storagetype>] <dirname>...<dirname>]
+	[-finalizeUpgrade]
+	[-rollingUpgrade [<query|prepare|finalize>]]
+	[-upgrade <query | finalize>]
+	[-refreshServiceAcl]
+	[-refreshUserToGroupsMappings]
+	[-refreshSuperUserGroupsConfiguration]
+	[-refreshCallQueue]
+	[-refresh <host:ipc_port> <key> [arg1..argn]
+	[-reconfig <namenode|datanode> <host:ipc_port> <start|status|properties>]
+	[-printTopology]
+	[-refreshNamenodes datanode_host:ipc_port]
+	[-getVolumeReport datanode_host:ipc_port]
+	[-deleteBlockPool datanode_host:ipc_port blockpoolId [force]]
+	[-setBalancerBandwidth <bandwidth in bytes per second>]
+	[-getBalancerBandwidth <datanode_host:ipc_port>]
+	[-fetchImage <local directory>]
+	[-allowSnapshot <snapshotDir>]
+	[-disallowSnapshot <snapshotDir>]
+	[-shutdownDatanode <datanode_host:ipc_port> [upgrade]]
+	[-evictWriters <datanode_host:ipc_port>]
+	[-getDatanodeInfo <datanode_host:ipc_port>]
+	[-metasave filename]
+	[-triggerBlockReport [-incremental] <datanode_host:ipc_port>]
+	[-listOpenFiles [-blockingDecommission] [-path <path>]]
+	[-help [cmd]]
+
+Generic options supported are:
+-conf <configuration file>        specify an application configuration file
+-D <property=value>               define a value for a given property
+-fs <file:///|hdfs://namenode:port> specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.
+-jt <local|resourcemanager:port>  specify a ResourceManager
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines
+
+The general command line syntax is:
+command [genericOptions] [commandOptions]
+
+
+[2025-04-17T20:14:28.353+0000] {app.py:175} ERROR - Error during data ingestion: No files were transferred to HDFS
+Traceback (most recent call last):
+  File "/opt/airflow/dags/app.py", line 170, in ingest_data_to_hdfs
+    raise ValueError("No files were transferred to HDFS")
+ValueError: No files were transferred to HDFS
+[2025-04-17T20:14:28.353+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 221, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/app.py", line 170, in ingest_data_to_hdfs
+    raise ValueError("No files were transferred to HDFS")
+ValueError: No files were transferred to HDFS
+[2025-04-17T20:14:28.365+0000] {taskinstance.py:1398} INFO - Marking task as UP_FOR_RETRY. dag_id=hdfs_csv_processing_pipeline, task_id=ingest_data_to_hdfs, execution_date=20250416T000000, start_date=20250417T201426, end_date=20250417T201428
+[2025-04-17T20:14:28.384+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 17 for task ingest_data_to_hdfs (No files were transferred to HDFS; 495)
+[2025-04-17T20:14:28.400+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-04-17T20:14:28.426+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

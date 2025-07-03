@@ -36,7 +36,7 @@ def ingest_row(path:str)->None:
 def main():
     session=inital_spark()
     ingest_row("/home/usmail/Desktop/health_care/heart_disease/heart_disease/data/")
-    df1=reader("/home/usmail/Desktop/health_care/heart_disease/heart_disease/data/coronary artery disease.csv",session)    
+    df1=reader("/data/coronary_artery_disease.csv", session)
     df2=reader("/home/usmail/Desktop/health_care/heart_disease/heart_disease/data/heart_statlog_cleveland_hungary_final.csv",session)
     df3=reader("/home/usmail/Desktop/health_care/heart_disease/heart_disease/data/heart_failure_clinical_records_dataset.csv",session) 
     df1_df2 = df1.join(df2, on=["age","sex"], how='inner')  # You can use 'outer', 'left', or 'right' depending on your need

@@ -1,0 +1,24 @@
+[2025-05-22T09:27:54.291+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.ingest_data_to_hdfs scheduled__2025-05-19T00:00:00+00:00 [queued]>
+[2025-05-22T09:27:54.319+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.ingest_data_to_hdfs scheduled__2025-05-19T00:00:00+00:00 [queued]>
+[2025-05-22T09:27:54.320+0000] {taskinstance.py:1359} INFO - Starting attempt 3 of 3
+[2025-05-22T09:27:54.352+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): ingest_data_to_hdfs> on 2025-05-19 00:00:00+00:00
+[2025-05-22T09:27:54.367+0000] {standard_task_runner.py:57} INFO - Started process 493 to run task
+[2025-05-22T09:27:54.377+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'hdfs_csv_processing_pipeline', 'ingest_data_to_hdfs', 'scheduled__2025-05-19T00:00:00+00:00', '--job-id', '100', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmppa794wbq']
+[2025-05-22T09:27:54.393+0000] {standard_task_runner.py:85} INFO - Job 100: Subtask ingest_data_to_hdfs
+[2025-05-22T09:27:54.513+0000] {task_command.py:415} INFO - Running <TaskInstance: hdfs_csv_processing_pipeline.ingest_data_to_hdfs scheduled__2025-05-19T00:00:00+00:00 [running]> on host 95b5cee51c94
+[2025-05-22T09:27:54.763+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='hdfs_csv_processing_pipeline' AIRFLOW_CTX_TASK_ID='ingest_data_to_hdfs' AIRFLOW_CTX_EXECUTION_DATE='2025-05-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-19T00:00:00+00:00'
+[2025-05-22T09:27:54.769+0000] {app.py:127} INFO - Ingesting data from ./data to /user/heart_disease/raw
+[2025-05-22T09:27:59.561+0000] {app.py:144} INFO - Successfully left HDFS safe mode
+[2025-05-22T09:27:59.562+0000] {app.py:156} INFO - current directory is : /opt/***
+[2025-05-22T09:27:59.566+0000] {app.py:165} INFO - path of target file is /user/heart_disease/raw/coronary_artery_disease.csv
+[2025-05-22T09:28:06.592+0000] {app.py:179} INFO - Successfully transferred coronary_artery_disease.csv to HDFS
+[2025-05-22T09:28:06.593+0000] {app.py:156} INFO - current directory is : /opt/***
+[2025-05-22T09:28:06.596+0000] {app.py:165} INFO - path of target file is /user/heart_disease/raw/heart_statlog_cleveland_hungary_final.csv
+[2025-05-22T09:28:11.097+0000] {app.py:179} INFO - Successfully transferred heart_statlog_cleveland_hungary_final.csv to HDFS
+[2025-05-22T09:28:11.099+0000] {app.py:156} INFO - current directory is : /opt/***
+[2025-05-22T09:28:11.101+0000] {app.py:165} INFO - path of target file is /user/heart_disease/raw/heart_failure_clinical_records_dataset.csv
+[2025-05-22T09:28:16.099+0000] {app.py:179} INFO - Successfully transferred heart_failure_clinical_records_dataset.csv to HDFS
+[2025-05-22T09:28:16.101+0000] {python.py:194} INFO - Done. Returned value was: ['/user/heart_disease/raw/coronary_artery_disease.csv', '/user/heart_disease/raw/heart_statlog_cleveland_hungary_final.csv', '/user/heart_disease/raw/heart_failure_clinical_records_dataset.csv']
+[2025-05-22T09:28:16.193+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=hdfs_csv_processing_pipeline, task_id=ingest_data_to_hdfs, execution_date=20250519T000000, start_date=20250522T092754, end_date=20250522T092816
+[2025-05-22T09:28:16.247+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-22T09:28:16.314+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

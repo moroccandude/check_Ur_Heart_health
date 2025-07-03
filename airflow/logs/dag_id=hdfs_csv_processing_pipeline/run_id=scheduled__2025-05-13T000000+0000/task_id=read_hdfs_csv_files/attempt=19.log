@@ -1,0 +1,34 @@
+[2025-05-14T11:20:18.386+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=hdfs_csv_processing_pipeline/run_id=scheduled__2025-05-13T00:00:00+00:00/task_id=read_hdfs_csv_files permission to 509
+[2025-05-14T11:20:18.429+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=hdfs_csv_processing_pipeline/run_id=scheduled__2025-05-13T00:00:00+00:00/task_id=read_hdfs_csv_files permission to 509
+[2025-05-14T11:20:18.470+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.read_hdfs_csv_files scheduled__2025-05-13T00:00:00+00:00 [queued]>
+[2025-05-14T11:20:18.481+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.read_hdfs_csv_files scheduled__2025-05-13T00:00:00+00:00 [queued]>
+[2025-05-14T11:20:18.482+0000] {taskinstance.py:1359} INFO - Starting attempt 19 of 21
+[2025-05-14T11:20:18.500+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): read_hdfs_csv_files> on 2025-05-13 00:00:00+00:00
+[2025-05-14T11:20:18.508+0000] {standard_task_runner.py:57} INFO - Started process 3060 to run task
+[2025-05-14T11:20:18.513+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'hdfs_csv_processing_pipeline', 'read_hdfs_csv_files', 'scheduled__2025-05-13T00:00:00+00:00', '--job-id', '36', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmpp5w9n_oy']
+[2025-05-14T11:20:18.519+0000] {standard_task_runner.py:85} INFO - Job 36: Subtask read_hdfs_csv_files
+[2025-05-14T11:20:18.590+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=hdfs_csv_processing_pipeline/run_id=scheduled__2025-05-13T00:00:00+00:00/task_id=read_hdfs_csv_files permission to 509
+[2025-05-14T11:20:18.593+0000] {task_command.py:415} INFO - Running <TaskInstance: hdfs_csv_processing_pipeline.read_hdfs_csv_files scheduled__2025-05-13T00:00:00+00:00 [running]> on host 68da82dd1ecf
+[2025-05-14T11:20:18.710+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='hdfs_csv_processing_pipeline' AIRFLOW_CTX_TASK_ID='read_hdfs_csv_files' AIRFLOW_CTX_EXECUTION_DATE='2025-05-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='19' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-13T00:00:00+00:00'
+[2025-05-14T11:20:18.712+0000] {app.py:198} INFO - Reading 3 CSV files from HDFS
+[2025-05-14T11:20:18.713+0000] {app.py:40} INFO - Creating Spark session
+[2025-05-14T11:20:25.069+0000] {app.py:53} INFO - Spark session created successfully with app ID: local-1747221624276
+[2025-05-14T11:20:25.071+0000] {logging_mixin.py:151} INFO - /user/heart_disease/raw/coronary_artery_disease.csv === path of hdfs file
+[2025-05-14T11:20:27.429+0000] {app.py:225} INFO - Reading file: /user/heart_disease/raw/coronary_artery_disease.csv (size: 38114 bytes)
+[2025-05-14T11:20:27.430+0000] {logging_mixin.py:151} INFO - coronary_artery_disease.csv === file name
+[2025-05-14T11:20:27.431+0000] {logging_mixin.py:151} INFO - coronary_artery_disease === dataset name
+[2025-05-14T11:20:38.917+0000] {app.py:242} INFO - Successfully read coronary_artery_disease: 1025 rows, 14 columns
+[2025-05-14T11:20:38.919+0000] {logging_mixin.py:151} INFO - /user/heart_disease/raw/heart_statlog_cleveland_hungary_final.csv === path of hdfs file
+[2025-05-14T11:20:41.750+0000] {app.py:225} INFO - Reading file: /user/heart_disease/raw/heart_statlog_cleveland_hungary_final.csv (size: 39689 bytes)
+[2025-05-14T11:20:41.752+0000] {logging_mixin.py:151} INFO - heart_statlog_cleveland_hungary_final.csv === file name
+[2025-05-14T11:20:41.753+0000] {logging_mixin.py:151} INFO - heart_statlog_cleveland_hungary_final === dataset name
+[2025-05-14T11:20:42.555+0000] {app.py:242} INFO - Successfully read heart_statlog_cleveland_hungary_final: 1190 rows, 12 columns
+[2025-05-14T11:20:42.557+0000] {logging_mixin.py:151} INFO - /user/heart_disease/raw/heart_failure_clinical_records_dataset.csv === path of hdfs file
+[2025-05-14T11:20:45.012+0000] {app.py:225} INFO - Reading file: /user/heart_disease/raw/heart_failure_clinical_records_dataset.csv (size: 12247 bytes)
+[2025-05-14T11:20:45.013+0000] {logging_mixin.py:151} INFO - heart_failure_clinical_records_dataset.csv === file name
+[2025-05-14T11:20:45.014+0000] {logging_mixin.py:151} INFO - heart_failure_clinical_records_dataset === dataset name
+[2025-05-14T11:20:46.040+0000] {app.py:242} INFO - Successfully read heart_failure_clinical_records_dataset: 299 rows, 13 columns
+[2025-05-14T11:20:46.360+0000] {python.py:194} INFO - Done. Returned value was: {'stats': {'coronary_artery_disease': {'path': '/user/heart_disease/raw/coronary_artery_disease.csv', 'rows': 1025, 'columns': 14, 'size_bytes': '38114', 'column_names': ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal', 'target']}, 'heart_statlog_cleveland_hungary_final': {'path': '/user/heart_disease/raw/heart_statlog_cleveland_hungary_final.csv', 'rows': 1190, 'columns': 12, 'size_bytes': '39689', 'column_names': ['age', 'sex', 'chest pain type', 'resting bp s', 'cholesterol', 'fasting blood sugar', 'resting ecg', 'max heart rate', 'exercise angina', 'oldpeak', 'ST slope', 'target']}, 'heart_failure_clinical_records_dataset': {'path': '/user/heart_disease/raw/heart_failure_clinical_records_dataset.csv', 'rows': 299, 'columns': 13, 'size_bytes': '12247', 'column_names': ['age', 'anaemia', 'creatinine_phosphokinase', 'diabetes', 'ejection_fraction', 'high_blood_pressure', 'platelets', 'serum_creatinine', 'serum_sodium', 'sex', 'smoking', 'time', 'DEATH_EVENT']}}, 'total_files_read': 3}
+[2025-05-14T11:20:46.466+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=hdfs_csv_processing_pipeline, task_id=read_hdfs_csv_files, execution_date=20250513T000000, start_date=20250514T112018, end_date=20250514T112046
+[2025-05-14T11:20:46.523+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-14T11:20:46.573+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

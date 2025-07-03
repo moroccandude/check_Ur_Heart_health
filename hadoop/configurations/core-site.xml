@@ -1,0 +1,27 @@
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://namenode:9001</value>
+    </property>
+
+    
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:///data/hadoop/datanode</value>
+        <description>Directory for DataNode storage</description>
+    </property>
+    <property>
+        <name>io.file.buffer.size</name>
+        <value>131072</value>
+    </property>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:///data/hadoop/namenode</value>
+        <description>Directory for NameNode metadata storage</description>
+    </property>
+     <property>
+        <name>fs.hdfs.impl</name>
+        <value>org.apache.hadoop.hdfs.DistributedFileSystem</value>
+        <description>Implementation class for HDFS</description>
+     </property>
+     </configuration>

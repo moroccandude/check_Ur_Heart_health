@@ -1,0 +1,15 @@
+[2025-04-08T21:26:34.689+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.initialize_spark scheduled__2025-04-07T00:00:00+00:00 [queued]>
+[2025-04-08T21:26:34.706+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.initialize_spark scheduled__2025-04-07T00:00:00+00:00 [queued]>
+[2025-04-08T21:26:34.706+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 3
+[2025-04-08T21:26:34.725+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): initialize_spark> on 2025-04-07 00:00:00+00:00
+[2025-04-08T21:26:34.738+0000] {standard_task_runner.py:57} INFO - Started process 106 to run task
+[2025-04-08T21:26:34.742+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'hdfs_csv_processing_pipeline', 'initialize_spark', 'scheduled__2025-04-07T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmp2bdh3631']
+[2025-04-08T21:26:34.747+0000] {standard_task_runner.py:85} INFO - Job 2: Subtask initialize_spark
+[2025-04-08T21:26:34.792+0000] {task_command.py:415} INFO - Running <TaskInstance: hdfs_csv_processing_pipeline.initialize_spark scheduled__2025-04-07T00:00:00+00:00 [running]> on host d92045a3045d
+[2025-04-08T21:26:34.862+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='hdfs_csv_processing_pipeline' AIRFLOW_CTX_TASK_ID='initialize_spark' AIRFLOW_CTX_EXECUTION_DATE='2025-04-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-07T00:00:00+00:00'
+[2025-04-08T21:26:34.863+0000] {app.py:40} INFO - Creating Spark session
+[2025-04-08T21:26:39.292+0000] {app.py:53} INFO - Spark session created successfully with app ID: local-1744147598808
+[2025-04-08T21:26:39.645+0000] {python.py:194} INFO - Done. Returned value was: {'app_id': 'local-1744147598808', 'start_time': '2025-04-08T21:26:39.645593'}
+[2025-04-08T21:26:39.697+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=hdfs_csv_processing_pipeline, task_id=initialize_spark, execution_date=20250407T000000, start_date=20250408T212634, end_date=20250408T212639
+[2025-04-08T21:26:39.740+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-04-08T21:26:39.760+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

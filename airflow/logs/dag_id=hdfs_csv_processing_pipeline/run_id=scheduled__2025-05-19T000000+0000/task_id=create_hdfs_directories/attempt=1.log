@@ -1,0 +1,18 @@
+[2025-05-22T09:07:26.169+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.create_hdfs_directories scheduled__2025-05-19T00:00:00+00:00 [queued]>
+[2025-05-22T09:07:26.187+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hdfs_csv_processing_pipeline.create_hdfs_directories scheduled__2025-05-19T00:00:00+00:00 [queued]>
+[2025-05-22T09:07:26.188+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 3
+[2025-05-22T09:07:26.208+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): create_hdfs_directories> on 2025-05-19 00:00:00+00:00
+[2025-05-22T09:07:26.216+0000] {standard_task_runner.py:57} INFO - Started process 1967 to run task
+[2025-05-22T09:07:26.222+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'hdfs_csv_processing_pipeline', 'create_hdfs_directories', 'scheduled__2025-05-19T00:00:00+00:00', '--job-id', '46', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmp5ob2khwv']
+[2025-05-22T09:07:26.226+0000] {standard_task_runner.py:85} INFO - Job 46: Subtask create_hdfs_directories
+[2025-05-22T09:07:26.304+0000] {task_command.py:415} INFO - Running <TaskInstance: hdfs_csv_processing_pipeline.create_hdfs_directories scheduled__2025-05-19T00:00:00+00:00 [running]> on host 45cc16d869be
+[2025-05-22T09:07:26.423+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='hdfs_csv_processing_pipeline' AIRFLOW_CTX_TASK_ID='create_hdfs_directories' AIRFLOW_CTX_EXECUTION_DATE='2025-05-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-19T00:00:00+00:00'
+[2025-05-22T09:07:26.425+0000] {app.py:94} INFO - Creating HDFS directories at /user/heart_disease
+[2025-05-22T09:07:30.959+0000] {app.py:104} INFO - Base directory created: /user/heart_disease
+[2025-05-22T09:07:35.728+0000] {app.py:117} INFO - Created subdirectory: /user/heart_disease/raw
+[2025-05-22T09:07:39.764+0000] {app.py:117} INFO - Created subdirectory: /user/heart_disease/processed
+[2025-05-22T09:07:43.616+0000] {app.py:117} INFO - Created subdirectory: /user/heart_disease/archive
+[2025-05-22T09:07:43.618+0000] {python.py:194} INFO - Done. Returned value was: /user/heart_disease
+[2025-05-22T09:07:43.668+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=hdfs_csv_processing_pipeline, task_id=create_hdfs_directories, execution_date=20250519T000000, start_date=20250522T090726, end_date=20250522T090743
+[2025-05-22T09:07:43.746+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-22T09:07:43.810+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

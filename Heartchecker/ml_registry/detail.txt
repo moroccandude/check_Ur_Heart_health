@@ -1,0 +1,48 @@
+age: The age of the patient in years.
+
+sex: The gender of the patient.
+
+1 = Male
+0 = Female
+cp (Chest Pain Type): Describes the type of chest pain experienced.
+
+0 = Typical angina
+1 = Atypical angina
+2 = Non-anginal pain
+3 = Asymptomatic
+trestbps (Resting Blood Pressure): The resting blood pressure in mmHg (millimeters of mercury).
+
+chol (Serum Cholesterol): Serum cholesterol level in mg/dL.
+
+fbs (Fasting Blood Sugar): Indicates if fasting blood sugar is greater than 120 mg/dL.
+
+1 = True (High blood sugar)
+0 = False (Normal blood sugar)
+restecg (Resting Electrocardiographic Results): Results from an ECG test.
+
+0 = Normal
+1 = ST-T wave abnormality
+2 = Left ventricular hypertrophy
+thalach (Maximum Heart Rate Achieved): The highest heart rate (beats per minute) achieved during exercise.
+
+exang (Exercise-Induced Angina): Indicates if the patient experienced chest pain during exercise.
+
+1 = Yes
+0 = No
+oldpeak: ST depression induced by exercise relative to rest. Measures the difference in heart electrical activity before and after exercise.
+
+slope: The slope of the peak exercise ST segment.
+
+0 = Upsloping
+1 = Flat
+2 = Downsloping
+
+---------------------------------------------------------------------------------
+Symptoms Based on These Features:
+Chest pain (especially typical angina).
+Shortness of breath (low thalach, high oldpeak).
+High blood pressure or cholesterol (trestbps, chol).
+Exercise intolerance (exang, thalach).
+Abnormal ECG readings (restecg, slope).
+Pain worsening with exertion (oldpeak, exang).
+Previous heart issues (ca, thal).

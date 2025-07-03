@@ -1,0 +1,15 @@
+[2025-04-04T11:44:00.559+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_dag.ingest_row manual__2025-04-04T11:41:33.956892+00:00 [queued]>
+[2025-04-04T11:44:00.573+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_dag.ingest_row manual__2025-04-04T11:41:33.956892+00:00 [queued]>
+[2025-04-04T11:44:00.574+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2025-04-04T11:44:00.595+0000] {taskinstance.py:1380} INFO - Executing <Task(_PythonDecoratedOperator): ingest_row> on 2025-04-04 11:41:33.956892+00:00
+[2025-04-04T11:44:00.607+0000] {standard_task_runner.py:57} INFO - Started process 318 to run task
+[2025-04-04T11:44:00.610+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'main_dag', 'ingest_row', 'manual__2025-04-04T11:41:33.956892+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmprofrzq8b']
+[2025-04-04T11:44:00.613+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask ingest_row
+[2025-04-04T11:44:00.691+0000] {task_command.py:415} INFO - Running <TaskInstance: main_dag.ingest_row manual__2025-04-04T11:41:33.956892+00:00 [running]> on host 40c50420c1d7
+[2025-04-04T11:44:00.782+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_dag' AIRFLOW_CTX_TASK_ID='ingest_row' AIRFLOW_CTX_EXECUTION_DATE='2025-04-04T11:41:33.956892+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-04T11:41:33.956892+00:00'
+[2025-04-04T11:44:00.784+0000] {app.py:53} INFO - Ingesting data from /home/usmail/Desktop/health_care/heart_disease/heart_disease/data/ to hdfs
+[2025-04-04T11:44:00.893+0000] {app.py:61} ERROR - Error occured while ingesting data Command '['docker', 'exec', '-i', 'namenode', 'hdfs', 'dfs', '-mkdir', '-p', '/user/heart_disease/row']' returned non-zero exit status 1.
+[2025-04-04T11:44:00.893+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-04-04T11:44:00.909+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=main_dag, task_id=ingest_row, execution_date=20250404T114133, start_date=20250404T114400, end_date=20250404T114400
+[2025-04-04T11:44:00.944+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-04-04T11:44:00.968+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

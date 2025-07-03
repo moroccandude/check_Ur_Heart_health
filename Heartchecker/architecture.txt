@@ -1,0 +1,2 @@
+|patience | => |data moved | => build endpoint(FastApi getWholeCSV=> messages) =| api endpoint -> |producer|=>|KafKa Brocker| => Pyspark => call to Model(Run in sperate container) =>
+
